@@ -1,0 +1,32 @@
+@media screen and (max-width: 1023px) {
+    .sidebar-trademark {
+        align-items: start;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .footer-card{
+        align-items: center;
+    }
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--accent-color);
+    gap: 1em;
+    align-content: flex-start;
+    height: 100%;
+    padding: 3em;
+    box-sizing: border-box;
+}
+
+.footer-card {
+    display: flex;
+    font-family: "Poppins", serif;
+    flex-direction: column;
+}
+
+.sidebar-trademark {
+    cursor: default;
+}

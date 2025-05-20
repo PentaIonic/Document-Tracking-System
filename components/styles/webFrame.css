@@ -1,0 +1,46 @@
+:root {
+  --primary-color: #b5a8cf;
+  --secondary-color: #a392ca;
+  --accent-color: #9874ec;
+  --background-color: rgb(240, 240, 240);
+  --text-color: #000000;
+  --text-color-Hover: #ffffff;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 6em minmax(100vh, fit-content) minmax(20em, 100%);
+  grid-template-areas:
+    "navbar"
+    "main"
+    "footer";
+}
+
+navbar {
+  display: block;
+  position: sticky;
+  top: 0;
+  height: 6em;
+  width: 100%;
+  grid-area: navbar;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+main {
+  grid-area: main;
+  display: flex;
+}
+
+footer {
+  grid-area: footer;
+}

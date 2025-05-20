@@ -1,0 +1,107 @@
+.right-sidebar {
+  position: fixed;
+  top: 0;
+  right: -20em; /* Open-Sidebar Script */
+  background-color: var(--accent-color);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 20em;
+  z-index: 1;
+  transition-duration: 0.5s;
+}
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+  padding: 0.5rem;
+  height: 100%;
+  justify-content: space-between;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.bottom-sidebar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.sidepanel-tabs {
+  display: inline-block;
+  margin-bottom: 1em;
+  box-sizing: border-box;
+}
+
+.sidepanel-tabs a {
+  text-decoration: none;
+  margin-bottom: 1em;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  font-family: "Poppins", serif;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.sidepanel-tabs a:hover {
+  color: var(--text-color-Hover);
+}
+
+.sidepanel-tabs.logout a:hover {
+  color: red;
+}
+
+.surveyTabs,
+.recordTabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-sidebar {
+  font-family: "Poppins", serif;
+  margin-top: auto;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0px;
+  justify-content: center;
+  align-items: center;
+  height: 5em;
+  width: 12em;
+  gap: 16px;
+}
+
+.logo-section-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 5em;
+  width: 12em;
+  gap: 16px;
+}
+
+.logo-sidebar img {
+  width: 60px;
+  height: auto;
+}
+
+.close-button {
+  display: flex;
+  justify-content: end;
+  padding: 10px 0px;
+}
+
+.close-button a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 2rem;
+  font-weight: bolder;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.close-button a:hover {
+  color: var(--text-color-Hover);
+}

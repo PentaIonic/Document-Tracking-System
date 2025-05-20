@@ -1,11 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | DTS</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <!-- Web Page Information & Responsive Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Styles & Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Local Styles -->
+    <link rel="stylesheet" href="../components/styles/navbar.css">
+    <link rel="stylesheet" href="../components/styles/footer.css">
+    <link rel="stylesheet" href="../components/styles/sidebar.css">
+    <link rel="stylesheet" href="../components/styles/webFrame.css">
+    <link rel="stylesheet" href="../styles/home.css">
+
+    <!-- Web Page Information -->
+    <title>Home</title>
+    <link rel="icon" href="#" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <navbar>
+        <div class="navbar-container" id="navbar"></div>
+    </navbar>
+    <!-- Page Content -->
+    <main>
+        <div class="main-container"></div>
+    </main>
+    <!-- Sidebar Panel -->
+    <div class="right-sidebar" id="sidebarBody">
+        <div class="sidebar-container" id="sidebarPanel"></div>
+    </div>
+    <!-- Page Footer -->
+    <footer><div class="footer-container" id="footer"></div></footer>
+
+    <!-- Local Scripts -->
+    <script src="../components/scripts/navbar.js"></script>
+    <script src="../components/scripts/footer.js"></script>
+    <script src="../components/scripts/sidebar.js"></script>
+    <script src="../scripts/home/home.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", loadNavbarPageContent);
+        document.addEventListener("DOMContentLoaded", loadFooterPageContent);
+        document.addEventListener("DOMContentLoaded", loadSidebarPageContent);
+    </script>
+  </body>
 </html>
