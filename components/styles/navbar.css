@@ -1,3 +1,4 @@
+/* Media Queries */
 @media screen and (max-width: 1023px) {
   .main-panel-tabs {
     display: none;
@@ -26,12 +27,14 @@
   }
 }
 
+/* Transistions */
 .navbar-container,
 .main-panel-tabs,
 .sidebar-button {
   transition: all 0.3s ease-in-out;
 }
 
+/* Navigation Bar Body */
 .navbar-container {
   display: flex;
   background-color: var(--accent-color);
@@ -48,6 +51,7 @@
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
+/* Logo with Web Name */
 .logo-area {
   display: flex;
   align-items: center;
@@ -77,6 +81,7 @@
   transform: scale(1.05);
 }
 
+/* Navigation Tabs */
 .main-panel-tabs {
   border-radius: 14px;
   height: 3em;
@@ -109,6 +114,7 @@
   color: var(--text-color-Hover);
 }
 
+/* Sidebar Button */
 .sidebar-button {
   margin: auto 0 auto auto;
   padding: 0;

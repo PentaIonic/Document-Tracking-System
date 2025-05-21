@@ -1,3 +1,4 @@
+/* Sidebar Container */
 .right-sidebar {
   position: fixed;
   top: 0;
@@ -12,6 +13,7 @@
   transition-duration: 0.5s;
 }
 
+/* Sidebar Frame */
 .right-container {
   display: flex;
   flex-direction: column;
