@@ -25,8 +25,10 @@ main {
   align-items: center;
   justify-content: center;
   background-color: gray;
-  width: 400px;
-  height: 40vh;
+  min-width: 280px;
+  width: 80%;
+  max-width: 720px;
+  min-height: 40vh;
   border-radius: 20px;
   padding: 2em;
   box-sizing: border-box;
