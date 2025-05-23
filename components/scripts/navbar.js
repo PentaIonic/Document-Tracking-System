@@ -8,7 +8,7 @@ function loadNavbarIndex() {
       console.error("Failed to load navigation bar:", xhr.status);
     }
   };
-  xhr.open("GET", "./components/navbar.html", true);
+  xhr.open("GET", "./components/navbarIndex.html", true);
   xhr.send();
 }
 
