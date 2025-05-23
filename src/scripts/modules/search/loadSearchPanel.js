@@ -7,6 +7,6 @@ function loadSearchPanel() {
       console.error("Failed to load navigation bar:", xhr.status);
     }
   };
-  xhr.open("GET", "../modules/search-panel.html", true);
+  xhr.open("GET", "../src/modules/search-panel.html", true);
   xhr.send();
 }

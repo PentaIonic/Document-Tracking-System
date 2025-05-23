@@ -8,7 +8,7 @@ function loadFooterIndex() {
       console.error("Failed to load footer:", xhr.status);
     }
   };
-  xhr.open("GET", "./components/footer.html", true);
+  xhr.open("GET", "./src/components/footer.html", true);
   xhr.send();
 }
 
@@ -22,6 +22,6 @@ function loadFooterPageContent() {
       console.error("Failed to load footer:", xhr.status);
     }
   };
-  xhr.open("GET", "../components/footer.html", true);
+  xhr.open("GET", "../src/components/footer.html", true);
   xhr.send();
 }

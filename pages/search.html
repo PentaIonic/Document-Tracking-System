@@ -18,12 +18,11 @@
     />
 
     <!-- Local Styles -->
-    <link rel="stylesheet" href="../components/styles/navbar.css" />
-    <link rel="stylesheet" href="../components/styles/footer.css" />
-    <link rel="stylesheet" href="../components/styles/sidebar.css" />
-    <link rel="stylesheet" href="../components/styles/webFrame.css" />
-    <link rel="stylesheet" href="../styles/search.css" />
-    <link rel="stylesheet" href="../modules/styles/search-panel.css" />
+    <link rel="stylesheet" href="../src//styles/components/navbar.css" />
+    <link rel="stylesheet" href="../src/styles/components/footer.css" />
+    <link rel="stylesheet" href="../src/styles/components/webFrame.css" />
+    <link rel="stylesheet" href="../src/styles/pages/search.css" />
+    <link rel="stylesheet" href="../src/styles/modules/search/search-panel.css" />
 
     <!-- Web Page Information -->
     <title>Search | DTS</title>
@@ -44,16 +43,14 @@
     <footer><div class="footer-container" id="footer"></div></footer>
 
     <!-- Local Scripts -->
-    <script src="../components/scripts/navbar.js"></script>
-    <script src="../components/scripts/footer.js"></script>
-    <script src="../components/scripts/sidebar.js"></script>
-    <script src="../scripts/search/search.js"></script>
-    <script src="../modules/scripts/loadSearchPanel.js"></script>
+    <script src="../src/scripts/components/navbar.js"></script>
+    <script src="../src/scripts/components/footer.js"></script>
+    <script src="../src/scripts/pages/search.js"></script>
+    <script src="../src/scripts/modules/search/loadSearchPanel.js"></script>
     <script>
       // Loading Components
       document.addEventListener("DOMContentLoaded", loadNavbarUser);
       document.addEventListener("DOMContentLoaded", loadFooterPageContent);
-      document.addEventListener("DOMContentLoaded", loadSidebarPageContent);
       document.addEventListener("DOMContentLoaded", loadSearchPanel);
     </script>
   </body>

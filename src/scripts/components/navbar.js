@@ -8,7 +8,7 @@ function loadNavbarIndex() {
       console.error("Failed to load navigation bar:", xhr.status);
     }
   };
-  xhr.open("GET", "./components/navbarIndex.html", true);
+  xhr.open("GET", "./src/components/navbarIndex.html", true);
   xhr.send();
 }
 
@@ -22,7 +22,7 @@ function loadNavbarUser() {
       console.error("Failed to load navigation bar:", xhr.status);
     }
   };
-  xhr.open("GET", "../components/navbarIndex.html", true);
+  xhr.open("GET", "../src/components/navbarIndex.html", true);
   xhr.send();
 }
 
@@ -36,6 +36,6 @@ function loadNavbarPageContent() {
       console.error("Failed to load navigation bar:", xhr.status);
     }
   };
-  xhr.open("GET", "../components/navbar.html", true);
+  xhr.open("GET", "../src/components/navbar.html", true);
   xhr.send();
 }
