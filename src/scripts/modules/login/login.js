@@ -8,6 +8,6 @@ function loadPortalIndex() {
       console.error("Failed to load portal:", xhr.status);
     }
   };
-  xhr.open("GET", "./src/modules/login.html", true);
+  xhr.open("GET", "./src/modules/login/login.html", true);
   xhr.send();
 }
