@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Web Page Information & Responsive Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Styles & Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mate:ital@0;1&family=Rambla:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+
+    <!-- Local Styles -->
+    <link rel="stylesheet" href="../components/styles/navbar.css" />
+    <link rel="stylesheet" href="../components/styles/footer.css" />
+    <link rel="stylesheet" href="../components/styles/sidebar.css" />
+    <link rel="stylesheet" href="../components/styles/webFrame.css" />
+    <link rel="stylesheet" href="../styles/search.css" />
+    <link rel="stylesheet" href="../modules/styles/search-panel.css" />
+
+    <!-- Web Page Information -->
+    <title>Search | DTS</title>
+    <link rel="icon" href="#" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <navbar>
+      <div class="navbar-container" id="navbar"></div>
+    </navbar>
+    <!-- Page Content -->
+    <main id="container"></main>
+    <!-- Sidebar Panel -->
+    <div class="right-sidebar" id="sidebarBody">
+      <div class="sidebar-container" id="sidebarPanel"></div>
+    </div>
+    <!-- Page Footer -->
+    <footer><div class="footer-container" id="footer"></div></footer>
+
+    <!-- Local Scripts -->
+    <script src="../components/scripts/navbar.js"></script>
+    <script src="../components/scripts/footer.js"></script>
+    <script src="../components/scripts/sidebar.js"></script>
+    <script src="../scripts/search/search.js"></script>
+    <script src="../modules/scripts/loadSearchPanel.js"></script>
+    <script>
+      // Loading Components
+      document.addEventListener("DOMContentLoaded", loadNavbarUser);
+      document.addEventListener("DOMContentLoaded", loadFooterPageContent);
+      document.addEventListener("DOMContentLoaded", loadSidebarPageContent);
+      document.addEventListener("DOMContentLoaded", loadSearchPanel);
+    </script>
+  </body>
+</html>

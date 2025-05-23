@@ -55,7 +55,6 @@ main {
 
 .panel-body label {
   position: relative;
-  background-color: white;
   font-family: "Mate";
   width: fit-content;
   border-radius: 1rem;
@@ -75,7 +74,7 @@ main {
 #accountID:focus + label,
 #accountPassword:focus + label {
     font-size: 0.75rem;
-    bottom: 4.5rem;
+    bottom: 3.85rem;
     pointer-events: none;
     transition:
         font-size 0.3s ease,

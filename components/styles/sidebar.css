@@ -42,7 +42,7 @@
   margin-bottom: 1em;
   color: var(--text-color);
   font-size: 0.9rem;
-  font-family: "Poppins", serif;
+  font-family: 'Source Serif 4';
   font-weight: bold;
   font-style: normal;
 }
@@ -62,7 +62,7 @@
 }
 
 .logo-sidebar {
-  font-family: "Poppins", serif;
+  font-family: "Rambla";
   margin-top: auto;
   color: var(--text-color);
   display: flex;
