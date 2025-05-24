@@ -25,3 +25,17 @@ function loadFooterPageContent() {
   xhr.open("GET", "../src/components/footer.html", true);
   xhr.send();
 }
+
+// Function for No Logo Footer
+function loadFooter() {
+  const xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      document.getElementById("footer").innerHTML = xhr.responseText;
+    } else {
+      console.error("Failed to load footer:", xhr.status);
+    }
+  };
+  xhr.open("GET", "../src/components/footerNoLogo.html", true);
+  xhr.send();
+}

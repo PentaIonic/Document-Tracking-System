@@ -1,16 +1,26 @@
 @media screen and (max-width: 1023px) {
-  .container {
+  .search-container {
     border-radius: 4px;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .container {
+  .search-container {
     border-radius: 20px;
   }
 }
 
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 90vh;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.search-container {
   display: flex;
   flex-direction: column;
   background-color: var(--primary-color);
@@ -76,7 +86,7 @@
 .search-button {
   display: flex;
   background-color: white;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   width: 3rem;
   height: 3rem;
@@ -86,7 +96,7 @@
 
 #searchDocument:focus + label {
   font-size: 0.75rem;
-  bottom: 2.90rem;
+  bottom: 2.9rem;
   pointer-events: none;
   transition: font-size 0.3s ease, bottom 0.3s ease;
 }

@@ -1,21 +1,27 @@
 let sidebarMoved = false;
 
-// Call Function for using sidebar
-function moveSidebar()  {
-    const sidebar = document.getElementById("sidebarBody");
-    sidebar.style.transition = "0.3s ease-in-out";
+// Toggle the sidebar
+function moveSidebar() {
+  const container = document.querySelector(".container");
+  if (!container) return;
 
-    if (!sidebarMoved) {
-        sidebar.style.right = "0em";
-    }
-    else {
-        sidebar.style.right = "-20em";
-    }
+  container.style.transition = "grid-template-columns 0.3s linear";
 
-    sidebarMoved = !sidebarMoved;
+  if (!sidebarMoved) {
+    setSidebarWidth("16em");
+  } else {
+    setSidebarWidth("0");
+  }
+
+  sidebarMoved = !sidebarMoved;
 }
 
-// Function for Portal Page Sidebar
+// Set CSS variable --sidebar-width
+function setSidebarWidth(width) {
+  document.documentElement.style.setProperty('--sidebar-width', width);
+}
+
+// Load sidebar content for portal page
 function loadSidebarIndex() {
   const xhr = new XMLHttpRequest();
   xhr.onload = function () {
@@ -29,7 +35,7 @@ function loadSidebarIndex() {
   xhr.send();
 }
 
-// Function for Content Page Sidebar
+// Load sidebar content for content pages
 function loadSidebarPageContent() {
   const xhr = new XMLHttpRequest();
   xhr.onload = function () {
@@ -39,6 +45,6 @@ function loadSidebarPageContent() {
       console.error("Failed to load sidebar:", xhr.status);
     }
   };
-  xhr.open("GET", "../components/sidebar.html", true);
+  xhr.open("GET", "../src/components/sidebar.html", true);
   xhr.send();
 }
