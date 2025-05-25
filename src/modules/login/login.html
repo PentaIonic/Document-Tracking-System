@@ -1,7 +1,8 @@
 <div class="container">
   <div class="portal-panel">
     <div class="panel-header">
-      <h1>Log In</h1>
+      <h1>Biringan City DOCTRAX</h1>
+      <p>The Document tracking system of Biringan Municipalty</p>
     </div>
     <form action="" method="post">
       <div class="panel-body">
@@ -14,17 +15,18 @@
           required
         />
         <label for="accountPassword">Password</label>
-        <input type="submit" name="Login" value="Log In" />
+        <input type="submit" name="Login" value="SIGN IN" />
+        <img class="login-img" src="../../assets/icons/user.svg" alt="" />
       </div>
     </form>
     <div class="panel-footer">
-      <p>For tracking current document, <a href="../../pages/search.html">Click Here</a></p>
-      <div class="division-line">
-        <div class="line"><hr /></div>
-        <h3>OR</h3>
-        <div class="line"><hr /></div>
-      </div>
-      <p>Scan QR Code <a href="#">here</a>.</p>
+      <p>For Non-Admin users, track your documents here.</p>
+      <a href="#">
+        <div class="track-document-button">
+          <img src="../../assets/icons/document-minus.svg" alt="" />
+          <label for="track-document-button">Track Doc</label>
+        </div>
+      </a>
     </div>
   </div>
 </div>

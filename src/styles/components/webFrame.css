@@ -6,10 +6,8 @@
   --background-color: #b6b09f;
   --text-color: #000000;
   --text-color-Hover: #ffffff;
-}
-
-::-webkit-scrollbar {
-  display: none;
+  --text-color-Dark: #ffffff;
+  --text-color-Dark-Hover: #000000;
 }
 
 /* Page Structure */
@@ -17,6 +15,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 /* Grid Structure */

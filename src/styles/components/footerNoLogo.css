@@ -14,8 +14,8 @@
 /* Footer Frame */
 .footer-container {
     display: flex;
-    flex-wrap: wrap;
-    background-color: var(--accent-color);
+    justify-content: center;
+    background-color: var(--background-color);
     gap: 1em;
     align-content: flex-start;
     height: 100%;
@@ -29,6 +29,8 @@
 }
 
 .sidebar-trademark {
+    width: 170px;
+    text-align: center;
     margin-left: 2em;
     cursor: default;
 }

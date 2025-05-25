@@ -1,5 +1,5 @@
-// Function for Portal Page Navigation Bar
-function loadNavbarIndex() {
+// Function for loading page's Navigation Bar
+function loadNavIndex() {
   const xhr = new XMLHttpRequest();
   xhr.onload = function () {
     if (xhr.status === 200) {
@@ -8,7 +8,7 @@ function loadNavbarIndex() {
       console.error("Failed to load navigation bar:", xhr.status);
     }
   };
-  xhr.open("GET", "./src/components/navbarIndex.html", true);
+  xhr.open("GET", "../src/components/navIndex.html", true);
   xhr.send();
 }
 

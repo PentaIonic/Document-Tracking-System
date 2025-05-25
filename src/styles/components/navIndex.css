@@ -1,0 +1,111 @@
+/* Media Queries */
+@media screen and (max-width: 1023px) {
+  .sidebar-button {
+    display: flex;
+  }
+
+  .logo-area {
+    justify-content: start;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main-panel-tabs {
+    display: flex;
+  }
+
+  .sidebar-button {
+    display: none;
+  }
+
+  .logo-area {
+    margin: auto auto auto 4em;
+    justify-content: center;
+  }
+
+  .nav-action-buttons {
+    margin: auto 4em auto auto;
+  }
+}
+
+/* Navigation Bar Body */
+.navbar-container {
+  display: flex;
+  background-color: var(--background-color);
+  height: 6em;
+  width: 100vw;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  align-items: start;
+  padding: 0px 1em;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+/* Logo with Web Name */
+.logo-area {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.logo-area img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.logo-area a {
+  color: var(--text-color);
+  text-decoration: none;
+  text-align: center;
+  font-family: Rambla;
+  font-size: 1.8125rem;
+  font-style: italic;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.logo-area:hover {
+  transform: scale(1.05);
+}
+
+/* Action Buttons */
+.nav-action-buttons {
+  display: flex;
+  margin: auto 4em auto auto;
+  padding: 0;
+  height: auto;
+  width: 200px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.action-buttons {
+  border-radius: 0.5rem;
+  background: #000;
+  padding: 1em;
+}
+
+.action-buttons-login {
+  background-color: none;
+  padding: 1em;
+  border-radius: 0.5rem;
+}
+
+.action-buttons > a, .action-buttons-login > a {
+  text-decoration: none;
+  color: var(--text-color-Dark);
+  text-align: center;
+  font-family: "Source Serif 4";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
