@@ -1,0 +1,71 @@
+@media screen and (max-width: 768px) {
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  height: 90vh;
+  width: 100%;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.background {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 4rem;
+  height: 90vh;
+  width: 100%;
+  background-color: var(--background-color);
+  overflow-x: hidden;
+  z-index: -1;
+}
+
+.background h1 {
+  width: 300px;
+  color: var(--text-color);
+  text-align: center;
+  font-family: Rambla;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.background p {
+  width: 300px;
+  color: var(--text-color);
+  text-align: center;
+  font-family: "Source Serif Pro";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.circle-red {
+  position: absolute;
+  bottom: 4em;
+  left: 4rem;
+  width: 34.875rem;
+  height: 34.875rem;
+  border-radius: 50%;
+  background: #e4003a;
+  filter: blur(12.5px);
+  transition: all 0.3s ease;
+}
+
+.circle-orange {
+  position: absolute;
+  bottom: 16rem;
+  left: 24rem;
+  width: 37.6875rem;
+  height: 37.6875rem;
+  border-radius: 50%;
+  position: absolute;
+  background: #eb5b00;
+  filter: blur(12.5px);
+  transition: all 0.3s ease;
+}

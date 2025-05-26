@@ -14,31 +14,43 @@
     />
 
     <!-- Local Styles -->
-    <link rel="stylesheet" href="./src/styles/modules/login/login.css" />
     <link rel="stylesheet" href="./src/styles/components/navIndex.css" />
     <link rel="stylesheet" href="./src/styles/components/footerNoLogo.css" />
-    <link rel="stylesheet" href="./src/styles/components/webFrame.css" />
+    <link rel="stylesheet" href="./src/styles//components/webFrame.css" />
+    <link rel="stylesheet" href="./src/styles/pages/about.css" />
 
     <!-- Web Page Information -->
-    <title>Doctrax</title>
+    <title>About | Doctrax</title>
+    <link rel="icon" href="#" type="image/x-icon" />
   </head>
   <body>
     <!-- Top Navigation Bar -->
     <navbar>
       <div class="navbar-container" id="navbar"></div>
     </navbar>
-    <!-- Index Panels -->
-    <main id="mainContainer"></main>
+    <!-- Page Content -->
+    <main>
+      <div class="background">
+        <div class="circle-orange"></div>
+        <div class="circle-red"></div>
+        <h1 style="z-index: 1">Biringan City<br />DOCTRAX</h1>
+        <p style="z-index: 1">
+          Welcome to Biringan City, Online Document Tracking System. We provide
+          real time and Transparency to all of you.
+        </p>
+      </div>
+    </main>
     <!-- Page Footer -->
     <footer><div class="footer-container" id="footer"></div></footer>
+
     <!-- Local Scripts -->
     <script src="./src/scripts/components/navbar.js"></script>
     <script src="./src/scripts/components/footer.js"></script>
-    <script src="./src/scripts/modules/login/login.js"></script>
+    <script src="./src/scripts/pages/home.js"></script>
     <script>
+      // Loading Components
       document.addEventListener("DOMContentLoaded", loadNavIndex);
       document.addEventListener("DOMContentLoaded", loadFooter);
-      document.addEventListener("DOMContentLoaded", loadPortalIndex);
     </script>
   </body>
 </html>
