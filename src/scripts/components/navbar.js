@@ -8,34 +8,32 @@ function loadNavIndex() {
       console.error("Failed to load navigation bar:", xhr.status);
     }
   };
-  xhr.open("GET", "../src/components/navIndex.html", true);
+  xhr.open("GET", "../src/components/nav/navIndex.html", true);
   xhr.send();
 }
 
-// Function for loading Navigation bar without tabs in Content Pages
-function loadNavbarUser() {
+// Load Home Navigation Bar
+function loadNavHome() {
   const xhr = new XMLHttpRequest();
   xhr.onload = function () {
     if (xhr.status === 200) {
       document.getElementById("navbar").innerHTML = xhr.responseText;
+      insertDisplayName();
     } else {
       console.error("Failed to load navigation bar:", xhr.status);
     }
   };
-  xhr.open("GET", "../src/components/navbarIndex.html", true);
+  xhr.open("GET", "../src/components/nav/navHome.html", true);
   xhr.send();
 }
 
-// Function for Content Page Navigation Bar
-function loadNavbarPageContent() {
-  const xhr = new XMLHttpRequest();
-  xhr.onload = function () {
-    if (xhr.status === 200) {
-      document.getElementById("navbar").innerHTML = xhr.responseText;
-    } else {
-      console.error("Failed to load navigation bar:", xhr.status);
+// Get account's display name
+function insertDisplayName() {
+  const name = localStorage.getItem("displayName");
+  if (name) {
+    const nameSpan = document.getElementById("accountName");
+    if (nameSpan) {
+      nameSpan.innerText = name;
     }
-  };
-  xhr.open("GET", "../src/components/navbar.html", true);
-  xhr.send();
+  }
 }

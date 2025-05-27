@@ -1,29 +1,51 @@
+<!-- Main Search Panel -->
 <div class="container">
-  <div class="search-container">
-    <div class="search-header">
-      <h1>Online Document Tracking System</h1>
+  <div class="portal-panel">
+    <!-- Header Section -->
+    <div class="panel-header">
+      <h1>Biringan City<br /><span class="doctrax">DOCTRAX</span></h1>
+      <p>
+        Know the status of your document by<br />
+        providing a valid Document ID or QR
+        <br />code below.
+      </p>
     </div>
-    <div class="search-bar">
-      <div class="input-field">
-        <input type="search" name="search-document" id="searchDocument" />
-        <label for="searchDocument">Enter Reference No.</label>
+
+    <!-- Search Section -->
+    <div class="panel-body">
+      <div class="search-input-wrapper">
+        <input
+          type="text"
+          name="document-ID"
+          id="documentID"
+          placeholder="Document ID"
+          required
+        />
+        <span class="material-icons-round">search</span>
       </div>
-      <div class="search-button">
-        <a href=""><span class="material-icons-round"> search </span></a>
-      </div>
-    </div>
-    <div class="guide">
-      <h4>Step-By-Step:</h4>
-      <ol>
-        <li>
-          In your receipt, find the <i>Transaction Number</i> indicated at the
-          bottom of the receipt.
-        </li>
-        <li>Type in the following number into the search bar.</li>
-        <li>
-          Once typed the transaction number, hit Enter or click the search icon.
-        </li>
-      </ol>
+
+      <div class="or-separator">or</div>
+
+      <button class="upload-btn">
+        <span class="upload-text">Upload File</span>
+        <span class="icon-svg">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20 15V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18L4 15M8 11L12 15M12 15L16 11M12 15V3"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </button>
     </div>
   </div>
 </div>

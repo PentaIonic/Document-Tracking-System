@@ -7,6 +7,10 @@
   .logo-area {
     justify-content: start;
   }
+
+  .logo-area a {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -25,6 +29,7 @@
 
   .nav-action-buttons {
     margin: auto 4em auto auto;
+    gap: 0.5rem;
   }
 }
 
@@ -80,27 +85,28 @@
   margin: auto 4em auto auto;
   padding: 0;
   height: auto;
-  width: 200px;
+  width: fit-content;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
   cursor: pointer;
 }
 
-.action-buttons {
+.action-buttons:hover {
   border-radius: 0.5rem;
   background: #000;
   padding: 1em;
 }
 
-.action-buttons-login {
+.action-buttons {
   background-color: none;
   padding: 1em;
   border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
 }
 
-.action-buttons > a, .action-buttons-login > a {
+.action-buttons > span,
+.action-buttons-login > span {
   text-decoration: none;
   color: var(--text-color-Dark);
   text-align: center;

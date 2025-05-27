@@ -12,6 +12,15 @@ main {
 }
 
 .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.main-container {
   display: flex;
   flex-direction: column;
   align-items: end;
@@ -20,10 +29,9 @@ main {
   width: 100%;
   background-color: var(--background-color);
   overflow-x: hidden;
-  z-index: -1;
 }
 
-.background h1 {
+.main-container h1 {
   width: 300px;
   color: var(--text-color);
   text-align: center;
@@ -34,7 +42,7 @@ main {
   line-height: normal;
 }
 
-.background p {
+.main-container p {
   width: 300px;
   color: var(--text-color);
   text-align: center;
