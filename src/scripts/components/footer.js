@@ -8,6 +8,6 @@ function loadFooter() {
       console.error("Failed to load footer:", xhr.status);
     }
   };
-  xhr.open("GET", "../src/components/footerNoLogo.html", true);
+  xhr.open("GET", "../src/components/footer/footerNoLogo.html", true);
   xhr.send();
 }

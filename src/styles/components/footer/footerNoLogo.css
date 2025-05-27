@@ -31,6 +31,6 @@
 .sidebar-trademark {
     width: 170px;
     text-align: center;
-    margin-left: 2em;
     cursor: default;
+    box-sizing: border-box;
 }
