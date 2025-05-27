@@ -98,6 +98,10 @@ main {
   padding: 1.5em;
 }
 
+::-webkit-input-placeholder {
+  color: rgba(235, 91, 0, 0);
+}
+
 #accountID:focus + label, #accountID:not(:placeholder-shown) + label {
   font-size: 0.75rem;
   bottom: 3.85rem;

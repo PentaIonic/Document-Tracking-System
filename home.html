@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="./src/styles/components/webFrame.css" />
 
     <!-- Web Page Information -->
-    <title>Doctrax</title>
+    <title>Home | Doctrax</title>
   </head>
   <body>
     <!-- Top Navigation Bar -->
@@ -31,21 +31,67 @@
     <div class="popup-menu"></div>
     <!-- Index Panels -->
     <main id="mainContainer">
-      <div class="home-header">
-        <div class="logo">
-          <img src="./assets/icons/page-logo.svg" alt="" />
+      <div class="sub-container">
+        <div class="home-header">
+          <div class="logo">
+            <img src="./assets/icons/page-logo.svg" alt="" />
+          </div>
+          <div class="page-name">
+            <span>Biringan City</span>
+            <span>Document Tracking System</span>
+          </div>
+          <div class="search-bar">
+            <input
+              type="search"
+              name="search-document"
+              id="searchDocument"
+              placeholder="Search..."
+            />
+            <div class="search-image" onclick="">
+              <img src="./assets/icons/search.svg" />
+            </div>
+          </div>
         </div>
-        <div class="page-name">
-          <span>Biringan City</span>
-          <span>Document Tracking System</span>
-        </div>
-        <div class="search-bar">
-          <input type="search" name="search-document" id="searchDocument" />
-          <img src="./assets/icons/search.svg" />
+        <hr style="width: 100%; box-sizing: border-box" />
+        <p>
+          Welcome to the Biringan Municipal Document Tracking System. Select a
+          department below to track, request, or manage your documents.
+        </p>
+        <div class="home-options">
+          <div class="option-layer">
+            <a href="./sectors/health-office.html">
+              <div class="sector">
+                <img src="./assets/images/health.png" alt="" />
+                <span>Municipal Health Office</span>
+              </div>
+            </a>
+            <a href="./sectors/civil-registrar-office.html">
+              <div class="sector">
+                <img src="./assets/images/civil-reg.png" alt="" />
+                <span>Civil Registrar Office</span>
+              </div>
+            </a>
+            <a href="./sectors/general-services-office.html">
+              <div class="sector">
+                <img src="./assets/images/gen-service.png" alt="" />
+                <span>General Services Office</span>
+              </div>
+            </a>
+            <a href="./sectors/agricultural-office.html">
+              <div class="sector">
+                <img src="./assets/images/agri.png" alt="" />
+                <span>Agricultural Office</span>
+              </div>
+            </a>
+            <a href="./sectors/accounting-office.html">
+              <div class="sector">
+                <img src="./assets/images/accounting.png" alt="" />
+                <span>Accounting Office</span>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
-      <hr style="width: 100%; box-sizing: border-box" />
-      <div class="home-options"></div>
     </main>
     <!-- Page Footer -->
     <footer><div class="footer-container" id="footer"></div></footer>
@@ -61,10 +107,6 @@
     </script>
     <script>
       checkLogin();
-      //temp
-      document.getElementById(
-        "accountName"
-      ).innerText = `Welcome, ${localStorage.getItem("displayName")}!`;
     </script>
   </body>
 </html>

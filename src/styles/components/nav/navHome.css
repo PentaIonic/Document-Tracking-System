@@ -80,7 +80,7 @@
 .nav-action-buttons {
   display: flex;
   align-items: center;
-  margin: auto 0;
+  margin: auto 1rem auto auto;
   gap: 1rem;
 }
 
