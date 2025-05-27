@@ -18,128 +18,150 @@
     padding: 2em;
   }
 }
-      
+
+:root {
+  --primary-color: #ded2b4;
+  --background-color: #eae4d5;
+  --accent-color: #f5a623;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Serif 4", sans-serif;
+  background-color: var(--background-color);
+}
+
+h1 {
+    font-family: "Rambla", sans-serif;
+}
+
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: var(--background-color);
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
 
-.container {
-    background-color: var(--primary-color);
-    width: 90%;
-    max-width: 550px;
-    padding: 2rem;
-    border-radius: 1.5rem;
-    box-shadow: 25px 20px 4px 0px rgba(0, 0, 0, 0.25);
-    }
+.form-wrapper {
+  background: var(--primary-color);
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 95%;
+  max-width: 1000px;
+}
 
-      .panel-header {
-        text-align: center;
-        padding-top: 0;
-      }
+.registration-form .form-title {
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
 
-      .panel-header h1 {
-        font-family: "Rambla", sans-serif;
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-top: -8.5rem; /* Add or adjust this */
-        margin-bottom: 0.25rem;
-      }
+.form-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
 
-      .panel-header .doctrax {
-        font-weight: 800;
-      }
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
 
-      .panel-header p {
-        font-family: "Source Serif 4", serif;
-        font-size: 1rem;
-        margin-top: 6rem;
-        margin-bottom: 1.5rem;
-      }
+.label-normal {
+  color: #807d73;
+  font-weight: 550;
+}
 
-      .panel-body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+.label-bold {
+  font-weight: bold;
+  color: #000; /* Or keep it #807d73 if you prefer */
+}
 
-      .search-input-wrapper {
-        position: relative;
-        display: flex;
-        align-items: center;
-      }
+.italic-text {
+  font-style: italic;
+}
 
-      .search-input-wrapper input[type="text"] {
-        width: 100%;
-        padding: 1rem 3rem 1rem 1rem; /* space on right for icon */
-        border-radius: 10px;
-        border: 2px solid #000;
-        background: rgba(235, 91, 0, 0.55);
-        font-family: 'Mate', serif;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
-        font-size: 1rem;
-        color: #000;
-      }
+input,
+select,
+textarea {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  resize: none;
+}
 
-      .search-input-wrapper input::placeholder {
-        color: black;
-        opacity: 1;
-      }
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+}
 
-      .search-input-wrapper .material-icons-round {
-        position: absolute;
-        right: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #000;
-      }
+.upload-box {
+  border: 1px dashed #444;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  height: 250px;
+}
 
-      .search-input-wrapper input[type="text"]:focus {
-        outline: none;
-        border-color: #333;
-      }
+.upload-box .material-icons-round {
+  font-size: 2rem;
+  color: #444;
+}
 
-      .or-separator {
-        margin: 1rem 0;
-        font-family: "Mate", serif;
-        font-weight: bold;
-      }
+.form-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
 
-      .upload-btn {
-        display: flex;
-        align-items: center;
-        justify-content: space-between; /* spaces text and icon */
-        gap: 0.5rem;
-        padding: 0.75rem 1rem;
-        width: 100%;
-        max-width: 250px;
-        border-radius: 10px;
-        border: 2px solid #000;
-        background-color: rgba(235, 91, 0, 0.55);
-        color: #000;
-        font-family: "Mate", serif;
-        font-weight: 800;
-        font-size: 1rem;
-        cursor: pointer;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
-        transition: background-color 0.3s ease, transform 0.2s ease;
-      }
+.submit-btn,
+.cancel-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
 
-      .upload-btn:hover {
-        background-color: rgba(198, 70, 0, 0.95);
-        transform: scale(1.03);
-        }
-      
-      .upload-btn .icon-svg {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        }
+.submit-btn {
+  background-color: #ccc;
+  font-weight: bold;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
 
-      .upload-btn .icon-svg svg {
-      width: 24px;
-      height: 24px;
-        }
+.submit-btn:hover {
+  background-color: #9d9d9d;
+}
+
+.cancel-btn {
+  background-color: #FFB200;
+  color: black;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 550;
+  transition: all 0.3s ease;
+  height: 50px;
+}
+
+.cancel-btn:hover {
+  background-color: #dd9a00;
+}

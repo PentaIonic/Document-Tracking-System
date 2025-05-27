@@ -20,14 +20,14 @@
     <!-- Local Styles -->
     <link rel="stylesheet" href="../src/styles/components/navIndex.css" />
     <link rel="stylesheet" href="../src/styles/components/footerNoLogo.css" />
-    <link rel="stylesheet" href="../src/styles/components/webFrame.css" />
-    <link rel="stylesheet" href="../src/styles/pages/search.css" />
-    <link rel="stylesheet" href="../src/styles/modules/search/search-panel.css" />
+    <link rel="stylesheet" href="../src/styles/components/sidebar.css" />
+    <link rel="stylesheet" href="../src/styles/pages/register-form.css" />
+    <link rel="stylesheet" href="../src/styles//components/webFrame.css" />
+    <link rel="stylesheet" href="../styles/#" />
 
     <!-- Web Page Information -->
-    <title>Tracking Portal | DTS</title>
+    <title>Registration Form</title>
     <link rel="icon" href="#" type="image/x-icon" />
- 
   </head>
   <body>
     <!-- Top Navigation Bar -->
@@ -36,60 +36,87 @@
     </navbar>
 
     <!-- Page Content -->
-    <main id="container">
-      <!-- Main Search Panel -->
-      <div class="container">
-        <div class="portal-panel">
-          <!-- Header Section -->
-          <div class="panel-header">
-            <h1>Biringan City<br><span class="doctrax">DOCTRAX</span></h1>
-            <p>
-              Know the status of your document by<br>
-              providing a valid Document ID or QR
-              <br>code below.
-            </p>
-          </div>
+    <main>
+      <div class="form-wrapper">
+      <form class="registration-form">
+        <h1 class="form-title">REGISTRATION FORM</h1>
 
-          <!-- Search Section -->
-          <div class="panel-body">
-            <div class="search-input-wrapper">
-              <input type="text" name="document-ID" id="documentID" placeholder="Document ID" required />
-              <span class="material-icons-round">search</span>
+        <h3 class="info-title">Personal Information:</h3>
+
+        <div class="form-grid">
+
+         <!-- Left Column -->
+    <div class="form-group left">
+        <label class="label-normal">Last Name</label><input type="text" />
+        <label class="label-normal">First Name</label><input type="text" />
+        <label class="label-normal">Middle Name</label><input type="text" />
+        <label class="label-normal">Suffix <span class="italic-text">(If applicable)</span></label>
+        <input type="text" />
+
+        <label class="label-bold">Age:</label><input type="number" />
+        <label class="label-bold">Sex:</label>
+            <div class="radio-group">
+        <label class="label-bold"><input type="radio" name="sex" /> Male</label>
+        <label class="label-bold"><input type="radio" name="sex" /> Female</label>
+    </div>
+  <label class="label-bold">Address:</label><textarea rows="3" class="address-box"></textarea>
+</div>
+
+          <!-- Right Column -->
+          <div class="form-group right">
+            <label style="font-weight: bold;">Date of Appeal/Appointment:</label>
+            <input type="date" />
+            <label style="font-weight: bold;">Department:</label>
+            <select><option>-Select-</option>
+            <option>Accounting Office</option>
+            <option>Agriculture Office</option>
+            <option>Civil Registrar Office</option>
+            <option>General Services Office</option>
+            <option>Municipal Health Office</option>
+             </select>
+
+            <label style="font-weight: bold;">Type of Document:</label>
+            <select><option>-Select-</option>               
+            <option>Health Certificate</option>
+            <option>Hospital Referral Form</option>
+            <option>Immunization Record</option>
+            <option>Medical Certificate</option>
+            <option>Prenatal Record</option>
+            <option>Sanitary Permit</option>
+            </select>
+
+            <label style="font-weight: bold;">Upload Document</label>
+            <div class="upload-box">
+              <span class="material-icons-round">cloud_upload</span>
+              <strong>Browse Files</strong>
+              <p class="drag-text">Drag & Drop files here</p>
             </div>
-
-            <div class="or-separator">or</div>
-
-            <button class="upload-btn">
-              <span class="upload-text">Upload File</span>
-              <span class="icon-svg">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 15V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18L4 15M8 11L12 15M12 15L16 11M12 15V3"
-                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-              </span>
-                </button>
           </div>
         </div>
-      </div>
-    </main>
 
-    <!-- Sidebar Panel -->
-    <div class="right-sidebar" id="sidebarBody">
-      <div class="sidebar-container" id="sidebarPanel"></div>
+        <div class="form-buttons">
+          <button type="submit" class="submit-btn">
+            <span class="material-icons-round">login</span> Submit
+          </button>
+          <button type="button" class="cancel-btn">Cancel Application</button>
+        </div>
+      </form>
     </div>
+</main>
+    
+    <!-- Page Footer -->
+    <footer><div class="footer-container" id="footer"></div></footer>
 
     <!-- Local Scripts -->
     <script src="../src/scripts/components/navbar.js"></script>
     <script src="../src/scripts/components/footer.js"></script>
-    <script src="../src/scripts/pages/search.js"></script>
-    <script src="../src/scripts/modules/search/loadSearchPanel.js"></script>
-    <script src="../src/scripts/modules/search/loadSearchResult.js"></script>
+    <script src="../src/scripts/components/sidebar.js"></script>
+    <script src="../scripts/home/#"></script>
     <script>
       // Loading Components
-      document.addEventListener("DOMContentLoaded", loadNavbarUser);
+      document.addEventListener("DOMContentLoaded", loadNavbarPageContent);
       document.addEventListener("DOMContentLoaded", loadFooterPageContent);
-      document.addEventListener("DOMContentLoaded", loadSearchPanel);
+      document.addEventListener("DOMContentLoaded", loadSidebarPageContent);
     </script>
   </body>
 </html>
