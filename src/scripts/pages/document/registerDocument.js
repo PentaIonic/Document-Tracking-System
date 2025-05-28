@@ -1,0 +1,153 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const recordForm = document.getElementById("recordForm");
+  const uploadBox = document.getElementById("uploadBox");
+  const documentFile = document.getElementById("documentFile");
+  const uploadedFilesList = document.getElementById("uploadList");
+
+  // Supabase config
+  const supabaseUrl = "https://qlgoqwvgtvydkuntjohg.supabase.co";
+  const supabaseKey =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFsZ29xd3ZndHZ5ZGt1bnRqb2hnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg0Mjg1OTgsImV4cCI6MjA2NDAwNDU5OH0.5H7UwMIuNi1k2bhdpknYxt6ub6UEtCgZNCBE02VP1Kk";
+  const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+
+  // Upload Box Event Listeners
+  uploadBox.addEventListener("click", () => documentFile.click());
+
+  uploadBox.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    uploadBox.classList.add("hover");
+  });
+
+  uploadBox.addEventListener("dragleave", () =>
+    uploadBox.classList.remove("hover")
+  );
+
+  uploadBox.addEventListener("drop", async (e) => {
+    e.preventDefault();
+    uploadBox.classList.remove("hover");
+    const files = e.dataTransfer.files;
+    await handleFileUpload(files[0]);
+  });
+
+  documentFile.addEventListener("change", async () => {
+    if (documentFile.files.length > 0) {
+      await handleFileUpload(documentFile.files[0]);
+    }
+  });
+
+  let uploadedFileInfo = null;
+
+  // Handles file upload to Supabase Storage
+  async function handleFileUpload(file) {
+    if (!file) return;
+
+    const filePath = `documents/${Date.now()}_${file.name}`;
+
+    // Upload the file to Supabase Storage
+    const { data: uploadData, error: uploadError } =
+      await supabaseClient.storage.from("documents").upload(filePath, file);
+
+    if (uploadError) {
+      alert("Upload failed: " + uploadError.message);
+      return;
+    }
+
+    // Generate public URL
+    const { data: publicData, error: urlError } = supabaseClient.storage
+      .from("documents")
+      .getPublicUrl(filePath);
+
+    if (urlError || !publicData || !publicData.publicUrl) {
+      alert("Failed to get public URL.");
+      return;
+    }
+
+    const publicUrl = publicData.publicUrl;
+
+    // Save info for later use
+    uploadedFileInfo = {
+      name: file.name,
+      url: publicUrl,
+      uploadedAt: new Date().toISOString(),
+    };
+
+    renderUploadedFile(file.name, publicUrl);
+  }
+
+  function renderUploadedFile(name, url) {
+    const li = document.createElement("li");
+    li.innerHTML = `<a href="${url}" target="_blank">${name}</a>`;
+    uploadedFilesList.appendChild(li);
+  }
+
+  function generateDocumentCode(department) {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+    const day = String(currentDate.getDate()).padStart(2, "0");
+
+    let depCode = "";
+    switch (department) {
+      case "health-office":
+        depCode = "HO";
+        break;
+      case "civil-registrar-office":
+        depCode = "CRO";
+        break;
+      case "gen-service-office":
+        depCode = "GSO";
+        break;
+      case "agricultural-office":
+        depCode = "AGO";
+        break;
+      case "accounting-office":
+        depCode = "ACO";
+        break;
+    }
+
+    let endCode = Math.floor(Math.random() * 9999 + 1);
+    return `${depCode}-${year}${month}${day}-${endCode}`;
+  }
+
+  // SUBMIT FORM
+  document
+    .querySelector(".submit-btn")
+    .addEventListener("click", recordDocument);
+
+  async function recordDocument() {
+    const formData = new FormData(recordForm);
+    const docCode = generateDocumentCode(formData.get("sector"));
+
+    const documentDetails = {
+      lastName: formData.get("lastName"),
+      firstName: formData.get("firstName"),
+      middleName: formData.get("middleName"),
+      suffixName: formData.get("suffixName"),
+      age: formData.get("age"),
+      sex: formData.get("sex"),
+      address: formData.get("address"),
+      documentDate: formData.get("documentDate"),
+      sector: formData.get("sector"),
+      transactionType: formData.get("transactionType"),
+      documentCode: docCode,
+      documentTitle: formData.get("documentTitle"),
+      documentFile: uploadedFileInfo,
+      documentURL: uploadedFileInfo?.url,
+    };
+
+    const documentRecords =
+      JSON.parse(localStorage.getItem("documentRecords")) || [];
+    documentRecords.push(documentDetails);
+    localStorage.setItem("documentRecords", JSON.stringify(documentRecords));
+
+    alert("Form submitted!");
+    recordForm.reset();
+    uploadedFilesList.innerHTML = null;
+    uploadedFileInfo = null;
+  }
+
+  async function clearStoredData() {
+    uploadedFilesList.innerHTML = "";
+    uploadedFileInfo = null;
+  }
+});

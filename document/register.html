@@ -19,7 +19,7 @@
 
     <!-- Local Styles -->
     <link rel="stylesheet" href="../src/styles/pages/document/register.css" />
-    <link rel="stylesheet" href="../src/styles/components/nav/navResults.css" />
+    <link rel="stylesheet" href="../src/styles/components/nav/navHome.css" />
     <link
       rel="stylesheet"
       href="../src/styles/components/footer/footerNoLogo.css"
@@ -30,6 +30,30 @@
     <title>Register | Doctrax</title>
   </head>
   <body>
+    <!-- Popup Success -->
+    <div class="popup-success" id="success">
+      <div class="popup-container-success">
+        <div class="close-section">
+          <a onclick="">&times;</a>
+        </div>
+        <div class="text-section">
+          <h1>Success!</h1>
+          <span
+            >You may download the file or scan the QR code to access it.</span
+          >
+        </div>
+        <div class="actions-section">
+          <button>
+            <span>Download File</span>
+          </button>
+          <span>OR</span>
+          <div class="qr-generated-code">
+            <span>Scan QR Code</span>
+            <div class="qr-document" id="qrDocument"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Top Navigation Bar -->
     <navbar>
       <div class="navbar-container" id="navbar"></div>
@@ -39,7 +63,7 @@
     <!-- Index Panels -->
     <main id="mainContainer">
       <div class="form-wrapper">
-        <form class="registration-form">
+        <form class="registration-form" id="recordForm">
           <h1 class="form-title">REGISTRATION FORM</h1>
 
           <h3 class="info-title">Personal Information:</h3>
@@ -47,49 +71,69 @@
           <div class="form-grid">
             <!-- Left Column -->
             <div class="form-group left">
-              <label class="label-normal">Last Name</label
-              ><input type="text" />
-              <label class="label-normal">First Name</label
-              ><input type="text" />
-              <label class="label-normal">Middle Name</label
-              ><input type="text" />
+              <label class="label-normal"
+                >Last Name <span style="color: red">*</span></label
+              ><input type="text" name="lastName" id="lastName" required />
+              <label class="label-normal"
+                >First Name <span style="color: red">*</span></label
+              ><input type="text" name="firstName" id="firstName" required />
+              <label class="label-normal"
+                >Middle Name <span style="color: red">*</span></label
+              ><input type="text" name="middleName" id="middleName" />
               <label class="label-normal"
                 >Suffix <span class="italic-text">(If applicable)</span></label
               >
-              <input type="text" />
+              <input type="text" name="suffixName" id="suffixName" />
 
-              <label class="label-bold">Age:</label><input type="number" />
-              <label class="label-bold">Sex:</label>
+              <label class="label-bold"
+                >Age <span style="color: red">*</span></label
+              ><input type="number" name="age" id="age" />
+              <label class="label-bold"
+                >Sex <span style="color: red">*</span></label
+              >
               <div class="radio-group">
                 <label class="label-bold"
-                  ><input type="radio" name="sex" /> Male</label
+                  ><input type="radio" name="sex" value="Male" /> Male</label
                 >
                 <label class="label-bold"
-                  ><input type="radio" name="sex" /> Female</label
+                  ><input type="radio" name="sex" value="Female" />
+                  Female</label
                 >
               </div>
-              <label class="label-bold">Address:</label
-              ><textarea rows="3" class="address-box"></textarea>
+              <label class="label-bold"
+                >Address <span style="color: red">*</span></label
+              ><textarea
+                name="address"
+                id="address"
+                rows="3"
+                class="address-box"
+                required
+              ></textarea>
             </div>
 
             <!-- Right Column -->
             <div class="form-group right">
               <label style="font-weight: bold"
-                >Date of Appeal/Appointment:</label
+                >Date of Appeal/Appointment
+                <span style="color: red">*</span></label
               >
-              <input type="date" />
-              <label style="font-weight: bold">Department:</label>
-              <select>
+              <input type="date" name="documentDate" required />
+              <label style="font-weight: bold"
+                >Department <span style="color: red">*</span></label
+              >
+              <select name="sector" id="sector" required>
                 <option>-Select-</option>
-                <option>Accounting Office</option>
-                <option>Agriculture Office</option>
-                <option>Civil Registrar Office</option>
-                <option>General Services Office</option>
-                <option>Municipal Health Office</option>
+                <option value="accounting-office">Accounting Office</option>
+                <option value="agricultural-office">Agriculture Office</option>
+                <option value="civil-registrar-office">Civil Registrar Office</option>
+                <option value="gen-service-office">General Services Office</option>
+                <option value="health-office">Municipal Health Office</option>
               </select>
 
-              <label style="font-weight: bold">Type of Document:</label>
-              <select>
+              <label style="font-weight: bold"
+                >Type of Document <span style="color: red">*</span></label
+              >
+              <select name="transactionType" id="transactionType" required>
                 <option>-Select-</option>
                 <option>Health Certificate</option>
                 <option>Hospital Referral Form</option>
@@ -99,20 +143,36 @@
                 <option>Sanitary Permit</option>
               </select>
 
-              <label style="font-weight: bold">Upload Document</label>
-              <div class="upload-box">
+              <label style="font-weight: bold"
+                >Title of Document <span style="color: red">*</span></label
+              >
+              <input
+                type="text"
+                name="documentTitle"
+                id="documentTitle"
+                required
+              />
+
+              <label style="font-weight: bold"
+                >Upload Document <span style="color: red">*</span></label
+              >
+              <div class="upload-box" id="uploadBox">
                 <span class="material-icons-round">cloud_upload</span>
                 <strong>Browse Files</strong>
                 <p class="drag-text">Drag & Drop files here</p>
+                <input type="file" name="documentFile" id="documentFile" />
               </div>
+              <div class="uploadList" id="uploadList"></div>
             </div>
           </div>
 
           <div class="form-buttons">
-            <button type="button" class="submit-btn" onclick="">
+            <button type="button" class="submit-btn">
               <span class="material-icons-round">login</span> Submit
             </button>
-            <button type="button" class="cancel-btn" onclick="">Cancel Application</button>
+            <button type="button" class="cancel-btn" onclick="">
+              Cancel Application
+            </button>
           </div>
         </form>
       </div>
@@ -120,12 +180,13 @@
     <!-- Page Footer -->
     <footer><div class="footer-container" id="footer"></div></footer>
     <!-- Local Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script src="../src/scripts/components/navbar.js"></script>
     <script src="../src/scripts/components/footer.js"></script>
-    <script src="../src/scripts/pages/#"></script>
+    <script src="../src/scripts/pages/document/registerDocument.js" defer></script>
     <script src="../src/modules/accounts/auth.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", loadNavSearch);
+      document.addEventListener("DOMContentLoaded", loadNavSector);
       document.addEventListener("DOMContentLoaded", loadFooter);
     </script>
     <script>
