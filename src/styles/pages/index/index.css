@@ -1,0 +1,191 @@
+@media screen and (min-width: 320px) {
+  /* Page Structure */
+  main {
+    display: flex;
+    justify-content: center;
+    background-color: var(--background-color);
+    align-items: center;
+    box-sizing: border-box;
+    height: 90vh;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+
+  /* Login Container */
+  .container {
+    background-color: var(--primary-color);
+    min-width: 300px;
+    width: 100%;
+    max-width: 550px;
+    min-height: 40vh;
+    padding: 2rem 0;
+    box-sizing: border-box;
+    box-shadow: 4px 8px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .portal-panel {
+    display: block;
+  }
+
+  /* Login Panel Content */
+  .panel-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .panel-header h1 {
+    text-align: center;
+    font-family: Rambla;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    width: 290px;
+    line-height: normal;
+    margin-bottom: 0.5rem;
+    cursor: default;
+  }
+
+  .panel-header p {
+    width: 280px;
+    text-align: center;
+    font-family: "Source Serif Pro";
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 2rem;
+  }
+
+  .panel-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .panel-body label {
+    position: relative;
+    font-family: "Mate";
+    width: fit-content;
+    border-radius: 1rem;
+    bottom: 3rem;
+    right: 3rem;
+    padding: 10px;
+    cursor: text;
+  }
+
+  /* Input Field */
+  .panel-body input[type="text"] {
+    max-width: 18.5625rem;
+    border-radius: 0.625rem;
+    border: 2px solid #000;
+    background: rgba(235, 91, 0, 0.55);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 1.5em;
+  }
+
+  ::-webkit-input-placeholder {
+    color: rgba(235, 91, 0, 0);
+  }
+
+  #accountID:focus + label,
+  #accountID:not(:placeholder-shown) + label {
+    font-size: 0.75rem;
+    bottom: 3.85rem;
+    pointer-events: none;
+    transition: font-size 0.3s ease, bottom 0.3s ease;
+  }
+
+  #accountID + label {
+    transition: font-size 0.3s ease, bottom 0.3s ease;
+  }
+
+  /* Button */
+  .panel-body button[type="submit"] {
+    background-color: var(--background-color);
+    color: var(--text-color-Dark);
+    border-radius: 0.625rem;
+    width: 10rem;
+    border: 0;
+    text-align: end;
+    font-family: "Source Serif 4";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    padding: 1rem 2rem;
+    cursor: pointer;
+  }
+
+  .login-img {
+    position: relative;
+    right: 2.25rem;
+    bottom: 2.3rem;
+  }
+
+  .panel-body button[type="submit"]:hover {
+    background-color: var(--accent-color);
+    color: var(--text-color-Hover);
+    transition: background-color 0.3s ease;
+  }
+
+  .panel-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .panel-footer p {
+    font-family: "Mate";
+    text-align: center;
+    cursor: default;
+  }
+
+  .panel-footer a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--text-color);
+  }
+
+  /* Track Doc Button */
+  .track-document-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--background-color);
+    width: 7.75rem;
+    text-align: center;
+    font-family: "Source Serif 4";
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    border-radius: 0.625rem;
+    padding: 1em;
+    cursor: pointer;
+  }
+
+  .track-document-button:hover {
+    background-color: var(--accent-color);
+    color: var(--text-color-Hover);
+    transition: background-color 0.3s ease;
+  }
+
+  .track-document-button label {
+    color: var(--text-color-Dark);
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    border-radius: 1rem;
+    box-shadow: 25px 20px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+}

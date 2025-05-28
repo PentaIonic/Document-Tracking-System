@@ -34,8 +34,15 @@
 
   .search-bar > input[type="search"] {
     display: flex;
+    border: none;
+    border-radius: 1rem 0 0 1rem;
     width: 100%;
     box-sizing: border-box;
+  }
+
+  .search-bar > button {
+    border-radius: 0 1rem 1rem 0;
+    cursor: pointer;
   }
 
   /* Document Results */

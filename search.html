@@ -19,9 +19,12 @@
 
     <!-- Local Styles -->
     <link rel="stylesheet" href="./src/styles/components/nav/navIndex.css" />
-    <link rel="stylesheet" href="./src/styles/components/footerNoLogo.css" />
+    <link
+      rel="stylesheet"
+      href="./src/styles/components/footer/footerNoLogo.css"
+    />
     <link rel="stylesheet" href="./src/styles/components/webFrame.css" />
-    <link rel="stylesheet" href="./src/styles/pages/search.css" />
+    <link rel="stylesheet" href="./src/styles/pages/search/search.css" />
     <link
       rel="stylesheet"
       href="./src/styles/modules/search/search-panel.css"
@@ -38,7 +41,59 @@
     </navbar>
 
     <!-- Page Content -->
-    <main id="container"></main>
+    <main id="container">
+      <!-- Main Search Panel -->
+      <div class="container">
+        <div class="portal-panel">
+          <!-- Header Section -->
+          <div class="panel-header">
+            <h1>Biringan City<br /><span class="doctrax">DOCTRAX</span></h1>
+            <p>
+              Know the status of your document by providing a valid Document
+              ID<br />
+              or <br />QR code below.
+            </p>
+          </div>
+
+          <!-- Search Section -->
+          <div class="panel-body">
+            <div class="search-input-wrapper">
+              <input
+                type="text"
+                name="document-ID"
+                id="documentID"
+                placeholder="Document ID"
+                required
+              />
+              <span class="material-icons-round">search</span>
+            </div>
+
+            <div class="or-separator">or</div>
+
+            <button class="upload-btn">
+              <span class="upload-text">Upload File</span>
+              <span class="icon-svg">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 15V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18L4 15M8 11L12 15M12 15L16 11M12 15V3"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <!-- Page Footer -->
     <footer><div class="footer-container" id="footer"></div></footer>
@@ -47,13 +102,10 @@
     <script src="./src/scripts/components/navbar.js"></script>
     <script src="./src/scripts/components/footer.js"></script>
     <script src="./src/scripts/pages/search.js"></script>
-    <script src="./src/scripts/modules/search/loadSearchPanel.js"></script>
-    <script src="./src/scripts/modules/search/loadSearchResult.js"></script>
     <script>
       // Loading Components
       document.addEventListener("DOMContentLoaded", loadNavIndex);
       document.addEventListener("DOMContentLoaded", loadFooter);
-      document.addEventListener("DOMContentLoaded", loadSearchPanel);
     </script>
   </body>
 </html>

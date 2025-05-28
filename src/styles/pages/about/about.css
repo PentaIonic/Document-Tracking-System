@@ -1,0 +1,122 @@
+@media screen and (min-width: 320px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 78vh;
+    width: 100%;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 90vh;
+    overflow: hidden;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    width: 100%;
+    background-color: var(--background-color);
+    overflow-x: hidden;
+  }
+
+  .main-container h1 {
+    width: 300px;
+    color: var(--text-color);
+    text-align: center;
+    font-family: Rambla;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .main-container p {
+    width: 300px;
+    color: var(--text-color);
+    text-align: center;
+    font-family: "Source Serif Pro";
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .circle-red {
+    position: absolute;
+    bottom: 3em;
+    left: 3rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background: #e4003a;
+    filter: blur(12.5px);
+    transition: all 0.3s ease;
+  }
+
+  .circle-orange {
+    position: absolute;
+    bottom: 5rem;
+    left: 6rem;
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+    position: absolute;
+    background: #eb5b00;
+    filter: blur(12.5px);
+    transition: all 0.3s ease;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    flex-direction: row;
+  }
+
+  .main-container {
+    align-items: end;
+    padding: 4rem;
+  }
+
+  .circle-red {
+    position: absolute;
+    bottom: 3em;
+    left: 3rem;
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .circle-orange {
+    position: absolute;
+    bottom: 7rem;
+    left: 8rem;
+    width: 16rem;
+    height: 16rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .circle-red {
+    position: absolute;
+    bottom: 4em;
+    left: 4rem;
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .circle-orange {
+    position: absolute;
+    bottom: 10rem;
+    left: 12rem;
+    width: 26rem;
+    height: 26rem;
+  }
+}
