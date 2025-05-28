@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Web Page Information & Responsive Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Styles & Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mate:ital@0;1&family=Montagu+Slab:opsz,wght@16..144,100..700&family=Rambla:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+
+    <!-- Local Styles -->
+    <link rel="stylesheet" href="../src/styles/pages/document/register.css" />
+    <link rel="stylesheet" href="../src/styles/components/nav/navResults.css" />
+    <link
+      rel="stylesheet"
+      href="../src/styles/components/footer/footerNoLogo.css"
+    />
+    <link rel="stylesheet" href="../src/styles/components/webFrame.css" />
+
+    <!-- Web Page Information -->
+    <title>Register | Doctrax</title>
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <navbar>
+      <div class="navbar-container" id="navbar"></div>
+    </navbar>
+    <!-- Popup Menu -->
+    <div class="popup-menu"></div>
+    <!-- Index Panels -->
+    <main id="mainContainer">
+      <div class="form-wrapper">
+        <form class="registration-form">
+          <h1 class="form-title">REGISTRATION FORM</h1>
+
+          <h3 class="info-title">Personal Information:</h3>
+
+          <div class="form-grid">
+            <!-- Left Column -->
+            <div class="form-group left">
+              <label class="label-normal">Last Name</label
+              ><input type="text" />
+              <label class="label-normal">First Name</label
+              ><input type="text" />
+              <label class="label-normal">Middle Name</label
+              ><input type="text" />
+              <label class="label-normal"
+                >Suffix <span class="italic-text">(If applicable)</span></label
+              >
+              <input type="text" />
+
+              <label class="label-bold">Age:</label><input type="number" />
+              <label class="label-bold">Sex:</label>
+              <div class="radio-group">
+                <label class="label-bold"
+                  ><input type="radio" name="sex" /> Male</label
+                >
+                <label class="label-bold"
+                  ><input type="radio" name="sex" /> Female</label
+                >
+              </div>
+              <label class="label-bold">Address:</label
+              ><textarea rows="3" class="address-box"></textarea>
+            </div>
+
+            <!-- Right Column -->
+            <div class="form-group right">
+              <label style="font-weight: bold"
+                >Date of Appeal/Appointment:</label
+              >
+              <input type="date" />
+              <label style="font-weight: bold">Department:</label>
+              <select>
+                <option>-Select-</option>
+                <option>Accounting Office</option>
+                <option>Agriculture Office</option>
+                <option>Civil Registrar Office</option>
+                <option>General Services Office</option>
+                <option>Municipal Health Office</option>
+              </select>
+
+              <label style="font-weight: bold">Type of Document:</label>
+              <select>
+                <option>-Select-</option>
+                <option>Health Certificate</option>
+                <option>Hospital Referral Form</option>
+                <option>Immunization Record</option>
+                <option>Medical Certificate</option>
+                <option>Prenatal Record</option>
+                <option>Sanitary Permit</option>
+              </select>
+
+              <label style="font-weight: bold">Upload Document</label>
+              <div class="upload-box">
+                <span class="material-icons-round">cloud_upload</span>
+                <strong>Browse Files</strong>
+                <p class="drag-text">Drag & Drop files here</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-buttons">
+            <button type="button" class="submit-btn" onclick="">
+              <span class="material-icons-round">login</span> Submit
+            </button>
+            <button type="button" class="cancel-btn" onclick="">Cancel Application</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <!-- Page Footer -->
+    <footer><div class="footer-container" id="footer"></div></footer>
+    <!-- Local Scripts -->
+    <script src="../src/scripts/components/navbar.js"></script>
+    <script src="../src/scripts/components/footer.js"></script>
+    <script src="../src/scripts/pages/#"></script>
+    <script src="../src/modules/accounts/auth.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", loadNavSearch);
+      document.addEventListener("DOMContentLoaded", loadFooter);
+    </script>
+    <script>
+      checkLogin();
+    </script>
+  </body>
+</html>

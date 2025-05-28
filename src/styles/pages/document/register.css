@@ -1,0 +1,184 @@
+:root {
+  --primary-color: #ded2b4;
+  --background-color: #eae4d5;
+  --accent-color: #f5a623;
+}
+
+@media screen and (min-width: 320px) {
+  body {
+    margin: 0;
+    font-family: "Source Serif 4", sans-serif;
+    background-color: var(--background-color);
+  }
+
+  h1 {
+    font-family: "Rambla", sans-serif;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+
+  .form-wrapper {
+    background: var(--primary-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 95%;
+    max-width: 1000px;
+  }
+
+  .registration-form .form-title {
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+  .form-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .label-normal {
+    color: #807d73;
+    font-weight: 550;
+  }
+
+  .label-bold {
+    font-weight: bold;
+    color: #000; /* Or keep it #807d73 if you prefer */
+  }
+
+  .italic-text {
+    font-style: italic;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    resize: none;
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .upload-box {
+    border: 1px dashed #444;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    height: 250px;
+  }
+
+  .upload-box .material-icons-round {
+    font-size: 2rem;
+    color: #444;
+  }
+
+  .form-buttons {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    justify-content: flex-end;
+    box-sizing: border-box;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    width: 100%;
+    height: 3rem;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+
+  .submit-btn {
+    background-color: #ccc;
+    font-weight: bold;
+    padding: 0.5rem 1.25rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    background-color: #9d9d9d;
+  }
+
+  .cancel-btn {
+    background-color: #ffb200;
+    color: black;
+    padding: 0.5rem 1.25rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 550;
+    transition: all 0.3s ease;
+    height: 50px;
+  }
+
+  .cancel-btn:hover {
+    background-color: #dd9a00;
+  }
+
+  .container {
+    border-radius: 4px;
+  }
+
+  .portal-panel {
+    padding: 1em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .form-buttons {
+    flex-direction: row;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    border-radius: 1.5625rem;
+  }
+
+  .portal-panel {
+    padding: 2em;
+  }
+}
