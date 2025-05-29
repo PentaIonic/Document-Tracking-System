@@ -174,12 +174,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // SUBMIT FORM
   document
-    .querySelector(".submit-btn")
+    .getElementById("submitData")
     .addEventListener("click", recordDocument);
 
   async function recordDocument() {
     const formData = new FormData(recordForm);
     const docCode = generateDocumentCode(department);
+
+    const requiredFields = [
+      "lastName",
+      "firstName",
+      "middleName",
+      "age",
+      "sex",
+      "address",
+      "documentDate",
+      "transactionType",
+      "documentTitle",
+    ];
+
+    // Loop that checks for field values, if the field is empty or unselected it will prompt for user to try filling it out again the blank fields.
+    for (const field of requiredFields) {
+      const value = formData.get(field)?.trim();
+      if (!value || value === "-Select-") {
+        alert(`Please fill out the ${field.replace(/([A-Z])/g, " $1")} field.`);
+        closePrompt();
+        return;
+      }
+    }
+
+    // Same logic for file
+    if (!uploadedFileInfo) {
+      alert("Please upload a document file before submitting.");
+      closePrompt();
+      return;
+    }
+
+    const suffixN = formData.get("suffixName").trim();
+    if (!suffixN) {
+      formData.set("suffixName", "N/A");
+    }
 
     const documentDetails = {
       lastName: formData.get("lastName"),
@@ -219,4 +253,29 @@ function gotoHome() {
 async function clearStoredData() {
   uploadedFilesList.innerHTML = "";
   uploadedFileInfo = null;
+}
+
+function closePrompt() {
+  const promptSuccess = document.getElementById("success");
+  const promptSubmit = document.getElementById("confirmSubmit");
+  const promptCancel = document.getElementById("confirmCancel");
+
+  promptSuccess.style.display = "none";
+  promptSubmit.style.display = "none";
+  promptCancel.style.display = "none";
+}
+
+function popSubmitConfirm() {
+  const promptSubmit = document.getElementById("confirmSubmit");
+  promptSubmit.style.display = "flex";
+}
+
+function popCancelConfirm() {
+  const promptCancel = document.getElementById("confirmCancel");
+  promptCancel.style.display = "flex";
+}
+
+function popSuccessPanel() {
+  const promptSuccess = document.getElementById("success");
+  promptSuccess.style.display = "flex";
 }

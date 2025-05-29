@@ -179,6 +179,7 @@
     padding: 1em;
   }
 
+  /* Success Popup */
   .popup-success {
     display: none;
     position: fixed;
@@ -276,6 +277,115 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+  }
+
+  /* Confirmation Popup */
+  .popup-confirmation-submit {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+
+  .popup-confirmation-exit {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+
+  .popup-container-confirmation-submit,
+  .popup-container-confirmation-exit {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    max-width: 720px;
+    border-radius: 10px;
+    background: #d9d9d9;
+    padding: 1rem;
+    box-shadow: 15px 20px 5px 0px rgba(0, 0, 0, 0.25);
+    height: fit-content;
+    box-sizing: border-box;
+  }
+
+  .popup-text {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .popup-text > span {
+    color: var(--text-color);
+    text-align: center;
+    font-family: "Source Serif 4";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .popup-action {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 50px;
+    margin-top: 2rem;
+    box-sizing: border-box;
+  }
+
+  .popup-action > button {
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    height: fit-content;
+    border-radius: 5px;
+    background: #ffb200;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .popup-action > button > span {
+    color: var(--text-color);
+    text-align: center;
+    font-family: "Source Serif Pro";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.96px;
+  }
+
+  .yes:hover {
+    background-color: green;
+    span {
+      color: var(--text-color-Hover);
+    }
+  }
+
+  .no:hover {
+    background-color: red;
+    span {
+      color: var(--text-color-Hover);
+    }
   }
 }
 

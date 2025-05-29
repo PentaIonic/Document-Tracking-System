@@ -34,7 +34,7 @@
     <div class="popup-success" id="success">
       <div class="popup-container-success">
         <div class="close-section">
-          <a onclick="">&times;</a>
+          <a onclick="gotoHome()">&times;</a>
         </div>
         <div class="text-section">
           <h1>Success!</h1>
@@ -51,6 +51,42 @@
             <span>Scan QR Code</span>
             <div class="qr-document" id="qrDocument"></div>
           </div>
+        </div>
+      </div>
+    </div>
+    <!-- Popup Confirmations -->
+    <div class="popup-confirmation-submit" id="confirmSubmit">
+      <div class="popup-container-confirmation-submit">
+        <div class="close-section">
+          <div class="close-section">
+            <a onclick="closePrompt()">&times;</a>
+          </div>
+          <div class="popup-text">
+            <span>Are you sure you want to submit this form?</span>
+          </div>
+          <div class="popup-action">
+            <button type="submit" class="yes" id="submitData">
+              <span>Yes</span>
+            </button>
+            <button class="no" onclick="closePrompt()"><span>No</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-confirmation-exit" id="confirmCancel">
+      <div class="popup-container-confirmation-exit">
+        <div class="close-section">
+          <a onclick="closePrompt()">&times;</a>
+        </div>
+        <div class="popup-text">
+          <span
+            >This action will cancel your application. Do you want to
+            continue?</span
+          >
+        </div>
+        <div class="popup-action">
+          <button class="yes" onclick="gotoHome()"><span>Yes</span></button>
+          <button class="no" onclick="closePrompt()"><span>No</span></button>
         </div>
       </div>
     </div>
@@ -79,7 +115,7 @@
               ><input type="text" name="firstName" id="firstName" required />
               <label class="label-normal"
                 >Middle Name <span style="color: red">*</span></label
-              ><input type="text" name="middleName" id="middleName" />
+              ><input type="text" name="middleName" id="middleName" required/>
               <label class="label-normal"
                 >Suffix <span class="italic-text">(If applicable)</span></label
               >
@@ -156,10 +192,18 @@
           </div>
 
           <div class="form-buttons">
-            <button type="button" class="submit-btn">
+            <button
+              type="button"
+              class="submit-btn"
+              onclick="popSubmitConfirm()"
+            >
               <span class="material-icons-round">login</span> Submit
             </button>
-            <button type="button" class="cancel-btn" onclick="gotoHome()">
+            <button
+              type="button"
+              class="cancel-btn"
+              onclick="popCancelConfirm()"
+            >
               Cancel Application
             </button>
           </div>
