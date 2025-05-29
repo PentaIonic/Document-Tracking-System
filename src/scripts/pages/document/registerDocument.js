@@ -10,6 +10,69 @@ document.addEventListener("DOMContentLoaded", () => {
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFsZ29xd3ZndHZ5ZGt1bnRqb2hnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg0Mjg1OTgsImV4cCI6MjA2NDAwNDU5OH0.5H7UwMIuNi1k2bhdpknYxt6ub6UEtCgZNCBE02VP1Kk";
   const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
+  // Autofills and changes form content based from different departments/sectors
+  const params = new URLSearchParams(window.location.search);
+  const department = params.get("department");
+  let transactionType;
+
+  switch (department) {
+    case "health-office":
+      document.getElementById("sector").value = "Municipal Health Office";
+      transactionType = document.getElementById("transactionType");
+      transactionType.innerHTML = `
+        <option>-Select-</option>
+        <option>Health Certificate</option>
+        <option>Hospital Referral Form</option>
+        <option>Immunization Record</option>
+        <option>Medical Certificate</option>
+        <option>Prenatal Record</option>
+        <option>Sanitary Permit</option>`;
+      break;
+    case "civil-registrar-office":
+      document.getElementById("sector").value = "Civil Registrar Office";
+      transactionType = document.getElementById("transactionType");
+      transactionType.innerHTML = `
+        <option>-Select-</option>
+        <option>Birth Certificate</option>
+        <option>CENOMAR</option>
+        <option>Death Certificate</option>
+        <option>Late Registration Request</option>
+        <option>Marriage Certificate</option>`;
+      break;
+    case "gen-service-office":
+      document.getElementById("sector").value = "General Services Office";
+      transactionType = document.getElementById("transactionType");
+      transactionType.innerHTML = `
+        <option>-Select-</option>
+        <option>Equipment Borrowing Form</option>
+        <option>Inventory Report</option>
+        <option>Maintenance Request</option>
+        <option>Supply Request Form</option>`;
+      break;
+    case "agricultural-office":
+      document.getElementById("sector").value = "Agriculture Office";
+      transactionType = document.getElementById("transactionType");
+      transactionType.innerHTML = `
+        <option>-Select-</option>
+        <option>Farm Equipment Loan Form</option>
+        <option>Fertilizer Subsidy Application</option>
+        <option>Immunization Record</option>
+        <option>Livestock Vaccination Request</option>
+        <option>Pre-Natal Record</option>`;
+      break;
+    case "accounting-office":
+      document.getElementById("sector").value = "Accounting Office";
+      transactionType = document.getElementById("transactionType");
+      transactionType.innerHTML = `
+        <option>-Select-</option>
+        <option>Budget Utilization Request</option>
+        <option>Disbursement Voucher</option>
+        <option>Liquidation Report Submission</option>
+        <option>Obligation Request & Status</option>
+        <option>Payroll Certification Request</option>`;
+      break;
+  }
+
   // Upload Box Event Listeners
   uploadBox.addEventListener("click", () => documentFile.click());
 
@@ -111,12 +174,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // SUBMIT FORM
   document
-    .querySelector(".submit-btn")
+    .getElementById("submitData")
     .addEventListener("click", recordDocument);
 
   async function recordDocument() {
     const formData = new FormData(recordForm);
-    const docCode = generateDocumentCode(formData.get("sector"));
+    const docCode = generateDocumentCode(department);
+
+    const requiredFields = [
+      "lastName",
+      "firstName",
+      "middleName",
+      "age",
+      "sex",
+      "address",
+      "documentDate",
+      "transactionType",
+      "documentTitle",
+    ];
+
+    // Loop that checks for field values, if the field is empty or unselected it will prompt for user to try filling it out again the blank fields.
+    for (const field of requiredFields) {
+      const value = formData.get(field)?.trim();
+      if (!value || value === "-Select-") {
+        alert(`Please fill out the ${field.replace(/([A-Z])/g, " $1")} field.`);
+        closePrompt();
+        return;
+      }
+    }
+
+    // Same logic for file
+    if (!uploadedFileInfo) {
+      alert("Please upload a document file before submitting.");
+      closePrompt();
+      return;
+    }
+
+    const suffixN = formData.get("suffixName").trim();
+    if (!suffixN) {
+      formData.set("suffixName", "N/A");
+    }
 
     const documentDetails = {
       lastName: formData.get("lastName"),
@@ -127,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
       sex: formData.get("sex"),
       address: formData.get("address"),
       documentDate: formData.get("documentDate"),
-      sector: formData.get("sector"),
+      sector: department,
       transactionType: formData.get("transactionType"),
       documentCode: docCode,
       documentTitle: formData.get("documentTitle"),
@@ -145,9 +242,40 @@ document.addEventListener("DOMContentLoaded", () => {
     uploadedFilesList.innerHTML = null;
     uploadedFileInfo = null;
   }
-
-  async function clearStoredData() {
-    uploadedFilesList.innerHTML = "";
-    uploadedFileInfo = null;
-  }
 });
+
+function gotoHome() {
+  recordForm.reset();
+  clearStoredData();
+  window.location.href = `../home.html`;
+}
+
+async function clearStoredData() {
+  uploadedFilesList.innerHTML = "";
+  uploadedFileInfo = null;
+}
+
+function closePrompt() {
+  const promptSuccess = document.getElementById("success");
+  const promptSubmit = document.getElementById("confirmSubmit");
+  const promptCancel = document.getElementById("confirmCancel");
+
+  promptSuccess.style.display = "none";
+  promptSubmit.style.display = "none";
+  promptCancel.style.display = "none";
+}
+
+function popSubmitConfirm() {
+  const promptSubmit = document.getElementById("confirmSubmit");
+  promptSubmit.style.display = "flex";
+}
+
+function popCancelConfirm() {
+  const promptCancel = document.getElementById("confirmCancel");
+  promptCancel.style.display = "flex";
+}
+
+function popSuccessPanel() {
+  const promptSuccess = document.getElementById("success");
+  promptSuccess.style.display = "flex";
+}

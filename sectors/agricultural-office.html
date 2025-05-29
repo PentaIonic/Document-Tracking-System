@@ -67,39 +67,29 @@
             <p>Select the specific transaction you wish to process:</p>
           </div>
           <div class="transaction-options">
-            <a href=""
-              ><div class="transaction">
-                <span>Fertilizer Subsidy Application</span>
-              </div></a
-            >
-            <a href=""
-              ><div class="transaction">
-                <span>Immunization Record</span>
-              </div></a
-            >
-            <a href=""
-              ><div class="transaction">
-                <span>Livestock Vaccination Request</span>
-              </div></a
-            >
-            <a href=""
-              ><div class="transaction">
-                <span>Pre-Natal Record</span>
-              </div></a
-            >
-            <a href=""
-              ><div class="transaction">
-                <span>Farm Equipment Loan Form</span>
-              </div></a
-            >
+            <div class="transaction">
+              <span>Fertilizer Subsidy Application</span>
+            </div>
+            <div class="transaction">
+              <span>Immunization Record</span>
+            </div>
+            <div class="transaction">
+              <span>Livestock Vaccination Request</span>
+            </div>
+            <div class="transaction">
+              <span>Pre-Natal Record</span>
+            </div>
+            <div class="transaction">
+              <span>Farm Equipment Loan Form</span>
+            </div>
           </div>
         </div>
         <div class="action-button">
-          <a href="">
+          <button id="autoFillForm" onclick="redirectDepartmentCode('agricultural-office')">
             <div class="proceed">
               <span>Proceed</span>
             </div>
-          </a>
+          </button>
         </div>
       </div>
     </main>
@@ -108,7 +98,7 @@
     <!-- Local Scripts -->
     <script src="../src/scripts/components/navbar.js"></script>
     <script src="../src/scripts/components/footer.js"></script>
-    <script src="../src/scripts/pages/#"></script>
+    <script src="../src/scripts/pages/sectors/sectors.js"></script>
     <script src="../src/modules/accounts/auth.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", loadNavHome);

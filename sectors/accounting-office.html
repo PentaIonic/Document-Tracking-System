@@ -67,39 +67,29 @@
             <p>Select the specific transaction you wish to process:</p>
           </div>
           <div class="transaction-options">
-            <a href=""
-              ><div class="transaction">
-                <span>Disbursement Voucher</span>
-              </div></a
-            >
-            <a href=""
-              ><div class="transaction">
-                <span>Liquidation Report Submission</span>
-              </div></a
-            >
-            <a href=""
-              ><div class="transaction">
-                <span>Obligation Request & Status</span>
-              </div></a
-            >
-            <a href=""
-              ><div class="transaction">
-                <span>Payroll Certification Request</span>
-              </div></a
-            >
-            <a href=""
-              ><div class="transaction">
-                <span>Budget Utilization Request</span>
-              </div></a
-            >
+            <div class="transaction">
+              <span>Disbursement Voucher</span>
+            </div>
+            <div class="transaction">
+              <span>Liquidation Report Submission</span>
+            </div>
+            <div class="transaction">
+              <span>Obligation Request & Status</span>
+            </div>
+            <div class="transaction">
+              <span>Payroll Certification Request</span>
+            </div>
+            <div class="transaction">
+              <span>Budget Utilization Request</span>
+            </div>
           </div>
         </div>
         <div class="action-button">
-          <a href="">
+          <button id="autoFillForm" onclick="redirectDepartmentCode('accounting-office')">
             <div class="proceed">
               <span>Proceed</span>
             </div>
-          </a>
+          </button>
         </div>
       </div>
     </main>
@@ -108,7 +98,7 @@
     <!-- Local Scripts -->
     <script src="../src/scripts/components/navbar.js"></script>
     <script src="../src/scripts/components/footer.js"></script>
-    <script src="../src/scripts/pages/#"></script>
+    <script src="../src/scripts/pages/sectors/sectors.js"></script>
     <script src="../src/modules/accounts/auth.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", loadNavHome);

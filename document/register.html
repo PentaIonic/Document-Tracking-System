@@ -34,7 +34,7 @@
     <div class="popup-success" id="success">
       <div class="popup-container-success">
         <div class="close-section">
-          <a onclick="">&times;</a>
+          <a onclick="gotoHome()">&times;</a>
         </div>
         <div class="text-section">
           <h1>Success!</h1>
@@ -51,6 +51,42 @@
             <span>Scan QR Code</span>
             <div class="qr-document" id="qrDocument"></div>aa
           </div>
+        </div>
+      </div>
+    </div>
+    <!-- Popup Confirmations -->
+    <div class="popup-confirmation-submit" id="confirmSubmit">
+      <div class="popup-container-confirmation-submit">
+        <div class="close-section">
+          <div class="close-section">
+            <a onclick="closePrompt()">&times;</a>
+          </div>
+          <div class="popup-text">
+            <span>Are you sure you want to submit this form?</span>
+          </div>
+          <div class="popup-action">
+            <button type="submit" class="yes" id="submitData">
+              <span>Yes</span>
+            </button>
+            <button class="no" onclick="closePrompt()"><span>No</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-confirmation-exit" id="confirmCancel">
+      <div class="popup-container-confirmation-exit">
+        <div class="close-section">
+          <a onclick="closePrompt()">&times;</a>
+        </div>
+        <div class="popup-text">
+          <span
+            >This action will cancel your application. Do you want to
+            continue?</span
+          >
+        </div>
+        <div class="popup-action">
+          <button class="yes" onclick="gotoHome()"><span>Yes</span></button>
+          <button class="no" onclick="closePrompt()"><span>No</span></button>
         </div>
       </div>
     </div>
@@ -79,7 +115,7 @@
               ><input type="text" name="firstName" id="firstName" required />
               <label class="label-normal"
                 >Middle Name <span style="color: red">*</span></label
-              ><input type="text" name="middleName" id="middleName" />
+              ><input type="text" name="middleName" id="middleName" required/>
               <label class="label-normal"
                 >Suffix <span class="italic-text">(If applicable)</span></label
               >
@@ -121,27 +157,16 @@
               <label style="font-weight: bold"
                 >Department <span style="color: red">*</span></label
               >
-              <select name="sector" id="sector" required>
-                <option>-Select-</option>
-                <option value="accounting-office">Accounting Office</option>
-                <option value="agricultural-office">Agriculture Office</option>
-                <option value="civil-registrar-office">Civil Registrar Office</option>
-                <option value="gen-service-office">General Services Office</option>
-                <option value="health-office">Municipal Health Office</option>
-              </select>
+              <input type="text" name="sector" id="sector" required readonly />
 
               <label style="font-weight: bold"
                 >Type of Document <span style="color: red">*</span></label
               >
-              <select name="transactionType" id="transactionType" required>
-                <option>-Select-</option>
-                <option>Health Certificate</option>
-                <option>Hospital Referral Form</option>
-                <option>Immunization Record</option>
-                <option>Medical Certificate</option>
-                <option>Prenatal Record</option>
-                <option>Sanitary Permit</option>
-              </select>
+              <select
+                name="transactionType"
+                id="transactionType"
+                required
+              ></select>
 
               <label style="font-weight: bold"
                 >Title of Document <span style="color: red">*</span></label
@@ -167,10 +192,18 @@
           </div>
 
           <div class="form-buttons">
-            <button type="button" class="submit-btn">
+            <button
+              type="button"
+              class="submit-btn"
+              onclick="popSubmitConfirm()"
+            >
               <span class="material-icons-round">login</span> Submit
             </button>
-            <button type="button" class="cancel-btn" onclick="">
+            <button
+              type="button"
+              class="cancel-btn"
+              onclick="popCancelConfirm()"
+            >
               Cancel Application
             </button>
           </div>
@@ -183,7 +216,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script src="../src/scripts/components/navbar.js"></script>
     <script src="../src/scripts/components/footer.js"></script>
-    <script src="../src/scripts/pages/document/registerDocument.js" defer></script>
+    <script
+      src="../src/scripts/pages/document/registerDocument.js"
+      defer
+    ></script>
     <script src="../src/modules/accounts/auth.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", loadNavSector);
