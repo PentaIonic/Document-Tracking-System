@@ -10,7 +10,37 @@
   <button>
     <img src="../../../assets/icons/bell.svg" alt="Notification" />
   </button>
-  <button>
+  <button id="toggleSidebar">
     <img src="../../../assets/icons/menu-hamburger.svg" alt="Menu" />
   </button>
+  <div class="sidebar-window" id="sidebar">
+    <div class="sidebar">
+      <div class="top-sidebar">
+        <div class="logo-sidebar">
+          <img src="../../assets/icons/page-logo.svg" alt="Logo" />
+          <a href="../../index.html">Document Tracking System</a>
+        </div>
+        <div class="account-panel">
+          <div class="account-hero">
+            <img src="../../assets/icons/logoipsum-300.svg" alt="" />
+          </div>
+          <div class="account-info">
+            <span id="accountNameSidebar"></span>
+            <span id="accountRole"></span>
+          </div>
+        </div>
+      </div>
+      <hr style="width: 95%" />
+      <div class="middle-sidebar">
+        <div class="sidebar-options">
+          <button onclick="logout()">
+            <div class="option-button">
+              <span class="material-icons-round"> logout </span>
+              <label for="logout">Logout</label>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

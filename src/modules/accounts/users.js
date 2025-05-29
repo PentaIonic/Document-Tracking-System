@@ -1,6 +1,6 @@
 // Demo Accounts
 const mockUsers = [
-  { username: "admin", role: "admin", displayName: "Administrator"},
-  { username: "officer", role: "officer", displayName: "Officer User"},
-  { username: "clerk", role: "clerk", displayName: "Clerk User"},
+  { username: "admin", role: "Admin", displayName: "Administrator"},
+  { username: "officer", role: "Officer", displayName: "Officer User"},
+  { username: "clerk", role: "Clerk", displayName: "Clerk User"},
 ];

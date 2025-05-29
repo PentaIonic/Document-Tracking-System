@@ -1,0 +1,10 @@
+#sidebar {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#sidebar.open {
+  opacity: 1;
+  pointer-events: auto;
+}

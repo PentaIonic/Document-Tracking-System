@@ -10,6 +10,7 @@ document.getElementById("loginForm")?.addEventListener("submit", function (e) {
     localStorage.setItem("loggedIn", "true");
     localStorage.setItem("username", username);
     localStorage.setItem("displayName", user.displayName);
+    localStorage.setItem("role", user.role);
     window.location.href = "../../../home.html";
     console.log("Login button clicked");
   } else {
@@ -21,6 +22,12 @@ document.getElementById("loginForm")?.addEventListener("submit", function (e) {
 function checkLogin() {
   if (localStorage.getItem("loggedIn") !== "true") {
     window.location.href = "../../../index.html";
+  }
+}
+
+function redirectHome() {
+  if(localStorage.getItem("loggedIn") === "true") {
+    window.location.href = "../../../home.html";
   }
 }
 
