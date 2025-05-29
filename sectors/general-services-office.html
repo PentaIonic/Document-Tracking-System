@@ -20,7 +20,10 @@
     <!-- Local Styles -->
     <link rel="stylesheet" href="../src/styles/pages/sectors/sectors.css" />
     <link rel="stylesheet" href="../src/styles/components/nav/navHome.css" />
-    <link rel="stylesheet" href="../src/styles/components/footer/footerNoLogo.css" />
+    <link
+      rel="stylesheet"
+      href="../src/styles/components/footer/footerNoLogo.css"
+    />
     <link rel="stylesheet" href="../src/styles/components/webFrame.css" />
 
     <!-- Web Page Information -->
@@ -63,34 +66,29 @@
             <p>Select the specific transaction you wish to process:</p>
           </div>
           <div class="transaction-options">
-            <a href=""
-              ><div class="transaction">
-                <span>Supply Request Form</span>
-              </div></a
-            >
-            <a href=""
-              ><div class="transaction">
-                <span>Equipment Borrowing Form</span>
-              </div></a
-            >
-            <a href=""
-              ><div class="transaction">
-                <span>Inventory Report</span>
-              </div></a
-            >
-            <a href=""
-              ><div class="transaction">
-                <span>Maintenance Request</span>
-              </div></a
-            >
+            <div class="transaction">
+              <span>Supply Request Form</span>
+            </div>
+            <div class="transaction">
+              <span>Equipment Borrowing Form</span>
+            </div>
+            <div class="transaction">
+              <span>Inventory Report</span>
+            </div>
+            <div class="transaction">
+              <span>Maintenance Request</span>
+            </div>
           </div>
         </div>
         <div class="action-button">
-          <a href="">
+          <button
+            id="autoFillForm"
+            onclick="redirectDepartmentCode('gen-service-office')"
+          >
             <div class="proceed">
               <span>Proceed</span>
             </div>
-          </a>
+          </button>
         </div>
       </div>
     </main>
@@ -99,7 +97,7 @@
     <!-- Local Scripts -->
     <script src="../src/scripts/components/navbar.js"></script>
     <script src="../src/scripts/components/footer.js"></script>
-    <script src="../src/scripts/pages/#"></script>
+    <script src="../src/scripts/pages/sectors/sectors.js"></script>
     <script src="../src/modules/accounts/auth.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", loadNavHome);
