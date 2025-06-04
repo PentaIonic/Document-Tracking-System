@@ -18,11 +18,13 @@
     />
 
     <!-- Local Styles -->
-    <link rel="stylesheet" href="../src/styles/pages/search/navIndex.css" />
-    <link rel="stylesheet" href="../src/styles/components/nav/navSector.css" />
-    <link rel="stylesheet" href="../src/styles/components/footer/footerNoLogo.css" />
+    <link rel="stylesheet" href="../src/styles/components/nav/navHome.css" />
+    <link
+      rel="stylesheet"
+      href="../src/styles/components/footer/footerNoLogo.css"
+    />
     <link rel="stylesheet" href="../src/styles/components/webFrame.css" />
-    <link rel="stylesheet" href="../src/styles/pages/document/tracking.css"/>
+    <link rel="stylesheet" href="../src/styles/pages/document/tracking.css" />
 
     <!-- Web Page Information -->
     <title>Tracking | Doctrax</title>
@@ -35,71 +37,80 @@
 
     <!-- Page Content -->
     <main id="container">
-  <section class="document-wrapper">
-    <h1 class="document-title">DOCUMENT</h1>
+      <section class="document-wrapper">
+        <h1 class="document-title">DOCUMENT</h1>
 
-    <!-- Document Details Panel -->
-<section class="document-panel">
-    <table class="document-table">
-      <tr>
-        <th>Reference Number</th>
-        <td></td>
-      </tr>
-      <tr>
-        <th>Personal Information</th>
-        <td>
-        <div class="info-stack">
-        Name:<br />
-        Age:<br />
-        Sex:<br />
-        Address:
-  </div>
-</td>
-      </tr>
-      <tr>
-        <th>Date of Appeal/Appointment</th>
-        <td></td>
-      </tr>
-      <tr>
-        <th>Date of Validation</th>
-        <td></td>
-      </tr>
-      <tr>
-        <th>Department</th>
-        <td></td>
-      </tr>
-      <tr>
-        <th>Status</th>
-        <td></td>
-      </tr>
-      <tr>
-        <th>Action</th>
-        <td class="action-buttons">
-          <button><span class="material-icons-round">visibility</span> Remarks</button>
-          <button><span class="material-icons-round">cancel</span> Cancel Application</button>
-        </td>
-      </tr>
-      <tr>
-        <th>QR CODE</th>
-        <td>
-          <div class="qr-box">
-            <div class="qr-inner"></div>
-          </div>
-        </td>
-      </tr>
-    </table>
-  </section>
-  </main>
+        <!-- Document Details Panel -->
+        <section class="document-panel">
+          <table class="document-table">
+            <tr>
+              <th>Reference Number</th>
+              <td><span id="docCode"></span></td>
+            </tr>
+            <tr>
+              <th>Personal Information</th>
+              <td>
+                <div class="info-stack">
+                  <strong>Name: <span id="fullName"></span></strong>
+                  <strong>Age: <span id="age"></span></strong>
+                  <strong>Sex: <span id="sex"></span></strong>
+                  <strong>Address: <span id="address"></span></strong>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>Date of Appeal/Appointment</th>
+              <td><span id="documentDate"></span></td>
+            </tr>
+            <tr>
+              <th>Date of Validation</th>
+              <td><span id="documentDate"></span></td>
+            </tr>
+            <tr>
+              <th>Department</th>
+              <td><span id="sector"></span></td>
+            </tr>
+            <tr>
+              <th>Status</th>
+              <td><span id="documentStatus"></span></td>
+            </tr>
+            <tr>
+              <th>Action</th>
+              <td class="action-buttons">
+                <button>
+                  <span class="material-icons-round">visibility</span> Remarks
+                </button>
+                <button>
+                  <span class="material-icons-round">cancel</span> Cancel
+                  Application
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <th>QR CODE</th>
+              <td>
+                <div class="qr-box">
+                  <div class="qr-inner"></div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </section>
 
-  <!-- Page Footer -->
-    <footer><div class="footer-container" id="footer"></div></footer>
+        <!-- Page Footer -->
+        <footer><div class="footer-container" id="footer"></div></footer>
 
-    <!-- Local Scripts -->
-    <script src="./src/scripts/components/navbar.js"></script>
-    <script src="./src/scripts/components/footer.js"></script>
-    <script src="./src/scripts/pages/search.js"></script>
-    <script>
-      // Loading Components
-      document.addEventListener("DOMContentLoaded", loadNavIndex);
-      document.addEventListener("DOMContentLoaded", loadFooter);
-    </script>
+        <!-- Local Scripts -->
+        <script src="../src/scripts/components/navbar.js"></script>
+        <script src="../src/scripts/components/footer.js"></script>
+        <script src="../src/scripts/pages/document/trackDocument.js" defer></script>
+        <script src="./src/scripts/pages/search.js"></script>
+        <script>
+          // Loading Components
+          document.addEventListener("DOMContentLoaded", loadNavHome);
+          document.addEventListener("DOMContentLoaded", loadFooter);
+        </script>
+      </section>
+    </main>
+  </body>
+</html>

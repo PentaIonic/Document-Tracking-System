@@ -19,8 +19,11 @@
 
     <!-- Local Styles -->
     <link rel="stylesheet" href="../src/styles/pages/search/results.css" />
-    <link rel="stylesheet" href="../src/styles/components/nav/navResults.css" />
-    <link rel="stylesheet" href="../src/styles/components/footer/footerNoLogo.css" />
+    <link rel="stylesheet" href="../src/styles/components/nav/navHome.css" />
+    <link
+      rel="stylesheet"
+      href="../src/styles/components/footer/footerNoLogo.css"
+    />
     <link rel="stylesheet" href="../src/styles/components/webFrame.css" />
 
     <!-- Web Page Information -->
@@ -39,7 +42,7 @@
         <span>Results</span>
         <div class="search-bar">
           <input type="search" name="searchDocument" id="searchDocument" />
-          <button>
+          <button onclick="clickSearch()">
             <div class="search-icon">
               <span class="material-icons-round"> search </span>
             </div>
@@ -54,23 +57,10 @@
               <tr>
                 <th>#</th>
                 <th>Document No.</th>
-                <th>Action</th>
+                <th>Actions</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>#HO202503254426</td>
-                <td>
-                  <input
-                    type="button"
-                    name="viewDocument"
-                    value="View"
-                    onclick=""
-                  />
-                </td>
-              </tr>
-            </tbody>
+            <tbody></tbody>
           </table>
         </div>
       </div>
@@ -80,10 +70,10 @@
     <!-- Local Scripts -->
     <script src="../src/scripts/components/navbar.js"></script>
     <script src="../src/scripts/components/footer.js"></script>
-    <script src="../src/scripts/pages/#"></script>
+    <script src="../src/scripts/pages/document/repository.js"></script>
     <script src="../src/modules/accounts/auth.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", loadNavSearch);
+      document.addEventListener("DOMContentLoaded", loadNavHome);
       document.addEventListener("DOMContentLoaded", loadFooter);
     </script>
     <script>

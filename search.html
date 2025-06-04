@@ -25,10 +25,7 @@
     />
     <link rel="stylesheet" href="./src/styles/components/webFrame.css" />
     <link rel="stylesheet" href="./src/styles/pages/search/search.css" />
-    <link
-      rel="stylesheet"
-      href="./src/styles/pages/search/search-panel.css"
-    />
+    <link rel="stylesheet" href="./src/styles/pages/search/search-panel.css" />
 
     <!-- Web Page Information -->
     <title>Search | Doctrax</title>
@@ -64,13 +61,18 @@
                 id="documentID"
                 placeholder="Document ID"
                 required
+                onkeypress="if(event.key === 'Enter'){ clickSearch(); }"
               />
-              <span class="material-icons-round">search</span>
+              <a onclick="clickSearch()"
+                ><span class="material-icons-round" style="cursor: pointer"
+                  >search</span
+                ></a
+              >
             </div>
 
-            <div class="or-separator" style="display: none;">or</div>
+            <div class="or-separator" style="display: none">or</div>
 
-            <button class="upload-btn" style="display: none;">
+            <button class="upload-btn" style="display: none">
               <span class="upload-text">Upload File</span>
               <span class="icon-svg">
                 <svg
@@ -101,7 +103,7 @@
     <!-- Local Scripts -->
     <script src="./src/scripts/components/navbar.js"></script>
     <script src="./src/scripts/components/footer.js"></script>
-    <script src="./src/scripts/pages/searchDocument.js"></script>
+    <script src="./src/scripts/pages/search/searchDocument.js" defer></script>
     <script>
       // Loading Components
       document.addEventListener("DOMContentLoaded", loadNavIndex);

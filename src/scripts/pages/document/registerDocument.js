@@ -15,6 +15,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const department = params.get("department");
   let transactionType;
 
+  const docCode = generateDocumentCode(department);
+
+  // QR Code Generation
+  const registerQR = new QRCodeStyling({
+    width: 200,
+    height: 200,
+    type: "svg",
+    data: `${window.location.href}/viewDocument.html?codeDocument=${docCode}`,
+    image: "../assets/icons/page-logo.svg",
+    dotsOptions: {
+      color: "var(--accent-color)",
+      type: "classy-rounded",
+    },
+    backgroundOptions: {
+      color: "var(--background-color)",
+    },
+    imageOptions: {
+      margin: 10,
+    },
+  });
+  registerQR.append(document.getElementById("qrDocument"));
+  registerQR.download({ name: "documnent-qr-code", extension: "svg" });
+
   switch (department) {
     case "health-office":
       document.getElementById("sector").value = "Municipal Health Office";
@@ -179,7 +202,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function recordDocument() {
     const formData = new FormData(recordForm);
-    const docCode = generateDocumentCode(department);
 
     const requiredFields = [
       "lastName",
@@ -230,6 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
       documentTitle: formData.get("documentTitle"),
       documentFile: uploadedFileInfo,
       documentURL: uploadedFileInfo?.url,
+      documentStatus: "Pending",
     };
 
     const documentRecords =
@@ -237,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
     documentRecords.push(documentDetails);
     localStorage.setItem("documentRecords", JSON.stringify(documentRecords));
 
-    alert("Form submitted!");
+    popSuccessPanel();
     recordForm.reset();
     uploadedFilesList.innerHTML = null;
     uploadedFileInfo = null;
@@ -277,5 +300,7 @@ function popCancelConfirm() {
 
 function popSuccessPanel() {
   const promptSuccess = document.getElementById("success");
+  const promptSubmit = document.getElementById("confirmSubmit");
+  promptSubmit.style.display = "none";
   promptSuccess.style.display = "flex";
 }
