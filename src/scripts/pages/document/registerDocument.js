@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
   registerQR.append(document.getElementById("qrDocument"));
-  registerQR.download({ name: "documnent-qr-code", extension: "svg" });
 
   switch (department) {
     case "health-office":

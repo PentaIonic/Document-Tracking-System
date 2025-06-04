@@ -1,24 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const documentRecords =
-    JSON.parse(localStorage.getItem("documentRecords")) || [];
+  // 1. Get stored records
+  const documentRecords = JSON.parse(localStorage.getItem("documentRecords")) || [];
+
+  // 2. Get ?docCode=XYZ from the URL
   const urlParams = new URLSearchParams(window.location.search);
-  const docCode = urlParams.get("docCode");
+  const docCode = urlParams.get("codeDocument");
 
   if (!docCode) return;
 
-  const selected = documentRecords.find((d) => d.documentCode === docCode);
+  // 3. Find the matching document
+  const matchedDoc = documentRecords.find(record => record.documentCode === docCode);
+  if (!matchedDoc) return;
 
-  if (!selected) return;
-
-  document.getElementById("docCode").textContent = selected.documentCode;
-  document.getElementById("fullName").textContent =
-    selected.lastName + selected.firstName + selected.middleName || "-";
-  document.getElementById("age").textContent = selected.age || "-";
-  document.getElementById("sex").textContent = selected.sex || "-";
-  document.getElementById("address").textContent = selected.address || "-";
-  document.getElementById("documentDate").textContent =
-    selected.documentDate || "-";
-  document.getElementById("sector").textContent = selected.sector || "-";
-  document.getElementById("documentStatus").textContent =
-    selected.status || "-";
+  // 4. Insert data into HTML elements using element IDs
+  document.getElementById("docCode").textContent = matchedDoc.documentCode || "-";
+  document.getElementById("fullName").textContent = 
+    `${matchedDoc.lastName || ""}, ${matchedDoc.firstName || ""} ${matchedDoc.middleName || ""}`.trim() || "-";
+  document.getElementById("age").textContent = matchedDoc.age || "-";
+  document.getElementById("sex").textContent = matchedDoc.sex || "-";
+  document.getElementById("address").textContent = matchedDoc.address || "-";
+  document.getElementById("documentDate").textContent = matchedDoc.documentDate || "-";
+  document.getElementById("sector").textContent = matchedDoc.sector || "-";
+  document.getElementById("documentStatus").textContent = matchedDoc.status || "-";
 });
