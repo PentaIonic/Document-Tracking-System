@@ -10,6 +10,63 @@
     width: 100%;
     transition: all 0.3s ease;
   }
+  /* Background */
+  main {
+    background: linear-gradient(-45deg, #EAE4D5, #FFB200, #EB5B00, #B6B09F);
+	  background-size: 400% 400%;
+	  animation: gradient 15s ease infinite;
+	  height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.navbar-container {
+  background: linear-gradient(-45deg, #EAE4D5, #FFB200, #EB5B00, #B6B09F);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.footer-container {
+  background: linear-gradient(-45deg, #EAE4D5, #FFB200, #EB5B00, #B6B09F);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 
   /* Login Container */
   .container {
@@ -189,3 +246,5 @@
 
 @media screen and (min-width: 1024px) {
 }
+
+
