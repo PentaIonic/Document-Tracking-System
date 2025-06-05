@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const suffixN = formData.get("suffixName").trim();
     if (!suffixN) {
-      formData.set("suffixName", "N/A");
+      formData.set("suffixName", "");
     }
 
     const documentDetails = {
@@ -245,13 +245,14 @@ document.addEventListener("DOMContentLoaded", () => {
       sex: formData.get("sex"),
       address: formData.get("address"),
       documentDate: formData.get("documentDate"),
+      documentDateValidation: "Not Processed Yet",
       sector: department,
-      transactionType: formData.get("transactionType"),
-      documentCode: docCode,
+      documentType: formData.get("transactionType"),
       documentTitle: formData.get("documentTitle"),
-      documentFile: uploadedFileInfo,
       documentURL: uploadedFileInfo?.url,
+      documentFile: uploadedFileInfo,
       documentStatus: "Pending",
+      documentCode: docCode,
     };
 
     const documentRecords =

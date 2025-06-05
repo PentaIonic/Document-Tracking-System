@@ -1,0 +1,225 @@
+@media screen and (min-width: 320px) {
+  /* Navigation Bar Body */
+  .navbar-container {
+    display: flex;
+    justify-content: flex-start;
+    background-color: var(--background-color);
+    height: 6em;
+    width: 100vw;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    align-items: start;
+    padding: 0px 1em;
+    margin: auto;
+    box-sizing: border-box;
+  }
+
+  /* Logo with Web Name */
+  .logo-area {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .logo-area img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+
+  .logo-area a {
+    display: none;
+    color: var(--text-color);
+    text-decoration: none;
+    text-align: center;
+    font-family: Rambla;
+    font-size: 1.8125rem;
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .logo-area:hover {
+    transform: scale(1.05);
+  }
+
+  .nav-action-buttons {
+    display: flex;
+    align-items: center;
+    margin: auto 1rem auto auto;
+    gap: 1rem;
+  }
+
+  .nav-action-buttons > button,
+  .nav-action-buttons > div {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-action-buttons > div > span {
+    display: none;
+  }
+
+  .nav-action-buttons {
+    display: flex;
+    margin: auto 0.5rem auto auto;
+    padding: 0;
+    height: auto;
+    width: fit-content;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .sidebar-window {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    top: 5rem;
+    right: 0rem;
+    width: 16rem;
+    padding: 1rem;
+    height: fit-content;
+
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    box-sizing: border-box;
+  }
+
+  .sidebar {
+    background-color: var(--background-color);
+  }
+
+  .top-sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+
+  .logo-sidebar {
+    font-family: "Rambla";
+    margin-top: auto;
+    color: var(--text-color);
+    background-color: var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem;
+    gap: 8px;
+    box-sizing: border-box;
+  }
+
+  .logo-sidebar img {
+    width: 60px;
+    height: auto;
+  }
+
+  .logo-sidebar a {
+    text-decoration: none;
+    font-family: "Rambla";
+    font-weight: bold;
+    text-align: center;
+    color: var(--text-color);
+  }
+
+  .account-panel {
+    display: flex;
+    background-color: var(--background-color);
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
+    padding: 1rem 1rem;
+    box-sizing: border-box;
+  }
+
+  .account-hero {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .account-hero img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .account-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .middle-sidebar {
+    width: 100%;
+    padding: 0 1em;
+    box-sizing: border-box;
+  }
+
+  .sidebar-options {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .sidebar-options > button {
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    margin-bottom: 1rem;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .option-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding: 0.25rem;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .option-button span {
+    cursor: pointer;
+  }
+
+  .option-button label {
+    cursor: pointer;
+  }
+
+  #sidebar {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  #sidebar.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .logo-area a {
+    display: flex;
+  }
+  .nav-action-buttons > div > span {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+}

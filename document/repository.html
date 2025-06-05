@@ -18,7 +18,7 @@
     />
 
     <!-- Local Styles -->
-    <link rel="stylesheet" href="../src/styles/pages/search/results.css" />
+    <link rel="stylesheet" href="../src/styles/pages/document/repository.css" />
     <link rel="stylesheet" href="../src/styles/components/nav/navHome.css" />
     <link
       rel="stylesheet"
@@ -40,13 +40,22 @@
     <main id="mainContainer">
       <div class="results-header">
         <span>Results</span>
-        <div class="search-bar">
-          <input type="search" name="searchDocument" id="searchDocument" />
-          <button onclick="clickSearch()">
-            <div class="search-icon">
-              <span class="material-icons-round"> search </span>
-            </div>
-          </button>
+        <div class="action-header">
+          <div class="search-bar">
+            <input type="search" name="searchDocument" id="searchDocument" />
+            <button onclick="clickSearch()">
+              <div class="search-icon">
+                <span class="material-icons-round"> search </span>
+              </div>
+            </button>
+          </div>
+          <div class="filter-dropdown">
+            <select id="sortCriteria">
+              <option value="documentID">Sort by Document ID</option>
+              <option value="department">Sort by Department</option>
+              <option value="status">Sort by Status</option>
+            </select>
+          </div>
         </div>
       </div>
       <div class="filters"></div>

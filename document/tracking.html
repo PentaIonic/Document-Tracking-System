@@ -30,6 +30,71 @@
     <title>Tracking | Doctrax</title>
   </head>
   <body>
+    <div class="popup-remark" id="remarkView">
+      <div class="popup-container-remark">
+        <div class="close-section">
+          <a onclick="closePrompt()">&times;</a>
+        </div>
+        <span>Reference Number:</span><br />
+        <span id="referenceNumValidRemark"></span><br /><br />
+        <span>Evaluator</span><br />
+        <span id="officerNameRemark"></span><br /><br />
+        <span>Remarks</span><br />
+        <span id="documentRemarksRemark"></span><br /><br />
+        <span>Details</span>
+        <span id="remarkDescriptionRemark"></span>
+      </div>
+    </div>
+    <div class="popup-process-document" id="processFormBox">
+      <div class="popup-container-process-document">
+        <div class="close-section">
+          <a onclick="closePrompt()">&times;</a>
+        </div>
+        <form id="processLog">
+          <div class="process-form-container">
+            <label for="referenceNumValid">Reference Number:</label>
+            <input type="text" id="referenceNumValid" required readonly />
+            <label for="officerName">Evaluator</label>
+            <input type="text" id="officerName" required readonly />
+            <label for="setStatus">Status</label>
+            <select name="setStatus" id="setStatus">
+              <option value="Pending" default selected disabled>Pending</option>
+              <option value="Approved">Approved</option>
+              <option value="Rejected">Rejected</option>
+            </select>
+            <label for="documentRemarks">Remarks</label>
+            <input type="text" id="documentRemarks" name="documentRemarks" required />
+            <label for="remarkDescription">Remarks Description</label>
+            <textarea
+              name="remarkDescription"
+              id="remarkDescription"
+            ></textarea>
+            <button type="button" id="processRequest">Process</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="popup-cancel-document" id="cancelFormBox">
+      <div class="popup-container-cancel-document">
+        <div class="close-section">
+          <div class="close-section">
+            <a onclick="closePrompt()">&times;</a>
+          </div>
+          <div class="popup-text">
+            <span
+              >Cancelling this request will result in the termination of your
+              document. Are you sure you want to proceed?</span
+            >
+          </div>
+          <div class="popup-action">
+            <button type="submit" class="yes" id="deleteRecord">
+              <span>Yes</span>
+            </button>
+            <button class="no" onclick="closePrompt()"><span>No</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Top Navigation Bar -->
     <navbar>
       <div class="navbar-container" id="navbar"></div>
@@ -64,7 +129,7 @@
             </tr>
             <tr>
               <th>Date of Validation</th>
-              <td><span id="documentDate"></span></td>
+              <td><span id="documentDateValidation"></span></td>
             </tr>
             <tr>
               <th>Department</th>
@@ -77,10 +142,14 @@
             <tr>
               <th>Action</th>
               <td class="action-buttons">
-                <button>
+                <button id="viewRemarks">
                   <span class="material-icons-round">visibility</span> Remarks
                 </button>
-                <button>
+                <button id="processDocument">
+                  <span class="material-icons-round"> post_add </span>Process
+                  Document
+                </button>
+                <button id="cancelDocument">
                   <span class="material-icons-round">cancel</span> Cancel
                   Application
                 </button>
@@ -89,9 +158,7 @@
             <tr>
               <th>QR CODE</th>
               <td>
-                <div class="qr-box">
-                  <div class="qr-inner"></div>
-                </div>
+                <div class="qr-box" id="qr-box"></div>
               </td>
             </tr>
           </table>
@@ -104,6 +171,10 @@
         <script src="../src/scripts/components/navbar.js"></script>
         <script src="../src/scripts/components/footer.js"></script>
         <script src="../src/scripts/pages/document/trackDocument.js"></script>
+        <script
+          type="text/javascript"
+          src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"
+        ></script>
         <script>
           // Loading Components
           document.addEventListener("DOMContentLoaded", loadNavHome);
