@@ -8,7 +8,8 @@ function isNotificationDue(documentDate, today) {
 }
 
 function loadNotifications() {
-  const documentRecords = JSON.parse(localStorage.getItem("documentRecords")) || [];
+  const documentRecords =
+    JSON.parse(localStorage.getItem("documentRecords")) || [];
   const notificationContainer = document.getElementById("notificationList");
   const now = new Date();
 
@@ -23,7 +24,7 @@ function loadNotifications() {
       notification.setAttribute("data-index", index); // Needed for dismiss
 
       notification.innerHTML = `
-        <div class="notification-info">
+        <div class="notification-info" onclick="window.location.href='../../../document/tracking.html?codeDocument=${entry.documentCode}'">
           <span class="notification-title">Document is past due date!</span>
           <span class="notification-description">${entry.documentCode}</span>
         </div>
@@ -32,7 +33,7 @@ function loadNotifications() {
             &times;
           </button>
         </div>`;
-        
+
       notificationContainer.appendChild(notification);
     }
   });
