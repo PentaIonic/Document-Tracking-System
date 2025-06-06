@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Web Page Information & Responsive Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Styles & Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mate:ital@0;1&family=Montagu+Slab:opsz,wght@16..144,100..700&family=Rambla:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+
+    <!-- Local Styles -->
+    <link rel="stylesheet" href="../src/styles/pages/document/admin.css" />
+    <link rel="stylesheet" href="../src/styles/components/nav/navIndex.css" />
+    <link rel="stylesheet" href="../src/styles/components/sidebar.css" />
+    <link
+      rel="stylesheet"
+      href="../src/styles/components/footer/footerNoLogo.css"
+    />
+    <link rel="stylesheet" href="../src/styles/components/webFrame.css" />
+
+    <!-- Web Page Information -->
+    <title>Admin Profile | Doctrax</title>
+  </head>
+  <body>
+    <!-- Dashboard Section -->
+    <div class="dashboard-container">
+      <div class="dashboard-header">
+        <div class="dashboard-title">DASHBOARD</div>
+        <div class="dashboard-cards">
+          <div class="dashboard-card">
+            <div class="card-title">Municipal Health Office</div>
+            <div class="card-value">350,897</div>
+            <div class="card-trend up">
+              ▲ 3.48% <span>Since last month</span>
+            </div>
+          </div>
+          <div class="dashboard-card">
+            <div class="card-title">Civil Register Office</div>
+            <div class="card-value">2,356</div>
+            <div class="card-trend up">
+              ▲ 3.48% <span>Since last month</span>
+            </div>
+          </div>
+          <div class="dashboard-card">
+            <div class="card-title">General Services Office</div>
+            <div class="card-value">924</div>
+            <div class="card-trend up">
+              ▲ 1.10% <span>Since yesterday</span>
+            </div>
+          </div>
+          <div class="dashboard-card">
+            <div class="card-title">Agricultural Office</div>
+            <div class="card-value">49,65</div>
+            <div class="card-trend up">▲ 12% <span>Since last month</span></div>
+          </div>
+        </div>
+        <div class="user-profile">
+          <input type="text" class="search-bar" placeholder="Search" />
+          <div class="user-info">
+            <img src="../src/images/user-avatar.png" alt="User" />
+            <span>Janet Marie</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Process Documents Table -->
+      <div class="documents-section">
+        <h3>Process Documents</h3>
+        <table class="documents-table">
+          <thead>
+            <tr>
+              <th>PEOPLE</th>
+              <th>REQUEST</th>
+              <th>STATUS</th>
+              <th>HANDLED</th>
+              <th>COMPLETION</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <img src="../src/images/avatar1.png" alt="avatar" /> Arnaldo
+                Marino
+              </td>
+              <td>Indigency</td>
+              <td class="status pending">pending</td>
+              <td>Ms. Jasme Mendoza</td>
+              <td>
+                <div class="progress-bar">
+                  <div class="bar" style="width: 60%"></div>
+                </div>
+                60%
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../src/images/avatar2.png" alt="avatar" /> Maria Dela
+                Cruz
+              </td>
+              <td>Medical Certificate</td>
+              <td class="status completed">completed</td>
+              <td>Ms. Kath Bautista</td>
+              <td>
+                <div class="progress-bar full"></div>
+                100%
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../src/images/avatar3.png" alt="avatar" /> Roger
+                Santos
+              </td>
+              <td>Cenomar</td>
+              <td class="status rejected">Rejected</td>
+              <td>Mr. Rolle Amore</td>
+              <td>
+                <div class="progress-bar" style="width: 72%"></div>
+                72%
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../src/images/avatar4.png" alt="avatar" /> Mentos Cruz
+              </td>
+              <td>Business Certificate</td>
+              <td class="status schedule">on schedule</td>
+              <td>Mr. Charles Angeles</td>
+              <td>
+                <div class="progress-bar" style="width: 90%"></div>
+                90%
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../src/images/avatar5.png" alt="avatar" /> Anne Maria
+                Lopez
+              </td>
+              <td>Cenomar</td>
+              <td class="status completed">completed</td>
+              <td>Mr. Charles Angeles</td>
+              <td>
+                <div class="progress-bar full"></div>
+                100%
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="pagination">
+          <button>&lt;</button>
+          <button class="active">1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>&gt;</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page Footer -->
+    <footer><div class="footer-container" id="footer"></div></footer>
+    <!-- Local Scripts -->
+    <script src="../src/scripts/components/navbar.js"></script>
+    <script src="../src/scripts/components/footer.js"></script>
+    <script src="../src/modules/accounts/auth.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", loadNavHome);
+      document.addEventListener("DOMContentLoaded", loadFooter);
+    </script>
+    <script>
+      checkLogin();
+    </script>
+  </body>
+</html>

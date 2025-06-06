@@ -256,8 +256,62 @@
     padding: 1rem;
     background-color: #ffb200;
     width: 300px;
+    font-weight: bold;
+    font-size: 1.1rem;
     height: fit-content;
     border-radius: 10px;
     box-sizing: border-box;
+  }
+
+  .close-section {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    box-sizing: border-box;
+  }
+
+  .close-section > a {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+
+  .process-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .process-form-container input,
+  .process-form-container textarea,
+  .process-form-container select {
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+  }
+
+  .process-form-container label {
+    font-family: "Source Serif 4", serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .process-form-container textarea {
+    resize: none;
+    height: 4rem;
+  }
+
+  #processRequest {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+
+  #referenceNumValidRemark, #officerNameRemark, #documentRemarksRemark, #remarkDescriptionRemark {
+    font-weight: normal;
+    font-size: 1rem;
   }
 }

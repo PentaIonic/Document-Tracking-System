@@ -31,14 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
       case "department":
         sorted.sort((a, b) =>
-          extractDepartment(a.documentCode).localeCompare(
-            extractDepartment(b.documentCode)
-          )
+          extractDepartment(a.sector).localeCompare(extractDepartment(b.sector))
         );
         break;
       case "status":
         sorted.sort(
-          (a, b) => getStatusOrder(a.status) - getStatusOrder(b.status)
+          (a, b) =>
+            getStatusOrder(a.documentStatus) - getStatusOrder(b.documentStatus)
         );
         break;
     }
@@ -54,9 +53,31 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       filteredRecords.forEach((entry, index) => {
         const row = document.createElement("tr");
+
+        let deptName = "";
+        switch (entry.sector) {
+          case "health-office":
+            deptName = "Health Office";
+            break;
+          case "civil-registrar-office":
+            deptName = "Civil Registrar Office";
+            break;
+          case "gen-service-office":
+            deptName = "General Services Office";
+            break;
+          case "agricultural-office":
+            deptName = "Agricultural Office";
+            break;
+          case "accounting-office":
+            deptName = "Accounting Office";
+            break;
+        }
+
         row.innerHTML = `
           <td>${index + 1}</td>
           <td>${entry.documentCode}</td>
+          <td>${deptName}</td>
+          <td>${entry.documentStatus}</td>
           <td><input type="button" name="viewDocument" value="View" onclick="clickViewDocument('${
             entry.documentCode
           }')"/></td>`;

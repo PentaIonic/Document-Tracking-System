@@ -60,13 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (matchedLog) {
     document.getElementById("referenceNumValidRemark").textContent =
-      matchedLog.referenceNumValid;
+      matchedLog.referenceNumValid || "Not yet processed!";
     document.getElementById("officerNameRemark").textContent =
-      matchedLog.officerName;
+      matchedLog.officerName || "Not yet processed!";
     document.getElementById("documentRemarksRemark").textContent =
-      matchedLog.documentRemarks;
+      matchedLog.documentRemarks || "Not yet processed!";
     document.getElementById("remarkDescriptionRemark").textContent =
-      matchedLog.remarkDescription;
+      matchedLog.remarkDescription || "Not yet processed!";
   }
 
   // QR Code Generation

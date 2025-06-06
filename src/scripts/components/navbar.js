@@ -112,12 +112,14 @@ function insertRole() {
 function setupMenuToggle() {
   const toggleMenu = document.getElementById("toggleMenu");
   const menu = document.getElementById("menu");
+  const notificationWindow = document.getElementById("notificationWindow");
 
   if (!toggleMenu || !menu) return;
 
   toggleMenu.addEventListener("click", function (e) {
     e.stopPropagation();
     menu.classList.toggle("open");
+    notificationWindow.classList.remove("open");
   });
 
   document.addEventListener("click", function (e) {
@@ -134,12 +136,14 @@ function setupMenuToggle() {
 function setupNotificationWindow() {
   const toggleNotification = document.getElementById("toggleNotification");
   const notificationWindow = document.getElementById("notificationWindow");
+  const menu = document.getElementById("menu");
 
   if (!toggleNotification || !notificationWindow) return;
 
   toggleNotification.addEventListener("click", function (e) {
     e.stopPropagation();
     notificationWindow.classList.toggle("open");
+    menu.classList.remove("open");
   });
 
   document.addEventListener("click", function (e) {

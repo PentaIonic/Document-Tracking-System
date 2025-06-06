@@ -13,6 +13,7 @@
     align-items: center;
     min-height: 90vh;
     height: fit-content;
+    padding: 1rem 0.5rem;
     background-color: var(--primary-color);
     width: 100%;
     box-sizing: border-box;
@@ -37,7 +38,7 @@
     align-items: center;
     min-height: 8rem;
     width: 100%;
-    gap: 0.5rem;
+    gap: 1rem;
     box-sizing: border-box;
   }
 
@@ -74,21 +75,20 @@
     margin-left: auto;
     min-width: 150px;
     width: 100%;
-
+    border-radius: 0.75rem;
     box-sizing: border-box;
+    overflow: hidden;
   }
 
   .search-bar > input[type="search"] {
     display: flex;
     border: none;
-    border-radius: 0.5rem 0 0 0.5rem;
     width: 100%;
-    padding: 0rem 0.5rem;
+    padding: 1rem 0.5rem;
     box-sizing: border-box;
   }
 
   .search-bar > button {
-    border-radius: 0 0.5rem 0.5rem 0;
     cursor: pointer;
   }
 
@@ -157,6 +157,7 @@
 
   .sub-container {
     padding: 3.25rem;
+    border-radius: 1rem;
   }
 
   .sub-container > p {

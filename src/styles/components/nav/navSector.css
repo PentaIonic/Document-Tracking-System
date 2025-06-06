@@ -4,7 +4,7 @@
     display: flex;
     justify-content: flex-start;
     background-color: var(--background-color);
-    height: 6em;
+    height: 7em;
     width: 100vw;
     position: relative;
     top: 50%;
@@ -237,6 +237,10 @@
     opacity: 1;
     display: flex;
     pointer-events: auto;
+  }
+
+  .notification-window::-webkit-scrollbar {
+    display: none;
   }
 }
 

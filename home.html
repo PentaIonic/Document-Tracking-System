@@ -28,6 +28,11 @@
 
     <!-- Web Page Information -->
     <title>Home | Doctrax</title>
+    <link
+      rel="icon"
+      href="./assets/images/Santa_Elena_Camarines_Norte.png"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <!-- Top Navigation Bar -->
@@ -41,15 +46,23 @@
       <div class="sub-container">
         <div class="home-header">
           <div class="logo">
-            <img src="./assets/icons/page-logo.svg" alt="" />
+            <img
+              src="./assets/images/Santa_Elena_Camarines_Norte.png"
+              alt="Municipal Logo"
+            />
           </div>
           <div class="page-name">
-            <span>Biringan City</span>
+            <span>Santa Elena</span>
             <span>Document Tracking System</span>
           </div>
           <div class="search-bar">
-            <input type="search" name="searchDocument" id="searchDocument" />
-            <button>
+            <input
+              type="search"
+              name="searchDocument"
+              id="searchDocument"
+              onkeypress="if(event.key === 'Enter'){ clickSearch(); }"
+            />
+            <button onclick="clickSearch()">
               <div class="search-icon">
                 <span class="material-icons-round"> search </span>
               </div>
@@ -58,7 +71,7 @@
         </div>
         <hr style="width: 100%; box-sizing: border-box" />
         <p>
-          Welcome to the Biringan Municipal Document Tracking System. Select a
+          Welcome to Santa Elena Municipal Document Tracking System! Select a
           department below to track, request, or manage your documents.
         </p>
         <div class="home-options">
@@ -104,6 +117,7 @@
     <script src="./src/scripts/components/footer.js"></script>
     <script src="./src/modules/accounts/auth.js"></script>
     <script src="./src/modules/notifications/notification.js"></script>
+    <script src="./src/scripts/pages/home/searchModule.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", loadNavHome);
       document.addEventListener("DOMContentLoaded", loadFooter);

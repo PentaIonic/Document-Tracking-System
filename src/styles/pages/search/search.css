@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 92vh;
     background-color: var(--background-color);
   }
 
@@ -128,7 +128,7 @@
     width: 15rem;
     font-family: "Source Serif 4", serif;
     font-size: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 4.5rem;
     box-sizing: border-box;
   }
 
@@ -241,6 +241,14 @@
     box-shadow: 25px 20px 4px 0px rgba(0, 0, 0, 0.25);
   }
 
+  .panel-header h1 {
+    font-size: 3.5rem;
+  }
+
+  .panel-header p {
+    font-size: 1.2rem;
+  }
+
   .search-container {
     border-radius: 4px;
   }
@@ -249,5 +257,13 @@
 @media screen and (min-width: 1024px) {
   .search-container {
     border-radius: 20px;
+  }
+
+  .panel-header p {
+    font-size: 1.4rem;
+  }
+
+  .panel-header h1 {
+    font-size: 4.5rem;
   }
 }

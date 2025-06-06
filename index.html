@@ -29,7 +29,11 @@
 
     <!-- Web Page Information -->
     <title>Search | Doctrax</title>
-    <link rel="icon" href="#" type="image/x-icon" />
+    <link
+      rel="icon"
+      href="./assets/images/Santa_Elena_Camarines_Norte.png"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <!-- Top Navigation Bar -->
@@ -44,11 +48,9 @@
         <div class="portal-panel">
           <!-- Header Section -->
           <div class="panel-header">
-            <h1>Biringan City<br /><span class="doctrax">DOCTRAX</span></h1>
+            <h1>Santa Elena<br /><span class="doctrax">DOCTRAX</span></h1>
             <p>
-              Know the status of your document by providing a valid Document
-              ID<br />
-              or <br />QR code below.
+              Know the status of your document by providing a valid Document ID
             </p>
           </div>
 
@@ -103,8 +105,10 @@
     <!-- Local Scripts -->
     <script src="./src/scripts/components/navbar.js"></script>
     <script src="./src/scripts/components/footer.js"></script>
+    <script src="./src/modules/accounts/auth.js"></script>
     <script src="./src/scripts/pages/search/searchDocument.js" defer></script>
     <script>
+      redirectHome();
       // Loading Components
       document.addEventListener("DOMContentLoaded", loadNavIndex);
       document.addEventListener("DOMContentLoaded", loadFooter);

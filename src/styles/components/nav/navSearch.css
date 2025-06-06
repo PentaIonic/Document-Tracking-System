@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     background-color: var(--background-color);
-    height: 6em;
+    height: 7em;
     width: 100vw;
     position: relative;
     top: 50%;
@@ -41,7 +41,6 @@
     text-align: center;
     font-family: Rambla;
     font-size: 1.8125rem;
-    font-style: italic;
     font-weight: 700;
     line-height: normal;
     box-sizing: border-box;

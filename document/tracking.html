@@ -44,7 +44,7 @@
         <span id="officerNameRemark"></span><br /><br />
         <span>Remarks</span><br />
         <span id="documentRemarksRemark"></span><br /><br />
-        <span>Details</span>
+        <span>Details</span><br />
         <span id="remarkDescriptionRemark"></span>
       </div>
     </div>
@@ -88,18 +88,18 @@
           <div class="close-section">
             <a onclick="closePrompt()">&times;</a>
           </div>
-          <div class="popup-text">
-            <span
-              >Cancelling this request will result in the termination of your
-              document. Are you sure you want to proceed?</span
-            >
-          </div>
-          <div class="popup-action">
-            <button type="submit" class="yes" id="deleteRecord">
-              <span>Yes</span>
-            </button>
-            <button class="no" onclick="closePrompt()"><span>No</span></button>
-          </div>
+        </div>
+        <div class="popup-text">
+          <span
+            >Cancelling this request will result in the termination of your
+            document. Are you sure you want to proceed?</span
+          >
+        </div>
+        <div class="popup-action">
+          <button type="submit" class="yes" id="deleteRecord">
+            <span>Yes</span>
+          </button>
+          <button class="no" onclick="closePrompt()"><span>No</span></button>
         </div>
       </div>
     </div>
