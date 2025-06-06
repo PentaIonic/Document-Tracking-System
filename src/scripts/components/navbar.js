@@ -76,6 +76,14 @@ function loadNavAdmin() {
   xhr.onload = function () {
     if (xhr.status === 200) {
       document.getElementById("navbar").innerHTML = xhr.responseText;
+
+      const toggleBtn = document.getElementById("toggleSidebar");
+      if (toggleBtn) {
+        toggleBtn.addEventListener("click", moveSidebar);
+      } else {
+        console.warn("toggleSidebar button not found after loading navbar.");
+      }
+
       setupMenuToggle();
       setupNotificationWindow();
       insertDisplayNameAdminPanel();
@@ -118,7 +126,7 @@ function insertDisplayName() {
 }
 
 function insertDisplayNameAdminPanel() {
-    const name = localStorage.getItem("displayName");
+  const name = localStorage.getItem("displayName");
   if (name) {
     const nameSpan = document.getElementById("accountName");
     if (nameSpan) {

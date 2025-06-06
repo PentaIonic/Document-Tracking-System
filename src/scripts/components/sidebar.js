@@ -1,8 +1,19 @@
 let sidebarMoved = false;
 
-// Toggle the sidebar
+window.addEventListener("DOMContentLoaded", () => {
+  if (window.innerWidth < 768) {
+    setSidebarWidth("0");
+    sidebarMoved = true;
+  } else {
+    setSidebarWidth("24em");
+    sidebarMoved = false;
+  }
+});
+
+// Don't attach toggleSidebar event here! It's injected later.
+
 function moveSidebar() {
-  const container = document.querySelector(".container");
+  const container = document.getElementById("container");
   if (!container) return;
 
   container.style.transition = "grid-template-columns 0.3s linear";
@@ -16,12 +27,10 @@ function moveSidebar() {
   sidebarMoved = !sidebarMoved;
 }
 
-// Set CSS variable --sidebar-width
 function setSidebarWidth(width) {
   document.documentElement.style.setProperty("--sidebar-width", width);
 }
 
-// Load sidebar content for content pages
 function loadSidebarAdmin() {
   const xhr = new XMLHttpRequest();
   xhr.onload = function () {
@@ -35,29 +44,4 @@ function loadSidebarAdmin() {
   };
   xhr.open("GET", "../src/components/sidebar.html", true);
   xhr.send();
-}
-
-// Toggle menu & notification visibility
-function setupMenuToggle() {
-  const toggleMenu = document.getElementById("toggleMenu");
-  const menu = document.getElementById("menu");
-  const notificationWindow = document.getElementById("notificationWindow");
-
-  if (!toggleMenu || !menu) return;
-
-  toggleMenu.addEventListener("click", function (e) {
-    e.stopPropagation();
-    menu.classList.toggle("open");
-    notificationWindow.classList.remove("open");
-  });
-
-  document.addEventListener("click", function (e) {
-    if (
-      menu.classList.contains("open") &&
-      !menu.contains(e.target) &&
-      !toggleMenu.contains(e.target)
-    ) {
-      menu.classList.remove("open");
-    }
-  });
 }
