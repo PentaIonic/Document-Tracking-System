@@ -5,6 +5,7 @@
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
+    padding: 1rem;
   }
 
   .page-actions {
@@ -22,6 +23,11 @@
     width: fit-content;
     align-items: center;
     box-sizing: border-box;
+    transition: color 0.3s ease;
+  }
+
+  .back-button:hover {
+    color: #ff9900;
   }
 
   .sub-container {
@@ -34,6 +40,8 @@
     background-color: var(--primary-color);
     width: 100%;
     box-sizing: border-box;
+    border-radius: 10px;
+    animation: fadeInSubtle 0.5s ease-in-out both;
   }
 
   .sector-header {
@@ -41,7 +49,6 @@
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
-    height: fit-content;
     gap: 1rem;
     padding: 1rem;
     border-radius: 10px;
@@ -60,6 +67,11 @@
   .sector-logo > img {
     width: 100%;
     height: 100%;
+    transition: transform 0.3s ease;
+  }
+
+  .sector-logo > img:hover {
+    transform: rotate(10deg) scale(1.05);
   }
 
   .sector-plate {
@@ -80,6 +92,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    font-size: 1.25rem;
   }
 
   .sector-overview {
@@ -158,6 +171,13 @@
     background: rgba(242, 242, 242, 0.85);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+
+  .transaction:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
   }
 
   .transaction > span {
@@ -192,6 +212,13 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     box-sizing: border-box;
     cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .proceed:hover {
+    background: rgba(255, 178, 0, 0.85);
+    transform: scale(1.03);
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.25);
   }
 
   .proceed > span {
@@ -205,6 +232,7 @@
   }
 }
 
+/* Tablet */
 @media screen and (min-width: 768px) {
   #mainContainer {
     padding: 3.25rem;
@@ -227,10 +255,23 @@
   }
 }
 
+/* Desktop */
 @media screen and (min-width: 1024px) {
   .transaction-options {
     min-width: 720px;
     width: 80%;
     min-height: 40vh;
+  }
+}
+
+/* Fade-in animation keyframes */
+@keyframes fadeInSubtle {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
