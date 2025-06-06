@@ -19,7 +19,7 @@
 
     <!-- Local Styles -->
     <link rel="stylesheet" href="../src/styles/pages/sectors/sectors.css" />
-    <link rel="stylesheet" href="../src/styles/components/nav/navHome.css" />
+    <link rel="stylesheet" href="../src/styles/components/nav/navSector.css" />
     <link
       rel="stylesheet"
       href="../src/styles/components/footer/footerNoLogo.css"
@@ -85,7 +85,10 @@
           </div>
         </div>
         <div class="action-button">
-          <button id="autoFillForm" onclick="redirectDepartmentCode('accounting-office')">
+          <button
+            id="autoFillForm"
+            onclick="redirectDepartmentCode('accounting-office')"
+          >
             <div class="proceed">
               <span>Proceed</span>
             </div>
@@ -101,11 +104,9 @@
     <script src="../src/scripts/pages/sectors/sectors.js"></script>
     <script src="../src/modules/accounts/auth.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", loadNavHome);
-      document.addEventListener("DOMContentLoaded", loadFooter);
-    </script>
-    <script>
       checkLogin();
+      document.addEventListener("DOMContentLoaded", loadNavSector);
+      document.addEventListener("DOMContentLoaded", loadFooter);
     </script>
   </body>
 </html>

@@ -5,41 +5,104 @@
 <div class="nav-action-buttons">
   <div style="display: flex; flex-direction: row; gap: 10px">
     <span id="accountName"></span>
-    <img src="../../../assets/icons/user-2.svg" alt="Account" />
+    <img
+      src="../../../assets/icons/material-design-icons/account_circle_36dp_000000.svg"
+      alt="Account"
+    />
   </div>
-  <button>
-    <img src="../../../assets/icons/bell.svg" alt="Notification" />
+  <button type="button" id="toggleNotification">
+    <img
+      src="../../../assets/icons/material-design-icons/notifications_24dp_000000.svg"
+      alt="Notification"
+    />
   </button>
-  <button id="toggleSidebar">
-    <img src="../../../assets/icons/menu-hamburger.svg" alt="Menu" />
-  </button>
-  <div class="sidebar-window" id="sidebar">
-    <div class="sidebar">
-      <div class="top-sidebar">
-        <div class="logo-sidebar">
-          <img src="../../assets/icons/page-logo.svg" alt="Logo" />
-          <a href="../../index.html">Document Tracking System</a>
+  <div class="notification-window" id="notificationWindow">
+    <div class="notification-container" id="notificationList">
+      <div class="notification">
+        <div class="notification-info">
+          <span id="notificationTitle">Title</span>
+          <span id="notificationDescription">Description</span>
         </div>
-        <div class="account-panel">
-          <div class="account-hero">
-            <img src="../../assets/icons/logoipsum-300.svg" alt="" />
-          </div>
-          <div class="account-info">
-            <span id="accountNameSidebar"></span>
-            <span id="accountRole"></span>
-          </div>
-        </div>
-      </div>
-      <hr style="width: 95%" />
-      <div class="middle-sidebar">
-        <div class="sidebar-options">
-          <button onclick="logout()">
-            <div class="option-button">
-              <span class="material-icons-round"> logout </span>
-              <label for="logout">Logout</label>
-            </div>
+        <div class="notification-close">
+          <button type="button" id="removeNotification">
+            <span>&times;</span>
           </button>
         </div>
+      </div>
+      <div class="notification">
+        <div class="notification-info">
+          <span id="notificationTitle">Title</span>
+          <span id="notificationDescription">Description</span>
+        </div>
+        <div class="notification-close">
+          <button type="button" id="removeNotification">
+            <span>&times;</span>
+          </button>
+        </div>
+      </div>
+      <div class="notification">
+        <div class="notification-info">
+          <span id="notificationTitle">Title</span>
+          <span id="notificationDescription">Description</span>
+        </div>
+        <div class="notification-close">
+          <button type="button" id="removeNotification">
+            <span>&times;</span>
+          </button>
+        </div>
+      </div>
+      <div class="notification">
+        <div class="notification-info">
+          <span id="notificationTitle">Title</span>
+          <span id="notificationDescription">Description</span>
+        </div>
+        <div class="notification-close">
+          <button type="button" id="removeNotification">
+            <span>&times;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" id="toggleMenu">
+    <img src="../../../assets/icons/menu-hamburger.svg" alt="Menu" />
+  </button>
+  <div class="menu-window" id="menu">
+    <div class="menu">
+      <div class="menu-header">
+        <div class="hero-menu">
+          <img
+            src="../../../assets/icons/material-design-icons/account_circle_36dp_000000.svg"
+            alt=""
+          />
+        </div>
+        <div class="info-menu">
+          <span id="accountNameMenu"></span>
+          <span id="accountRole"></span>
+        </div>
+      </div>
+      <div class="menu-options">
+        <button type="button" class="option-button" onclick="gotoHome()">
+          <img
+            src="../../../assets/icons/material-design-icons/home_24dp_000000.svg"
+            alt=""
+          />
+          <span>Home</span>
+        </button>
+        <button type="button" class="option-button" onclick="">
+          <img
+            src="../../../assets/icons/material-design-icons/support_agent_24dp_000000.svg"
+            alt=""
+          />
+          <span>Technical Support</span>
+        </button>
+        <button type="button" class="option-button" onclick="logout()">
+          <img
+            src="../../../assets/icons/material-design-icons/logout_24dp_000000.svg"
+            alt=""
+          />
+          <span>Logout</span>
+        </button>
       </div>
     </div>
   </div>

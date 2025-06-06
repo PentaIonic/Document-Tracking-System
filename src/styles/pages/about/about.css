@@ -3,139 +3,174 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    height: 90vh;
+    background-color: var(--background-color);
+    min-height: 90vh;
     width: 100%;
-    transition: all 0.3s ease;
     overflow: hidden;
+    position: relative;
+  }
+
+  .section-1, .section-2 {
+    display: flex;
+    width: 100%;
+    height: 92vh;
+    box-sizing: border-box;
+  }
+
+  .about-buttons {
+    display: flex;
+    width: 100%;
+    height: 92vh;
+    box-sizing: border-box;
+    z-index: 1;
   }
 
   .background {
-    position: absolute;
+    display: none;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 90vh;
-    z-index: 0;
+    height: 100vh;
     overflow: hidden;
+    pointer-events: none;
+    box-sizing: border-box;
   }
 
+  .ripple-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    background: #eb5b00;
+    animation: ripple 15s infinite;
+    box-shadow: 0px 0px 1px 0px #508fb9;
+    pointer-events: none;
+  }
+
+  /* Scaled Circles with Viewport Units */
+  .small {
+    width: 200px;
+    height: 200px;
+  }
+
+  .medium {
+    width: 400px;
+    height: 400px;
+  }
+
+  .large {
+    width: 600px;
+    height: 600px;
+  }
+
+  .xlarge {
+    width: 800px;
+    height:800px;
+  }
+
+  .xxlarge {
+    width: 1000px;
+    height: 1000px;
+  }
+
+  /* Opacity Shades */
+  .shade1 {
+    opacity: 0.2;
+  }
+  .shade2 {
+    opacity: 0.5;
+  }
+  .shade3 {
+    opacity: 0.7;
+  }
+  .shade4 {
+    opacity: 0.8;
+  }
+  .shade5 {
+    opacity: 0.9;
+  }
+
+  /* Main Container Styling */
   .main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 90vh;
+    justify-content: center;
+    min-height: 90vh;
     width: 100%;
-    background-color: var(--background-color);
     overflow-x: hidden;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-sizing: border-box;
   }
 
   .main-container h1 {
-    width: 1500px;
+    max-width: 500px;
     color: var(--text-color);
-    text-align: center;
     font-family: Rambla;
-    font-size: 5rem;
-    font-style: normal;
+    font-size: clamp(2rem, 6vw, 5rem);
     font-weight: 700;
     line-height: normal;
+    z-index: 1;
   }
 
   .main-container p {
-    width: 500px;
+    max-width: 250px;
+    width: 100%;
     color: var(--text-color);
-    text-align: center;
     font-family: "Source Serif Pro";
     font-size: 1.25rem;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    margin-top: 1rem;
+    padding: 0 1rem;
+    z-index: 1;
+  }
+}
+
+/* Tablet & Up Overrides */
+@media screen and (min-width: 768px) {
+  .background {
+    display: flex;
   }
 
-@media screen and (min-width: 768px) {
   main {
     flex-direction: row;
   }
 
   .main-container {
-    align-items: end;
+    align-items: flex-end;
     padding: 4rem;
+    text-align: center;
   }
 
+  .main-container p {
+    max-width: 250px;
+  }
 }
 
-}
-.circle{
-  position: absolute;
-  border-radius: 50%;
-  background: #eb5b00;
-  animation: ripple 15s infinite;
-  box-shadow: 0px 0px 1px 0px #508fb9;
+@media screen and (min-width: 1024px) {
+  .main-container p {
+    max-width: 400px;
+  }
 }
 
-.small{
-  width: 200px;
-  height: 200px;
-  left: -100px;
-  bottom: 300px;
-}
-
-.medium{
-  width: 400px;
-  height: 400px;
-  left: -200px;
-  top: 175px;
-}
-
-.large{
-  width: 600px;
-  height: 600px;
-  left: -300px;
-  top: 90px;
-}
-
-.xlarge{
-  width: 800px;
-  height: 800px;
-  left: -400px;
-  top: 10px;
-}
-
-.xxlarge{
-  width: 1000px;
-  height: 1000px;
-  left: -500px;
-  top: -100px;
-}
-
-.shade1{
-  opacity: 0.2;
-}
-.shade2{
-  opacity: 0.5;
-}
-
-.shade3{
-  opacity: 0.7;
-}
-
-.shade4{
-  opacity: 0.8;
-}
-
-.shade5{
-  opacity: 0.9;
-}
-
-@keyframes ripple{
-  0%{
+@keyframes ripple {
+  0% {
     transform: scale(0.8);
   }
-  
-  50%{
+
+  50% {
     transform: scale(1.2);
   }
-  
-  100%{
+
+  100% {
     transform: scale(0.8);
   }
 }

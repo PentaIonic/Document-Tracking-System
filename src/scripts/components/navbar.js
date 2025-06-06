@@ -4,7 +4,8 @@ function loadNavDocument() {
   xhr.onload = function () {
     if (xhr.status === 200) {
       document.getElementById("navbar").innerHTML = xhr.responseText;
-      setupSidebarToggle();
+      setupMenuToggle();
+      setupNotificationWindow();
       insertDisplayName();
       insertRole();
     } else {
@@ -22,7 +23,7 @@ function loadNavIndex() {
   xhr.onload = function () {
     if (xhr.status === 200) {
       document.getElementById("navbar").innerHTML = xhr.responseText;
-      setupSidebarToggle();
+      setupMenuToggle();
     } else {
       console.error("Failed to load navigation bar:", xhr.status);
     }
@@ -31,13 +32,14 @@ function loadNavIndex() {
   xhr.send();
 }
 
-// Load Home Navigation Bar
+// Load Home's Navigation Bar
 function loadNavHome() {
   const xhr = new XMLHttpRequest();
   xhr.onload = function () {
     if (xhr.status === 200) {
       document.getElementById("navbar").innerHTML = xhr.responseText;
-      setupSidebarToggle();
+      setupMenuToggle();
+      setupNotificationWindow();
       insertDisplayName();
       insertRole();
     } else {
@@ -48,13 +50,14 @@ function loadNavHome() {
   xhr.send();
 }
 
-// Load Sector Navigation Bar
+// Load Sectors' Navigation Bar
 function loadNavSector() {
   const xhr = new XMLHttpRequest();
   xhr.onload = function () {
     if (xhr.status === 200) {
       document.getElementById("navbar").innerHTML = xhr.responseText;
-      setupSidebarToggle();
+      setupMenuToggle();
+      setupNotificationWindow();
       insertDisplayName();
       insertRole();
     } else {
@@ -71,7 +74,7 @@ function loadNavSearch() {
   xhr.onload = function () {
     if (xhr.status === 200) {
       document.getElementById("navbar").innerHTML = xhr.responseText;
-      setupSidebarToggle();
+      setupMenuToggle();
     } else {
       console.error("Failed to load navigation bar:", xhr.status);
     }
@@ -85,10 +88,10 @@ function insertDisplayName() {
   const name = localStorage.getItem("displayName");
   if (name) {
     const nameSpan = document.getElementById("accountName");
-    const nameSpanSidebar = document.getElementById("accountNameSidebar");
+    const nameSpanMenu = document.getElementById("accountNameMenu");
     if (nameSpan) {
       nameSpan.innerText = name;
-      nameSpanSidebar.innerText = name;
+      nameSpanMenu.innerText = name;
     }
   }
 }
@@ -103,25 +106,51 @@ function insertRole() {
   }
 }
 
-// Toggle sidebar visibility
-function setupSidebarToggle() {
-  const toggleSidebar = document.getElementById("toggleSidebar");
-  const sidebar = document.getElementById("sidebar");
+// Toggle menu & notification visibility
+function setupMenuToggle() {
+  const toggleMenu = document.getElementById("toggleMenu");
+  const menu = document.getElementById("menu");
 
-  if (!toggleSidebar || !sidebar) return;
+  if (!toggleMenu || !menu) return;
 
-  toggleSidebar.addEventListener("click", function (e) {
+  toggleMenu.addEventListener("click", function (e) {
     e.stopPropagation();
-    sidebar.classList.toggle("open");
+    menu.classList.toggle("open");
   });
 
   document.addEventListener("click", function (e) {
     if (
-      sidebar.classList.contains("open") &&
-      !sidebar.contains(e.target) &&
-      !toggleSidebar.contains(e.target)
+      menu.classList.contains("open") &&
+      !menu.contains(e.target) &&
+      !toggleMenu.contains(e.target)
     ) {
-      sidebar.classList.remove("open");
+      menu.classList.remove("open");
     }
   });
+}
+
+function setupNotificationWindow() {
+  const toggleNotification = document.getElementById("toggleNotification");
+  const notificationWindow = document.getElementById("notificationWindow");
+
+  if (!toggleNotification || !notificationWindow) return;
+
+  toggleNotification.addEventListener("click", function (e) {
+    e.stopPropagation();
+    notificationWindow.classList.toggle("open")
+  });
+
+  document.addEventListener("click", function (e) {
+    if (
+      notificationWindow.classList.contains("open") &&
+      !notificationWindow.contains(e.target) &&
+      !toggleNotification.contains(e.target)
+    ) {
+      notificationWindow.classList.remove("open");
+    }
+  });
+}
+
+function gotoHome() {
+  window.location.href = "../home.html";
 }

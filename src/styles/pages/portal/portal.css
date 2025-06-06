@@ -148,7 +148,9 @@
   }
 
   #accountID:focus + label,
-  #accountID:not(:placeholder-shown) + label {
+  #accountID:not(:placeholder-shown) + label,
+  #password:focus + label,
+  #password:not(:placeholder-shown) + label {
     font-size: 0.75rem;
     bottom: 3.85rem;
     pointer-events: none;
