@@ -23,7 +23,7 @@ function loadNavIndex() {
   xhr.onload = function () {
     if (xhr.status === 200) {
       document.getElementById("navbar").innerHTML = xhr.responseText;
-      setupSidebarToggle();
+      setupMenuToggle();
     } else {
       console.error("Failed to load navigation bar:", xhr.status);
     }
@@ -74,7 +74,7 @@ function loadNavSearch() {
   xhr.onload = function () {
     if (xhr.status === 200) {
       document.getElementById("navbar").innerHTML = xhr.responseText;
-      setupSidebarToggle();
+      setupMenuToggle();
     } else {
       console.error("Failed to load navigation bar:", xhr.status);
     }
@@ -152,5 +152,5 @@ function setupNotificationWindow() {
 }
 
 function gotoHome() {
-  window.location.href = "../index.html";
+  window.location.href = "../home.html";
 }

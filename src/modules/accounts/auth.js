@@ -3,8 +3,11 @@ document.getElementById("loginForm")?.addEventListener("submit", function (e) {
   e.preventDefault();
 
   const username = document.getElementById("accountID").value.trim();
+  const password = document.getElementById("password").value.trim();
 
-  const user = mockUsers.find((u) => u.username === username);
+  const user = mockUsers.find(
+    (u) => u.username === username && u.password === password
+  );
 
   if (user) {
     localStorage.setItem("loggedIn", "true");
@@ -14,7 +17,10 @@ document.getElementById("loginForm")?.addEventListener("submit", function (e) {
     window.location.href = "../../../home.html";
     console.log("Login button clicked");
   } else {
-    document.getElementById("error").innerText = "Invalid account ID";
+    document.getElementById("errorLogin").innerText =
+      "Invalid account ID or password";
+    document.getElementById("accountID").value = "";
+    document.getElementById("password").value = "";
   }
 });
 
@@ -26,7 +32,7 @@ function checkLogin() {
 }
 
 function redirectHome() {
-  if(localStorage.getItem("loggedIn") === "true") {
+  if (localStorage.getItem("loggedIn") === "true") {
     window.location.href = "../../../home.html";
   }
 }

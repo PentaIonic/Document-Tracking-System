@@ -12,72 +12,102 @@
       href="https://fonts.googleapis.com/css2?family=Mate:ital@0;1&family=Rambla:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
 
     <!-- Local Styles -->
-    <link rel="stylesheet" href="./src/styles/pages/index/index.css" />
     <link rel="stylesheet" href="./src/styles/components/nav/navIndex.css" />
     <link
       rel="stylesheet"
       href="./src/styles/components/footer/footerNoLogo.css"
     />
     <link rel="stylesheet" href="./src/styles/components/webFrame.css" />
+    <link rel="stylesheet" href="./src/styles/pages/search/search.css" />
+    <link rel="stylesheet" href="./src/styles/pages/search/search-panel.css" />
 
     <!-- Web Page Information -->
-    <title>Doctrax</title>
+    <title>Search | Doctrax</title>
+    <link rel="icon" href="#" type="image/x-icon" />
   </head>
   <body>
     <!-- Top Navigation Bar -->
     <navbar>
       <div class="navbar-container" id="navbar"></div>
     </navbar>
-    <!-- Index Panels -->
-    <main id="mainContainer">
+
+    <!-- Page Content -->
+    <main id="container">
+      <!-- Main Search Panel -->
       <div class="container">
         <div class="portal-panel">
+          <!-- Header Section -->
           <div class="panel-header">
-            <h1>Biringan City DOCTRAX</h1>
-            <p>The Document tracking system of Biringan Municipalty</p>
+            <h1>Biringan City<br /><span class="doctrax">DOCTRAX</span></h1>
+            <p>
+              Know the status of your document by providing a valid Document
+              ID<br />
+              or <br />QR code below.
+            </p>
           </div>
-          <form id="loginForm">
-            <div class="panel-body">
+
+          <!-- Search Section -->
+          <div class="panel-body">
+            <div class="search-input-wrapper">
               <input
                 type="text"
-                name="account-id"
-                id="accountID"
-                placeholder="Account ID"
+                name="document-ID"
+                id="documentID"
+                placeholder="Document ID"
                 required
+                onkeypress="if(event.key === 'Enter'){ clickSearch(); }"
               />
-              <label for="accountID">Account ID</label>
-              <button type="submit">Sign In</button>
-              <img class="login-img" src="../../assets/icons/user.svg" alt="" />
-              <p id="errorLogin" style="color: red"></p>
+              <a onclick="clickSearch()"
+                ><span class="material-icons-round" style="cursor: pointer"
+                  >search</span
+                ></a
+              >
             </div>
-          </form>
-          <div class="panel-footer">
-            <p>For Non-Admin users, track your documents here.</p>
-            <a href="./search.html">
-              <div class="track-document-button">
-                <img src="../../assets/icons/document-minus.svg" alt="" />
-                <label for="track-document-button">Track Doc</label>
-              </div>
-            </a>
+
+            <div class="or-separator" style="display: none">or</div>
+
+            <button class="upload-btn" style="display: none">
+              <span class="upload-text">Upload File</span>
+              <span class="icon-svg">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 15V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18L4 15M8 11L12 15M12 15L16 11M12 15V3"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </button>
           </div>
         </div>
       </div>
     </main>
+
     <!-- Page Footer -->
     <footer><div class="footer-container" id="footer"></div></footer>
+
     <!-- Local Scripts -->
     <script src="./src/scripts/components/navbar.js"></script>
     <script src="./src/scripts/components/footer.js"></script>
-    <script src="./src/modules/accounts/users.js"></script>
-    <script src="./src/modules/accounts/auth.js"></script>
+    <script src="./src/scripts/pages/search/searchDocument.js" defer></script>
     <script>
+      // Loading Components
       document.addEventListener("DOMContentLoaded", loadNavIndex);
       document.addEventListener("DOMContentLoaded", loadFooter);
-    </script>
-    <script>
-      redirectHome();
     </script>
   </body>
 </html>
