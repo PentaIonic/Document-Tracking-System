@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const registerQR = new QRCodeStyling({
     width: 200,
     height: 200,
-    type: "svg",
+    type: "png",
     data: `${window.location.href}/viewDocument.html?codeDocument=${docCode}`,
-    image: "../assets/icons/page-logo.svg",
+    image: "../assets/images/Santa_Elena_Camarines_Norte.png",
     dotsOptions: {
       color: "var(--accent-color)",
       type: "classy-rounded",

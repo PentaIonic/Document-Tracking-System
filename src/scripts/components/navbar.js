@@ -85,7 +85,7 @@ function loadNavAdmin() {
       }
 
       setupMenuToggle();
-      setupNotificationWindow();
+      setupNotificationWindowAdminOnly();
       insertDisplayNameAdminPanel();
       loadNotifications();
       insertRole();
@@ -181,6 +181,28 @@ function setupNotificationWindow() {
     e.stopPropagation();
     notificationWindow.classList.toggle("open");
     menu.classList.remove("open");
+  });
+
+  document.addEventListener("click", function (e) {
+    if (
+      notificationWindow.classList.contains("open") &&
+      !notificationWindow.contains(e.target) &&
+      !toggleNotification.contains(e.target)
+    ) {
+      notificationWindow.classList.remove("open");
+    }
+  });
+}
+
+function setupNotificationWindowAdminOnly() {
+  const toggleNotification = document.getElementById("toggleNotification");
+  const notificationWindow = document.getElementById("notificationWindow");
+
+  if (!toggleNotification || !notificationWindow) return;
+
+  toggleNotification.addEventListener("click", function (e) {
+    e.stopPropagation();
+    notificationWindow.classList.toggle("open");
   });
 
   document.addEventListener("click", function (e) {

@@ -73,10 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const documentQR = new QRCodeStyling({
     width: 200,
     height: 200,
-    type: "svg",
+    type: "png",
     shape: "circle",
     data: `${window.location.origin}/document/viewDocument.html?codeDocument=${docCode}`,
-    image: "../assets/icons/page-logo.svg",
+    image: "../assets/images/Santa_Elena_Camarines_Norte.png",
     dotsOptions: {
       color: "var(--accent-color)",
       type: "classy-rounded",

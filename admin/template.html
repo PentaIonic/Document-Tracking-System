@@ -36,7 +36,11 @@
     />
   </head>
   <body>
-    <div class="container" id="container">
+    <div
+      class="container"
+      id="container"
+      style="transition: grid-template-columns 0.3s linear"
+    >
       <aside>
         <div class="sidebar-panel" id="sidebarPanel"></div>
       </aside>
@@ -44,7 +48,66 @@
       <nav>
         <div class="navbar-container" id="navbar"></div>
       </nav>
-      <main></main>
+      <main>
+        <!-- Dashboard Section -->
+        <div class="dashboard-container">
+          <div class="dashboard-header">
+            <div class="overview-upper">
+              <div class="dashboard-title">DASHBOARD</div>
+              <div class="user-profile">
+                <input type="text" class="search-bar" placeholder="Search" />
+                <div class="user-info">
+                  <img
+                    src="../assets/icons/material-design-icons/account_circle_36dp_000000.svg"
+                    alt="User"
+                  />
+                  <span id="dashboardLoggedName">Placeholder</span>
+                </div>
+              </div>
+            </div>
+            <div class="overview-lower">
+              <div class="dashboard-cards">
+                <div class="dashboard-card">
+                  <div class="card-title">Municipal Health Office</div>
+                  <span class="card-value" id="hoRecordValue"></span>
+                </div>
+                <div class="dashboard-card">
+                  <div class="card-title">Civil Register Office</div>
+                  <span class="card-value" id="croRecordValue"></span>
+                </div>
+                <div class="dashboard-card">
+                  <div class="card-title">General Services Office</div>
+                  <dspan class="card-value" id="gsoRecordValue"></span>
+                </div>
+                <div class="dashboard-card">
+                  <div class="card-title">Agricultural Office</div>
+                  <span class="card-value" id="agoRecordValue"></span>
+                </div>
+                <div class="dashboard-card">
+                  <div class="card-title">Agricultural Office</div>
+                  <span class="card-value" id="acoRecordValue"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Process Documents Table -->
+          <div class="documents-section">
+            <h3>Process Documents</h3>
+            <table class="documents-table" id="showLogs">
+              <thead>
+                <tr>
+                  <th>PEOPLE</th>
+                  <th>REQUEST</th>
+                  <th>STATUS</th>
+                  <th>HANDLED</th>
+                  <th>DATE PROCESSED</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
       <!-- Page Footer -->
       <footer><div class="footer-container" id="footer"></div></footer>
     </div>
@@ -54,6 +117,7 @@
     <script src="../src/scripts/components/footer.js"></script>
     <script src="../src/scripts/components/sidebar.js"></script>
     <script src="../src/modules/accounts/auth.js"></script>
+    <script src="../src/scripts/pages/admin/admin.js"></script>
     <script src="../src/modules/notifications/notification.js"></script>
     <script>
       //document.addEventListener("DOMContentLoaded", loadSidebarAdmin);

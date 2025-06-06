@@ -1,173 +1,196 @@
 @media screen and (min-width: 320px) {
+  /* Dashboard Container */
+  .dashboard-container {
+    flex-direction: column;
+    font-family: "Rambla", sans-serif;
+    padding: 2rem;
+    height: 81.5vh;
+    background: #f4f0e6;
+    overflow: hidden;
+  }
 
-/* Dashboard Container */
-.dashboard-container {
-  font-family: "Rambla", sans-serif;
-  padding: 2rem;
-  background: #f4f0e6;
+  /* Dashboard Header */
+  .dashboard-header {
+    background: linear-gradient(90deg, #f15a24, #f9d423);
+    padding: 1.5rem;
+    border-radius: 12px;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .overview-upper {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .dashboard-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .dashboard-cards {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .dashboard-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .card-title {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .card-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .card-trend {
+    font-size: 0.8rem;
+    color: green;
+  }
+
+  .card-trend span {
+    color: #999;
+    margin-left: 4px;
+  }
+
+  .user-profile {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .search-bar {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    border: none;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-sizing: border-box;
+  }
+
+  .user-info img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+
+  .user-info span {
+    color: white;
+    font-weight: bold;
+  }
+
+  /* Process Documents Table */
+  .documents-section {
+    background: #bdb6a3;
+    
+    border-radius: 8px;
+    padding: 1rem;
+  }
+
+  .documents-section h3 {
+    background: #fcb900;
+    padding: 0.75rem 1rem;
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .documents-table {
+    width: 100%;
+    overflow-y: hidden;
+    border-collapse: collapse;
+    background: #d1c8b0;
+  }
+
+  .documents-table thead {
+    background: #ffbc00;
+  }
+
+  .documents-table th,
+  .documents-table td {
+    padding: 0.8rem;
+    text-align: left;
+  }
+
+  .documents-table td img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
+
+  .status {
+    font-weight: bold;
+  }
+
+  .status.pending {
+    color: orange;
+  }
+  .status.completed {
+    color: green;
+  }
+  .status.rejected {
+    color: red;
+  }
+  .status.schedule {
+    color: blue;
+  }
+
+  .progress-bar {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .progress-bar .bar {
+    height: 100%;
+    background: linear-gradient(to right, #f66, #999);
+    border-radius: 4px;
+  }
+
+  .progress-bar.full {
+    width: 100%;
+    background: green;
+  }
+
+  .pagination {
+    margin-top: 1rem;
+    text-align: right;
+  }
+
+  .pagination button {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+
+  .pagination button.active {
+    background: #4a4aff;
+    color: white;
+  }
 }
-
-/* Dashboard Header */
-.dashboard-header {
-  background: linear-gradient(90deg, #f15a24, #f9d423);
-  padding: 1.5rem;
-  border-radius: 12px;
-  position: relative;
-  margin-bottom: 2rem;
-}
-
-.dashboard-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  margin-bottom: 1rem;
-}
-
-.dashboard-cards {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.dashboard-card {
-  background: white;
-  padding: 1rem;
-  border-radius: 10px;
-  flex: 1;
-  min-width: 200px;
-}
-
-.card-title {
-  font-weight: bold;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.card-value {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.card-trend {
-  font-size: 0.8rem;
-  color: green;
-}
-
-.card-trend span {
-  color: #999;
-  margin-left: 4px;
-}
-
-.user-profile {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.search-bar {
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  border: none;
-}
-
-.user-info img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-}
-
-.user-info span {
-  color: white;
-  font-weight: bold;
-}
-
-/* Process Documents Table */
-.documents-section {
-  background: #bdb6a3;
-  border-radius: 8px;
-  padding: 1rem;
-}
-
-.documents-section h3 {
-  background: #fcb900;
-  padding: 0.75rem 1rem;
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-.documents-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #d1c8b0;
-}
-
-.documents-table thead {
-  background: #ffbc00;
-}
-
-.documents-table th,
-.documents-table td {
-  padding: 0.8rem;
-  text-align: left;
-}
-
-.documents-table td img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  vertical-align: middle;
-  margin-right: 0.5rem;
-}
-
-.status {
-  font-weight: bold;
-}
-
-.status.pending { color: orange; }
-.status.completed { color: green; }
-.status.rejected { color: red; }
-.status.schedule { color: blue; }
-
-.progress-bar {
-  height: 8px;
-  background: #e0e0e0;
-  border-radius: 4px;
-  overflow: hidden;
-  position: relative;
-}
-
-.progress-bar .bar {
-  height: 100%;
-  background: linear-gradient(to right, #f66, #999);
-  border-radius: 4px;
-}
-
-.progress-bar.full {
-  width: 100%;
-  background: green;
-}
-
-.pagination {
-  margin-top: 1rem;
-  text-align: right;
-}
-
-.pagination button {
-  background: none;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  margin-left: 5px;
-  cursor: pointer;
-}
-
-.pagination button.active {
-  background: #4a4aff;
-  color: white;
-  
-}
-    }
