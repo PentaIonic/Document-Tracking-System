@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tableBody.innerHTML = "";
     if (filteredRecords.length === 0) {
       const noDataRow = document.createElement("tr");
-      noDataRow.innerHTML = `<td colspan="3" style="text-align:center;" class="noDataRow"><span>No Data Available</span></td>`;
+      noDataRow.innerHTML = `<td colspan="5" style="text-align:center;" class="noDataRow"><span>No Data Available</span></td>`;
       tableBody.appendChild(noDataRow);
     } else {
       filteredRecords.forEach((entry, index) => {

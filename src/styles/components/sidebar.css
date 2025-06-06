@@ -61,6 +61,10 @@
 
 .account-panel {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 6rem;
   flex-direction: row;
   gap: 1rem;
 }
@@ -96,8 +100,9 @@
 .sidebar-options > button {
   display: flex;
   flex-direction: row;
+  padding: 0.5rem;
   background-color: transparent;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   border: 0;
   cursor: pointer;
 }
@@ -107,7 +112,7 @@
   flex-direction: row;
   justify-content: start;
   align-items: center;
-  padding: 0.25rem;
+  padding: 0.5rem;
   width: 100%;
   gap: 8px;
 }

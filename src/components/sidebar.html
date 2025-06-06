@@ -1,45 +1,64 @@
 <div class="left-container">
   <div class="top-sidebar">
     <div class="logo-sidebar">
-      <img src="../../assets/icons/logoipsum-300.svg" alt="Logo" />
-      <a href="../../index.html">Document Tracking System</a>
+      <img
+        src="../../assets/images/Santa_Elena_Camarines_Norte.png"
+        alt="Logo"
+      />
+      <a href="../../index.html">Santa Elena Doctrax</a>
     </div>
     <div class="account-panel">
       <div class="account-hero">
-        <img src="../../assets/icons/logoipsum-300.svg" alt="" />
+        <img
+          src="../../assets/icons/material-design-icons/account_circle_36dp_000000.svg"
+          alt=""
+        />
       </div>
       <div class="account-info">
         <span>Account Name</span>
-        <span>Role</span>
+        <span id="accountNameMenu">Role</span>
       </div>
     </div>
   </div>
   <hr style="width: 95%" />
   <div class="middle-sidebar">
     <div class="sidebar-options">
+      <h3>Features</h3>
+      <button onclick="location.href='../../home.html'">
+        <div class="option-button">
+          <span class="material-icons-round"> home </span>
+          <label for="documents">Home</label>
+        </div>
+      </button>
+      <button onclick="location.href='../../document/repository.html'">
+        <div class="option-button">
+          <span class="material-icons-round"> folder </span>
+          <label for="documents">Repository</label>
+        </div>
+      </button>
       <h3>Modules</h3>
       <button>
         <div class="option-button">
           <span class="material-icons-round"> description </span>
           <label for="documents">Manage Documents</label>
-          <span class="itemCount">#</span>
         </div>
       </button>
       <button>
         <div class="option-button">
           <span class="material-icons-round"> add </span>
           <label for="documents">Add Document</label>
-          <span class="itemCount">#</span>
         </div>
       </button>
       <h3>Settings</h3>
       <button>
         <div class="option-button">
           <span class="material-icons-round"> manage_accounts </span>
-          <label for="documents">Change Password</label>
+          <label for="documents"
+            >Change Password <strong>(Coming Soon)</strong></label
+          >
         </div>
       </button>
-      <button>
+      <button onclick="logout()">
         <div class="option-button">
           <span class="material-icons-round"> logout </span>
           <label for="documents">Logout</label>

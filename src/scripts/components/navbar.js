@@ -70,6 +70,25 @@ function loadNavSector() {
   xhr.send();
 }
 
+// Load Admin' Navigation Bar
+function loadNavAdmin() {
+  const xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      document.getElementById("navbar").innerHTML = xhr.responseText;
+      setupMenuToggle();
+      setupNotificationWindow();
+      insertDisplayNameAdminPanel();
+      loadNotifications();
+      insertRole();
+    } else {
+      console.error("Failed to load navigation bar:", xhr.status);
+    }
+  };
+  xhr.open("GET", "../src/components/nav/navAdmin.html", true);
+  xhr.send();
+}
+
 // Load Sector Navigation Bar
 function loadNavSearch() {
   const xhr = new XMLHttpRequest();
@@ -94,6 +113,16 @@ function insertDisplayName() {
     if (nameSpan) {
       nameSpan.innerText = name;
       nameSpanMenu.innerText = name;
+    }
+  }
+}
+
+function insertDisplayNameAdminPanel() {
+    const name = localStorage.getItem("displayName");
+  if (name) {
+    const nameSpan = document.getElementById("accountName");
+    if (nameSpan) {
+      nameSpan.innerText = name;
     }
   }
 }

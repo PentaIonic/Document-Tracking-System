@@ -8,7 +8,7 @@ function moveSidebar() {
   container.style.transition = "grid-template-columns 0.3s linear";
 
   if (!sidebarMoved) {
-    setSidebarWidth("16em");
+    setSidebarWidth("24em");
   } else {
     setSidebarWidth("0");
   }
@@ -18,33 +18,46 @@ function moveSidebar() {
 
 // Set CSS variable --sidebar-width
 function setSidebarWidth(width) {
-  document.documentElement.style.setProperty('--sidebar-width', width);
-}
-
-// Load sidebar content for portal page
-function loadSidebarIndex() {
-  const xhr = new XMLHttpRequest();
-  xhr.onload = function () {
-    if (xhr.status === 200) {
-      document.getElementById("sidebarPanel").innerHTML = xhr.responseText;
-    } else {
-      console.error("Failed to load sidebar:", xhr.status);
-    }
-  };
-  xhr.open("GET", "./components/sidebar.html", true);
-  xhr.send();
+  document.documentElement.style.setProperty("--sidebar-width", width);
 }
 
 // Load sidebar content for content pages
-function loadSidebarPageContent() {
+function loadSidebarAdmin() {
   const xhr = new XMLHttpRequest();
   xhr.onload = function () {
     if (xhr.status === 200) {
       document.getElementById("sidebarPanel").innerHTML = xhr.responseText;
+      insertDisplayName();
+      insertRole();
     } else {
       console.error("Failed to load sidebar:", xhr.status);
     }
   };
   xhr.open("GET", "../src/components/sidebar.html", true);
   xhr.send();
+}
+
+// Toggle menu & notification visibility
+function setupMenuToggle() {
+  const toggleMenu = document.getElementById("toggleMenu");
+  const menu = document.getElementById("menu");
+  const notificationWindow = document.getElementById("notificationWindow");
+
+  if (!toggleMenu || !menu) return;
+
+  toggleMenu.addEventListener("click", function (e) {
+    e.stopPropagation();
+    menu.classList.toggle("open");
+    notificationWindow.classList.remove("open");
+  });
+
+  document.addEventListener("click", function (e) {
+    if (
+      menu.classList.contains("open") &&
+      !menu.contains(e.target) &&
+      !toggleMenu.contains(e.target)
+    ) {
+      menu.classList.remove("open");
+    }
+  });
 }
