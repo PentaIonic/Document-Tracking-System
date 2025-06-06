@@ -7,6 +7,7 @@ function loadNavDocument() {
       setupMenuToggle();
       setupNotificationWindow();
       insertDisplayName();
+      loadNotifications();
       insertRole();
     } else {
       console.error("Failed to load navigation bar:", xhr.status);
@@ -15,7 +16,6 @@ function loadNavDocument() {
   xhr.open("GET", "../src/components/nav/navDocument.html", true);
   xhr.send();
 }
-
 
 // Function for loading page's Navigation Bar
 function loadNavIndex() {
@@ -41,6 +41,7 @@ function loadNavHome() {
       setupMenuToggle();
       setupNotificationWindow();
       insertDisplayName();
+      loadNotifications();
       insertRole();
     } else {
       console.error("Failed to load navigation bar:", xhr.status);
@@ -59,6 +60,7 @@ function loadNavSector() {
       setupMenuToggle();
       setupNotificationWindow();
       insertDisplayName();
+      loadNotifications();
       insertRole();
     } else {
       console.error("Failed to load navigation bar:", xhr.status);
@@ -137,7 +139,7 @@ function setupNotificationWindow() {
 
   toggleNotification.addEventListener("click", function (e) {
     e.stopPropagation();
-    notificationWindow.classList.toggle("open")
+    notificationWindow.classList.toggle("open");
   });
 
   document.addEventListener("click", function (e) {
