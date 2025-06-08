@@ -20,27 +20,24 @@ document.addEventListener("DOMContentLoaded", () => {
   let acoCount = 0;
 
   documentRecords.forEach((record) => {
-    const log = processLogs.find((l) => l.documentId === record.id);
-    const handled =
-      log && log.officerName ? log.officerName : "Not yet processed";
-    const dateProcessed =
-      log && log.documentDateValidation
-        ? log.documentDateValidation
-        : "Not yet processed";
+    const log = processLogs.find((l) => l.documentCode === record.documentCode);
+
+    const handled = log?.officerName || "Not yet processed";
+    const dateProcessed = log?.documentDateValidation || "Not yet processed";
 
     const row = document.createElement("tr");
     row.innerHTML = `
-            <td>${
-              record.lastName +
-                ", ".concat(record.firstName) +
-                " ".concat(record.middleName) +
-                " ".concat(record.suffixName) || ""
-            }</td>
-            <td>${record.documentType || ""}</td>
-            <td>${record.documentStatus || ""}</td>
-            <td>${handled}</td>
-            <td>${dateProcessed}</td>
-        `;
+    <td>${
+      record.lastName +
+        ", ".concat(record.firstName) +
+        " ".concat(record.middleName) +
+        " ".concat(record.suffixName) || ""
+    }</td>
+    <td>${record.documentType || ""}</td>
+    <td>${record.documentStatus || ""}</td>
+    <td>${handled}</td>
+    <td>${dateProcessed}</td>
+  `;
     tableLog.appendChild(row);
 
     switch (record.sector) {
