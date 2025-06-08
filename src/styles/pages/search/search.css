@@ -1,5 +1,6 @@
 /* ===== Responsive Styles ===== */
 @media screen and (min-width: 320px) {
+  /* Page Frame */
   main {
     display: flex;
     justify-content: center;
@@ -35,12 +36,49 @@
     box-sizing: border-box;
   }
 
+  /* Header Name */
   .search-header {
     width: 100%;
     text-align: center;
     font-family: "Rambla";
   }
 
+  .panel-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 0;
+    box-sizing: border-box;
+  }
+
+  .panel-header h1 {
+    font-family: "Rambla", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 0rem;
+  }
+
+  .panel-header .doctrax {
+    font-weight: 800;
+  }
+
+  .panel-header p {
+    display: flex;
+    width: 15rem;
+    font-family: "Source Serif 4", serif;
+    font-size: 1rem;
+    margin-bottom: 4.5rem;
+    box-sizing: border-box;
+  }
+
+  .panel-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Orange Search Bar */
   .search-bar {
     display: flex;
     flex-direction: row;
@@ -86,17 +124,6 @@
     border: 0;
   }
 
-  .search-button {
-    display: flex;
-    background-color: white;
-    justify-content: start;
-    align-items: center;
-    width: 3rem;
-    height: 3rem;
-    margin-left: auto;
-    border-radius: 0rem 1rem 1rem 0rem;
-  }
-
   #searchDocument:focus + label {
     font-size: 0.75rem;
     bottom: 2.9rem;
@@ -106,41 +133,6 @@
 
   #searchDocument + label {
     transition: font-size 0.3s ease, bottom 0.3s ease;
-  }
-
-  .panel-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding-top: 0;
-    box-sizing: border-box;
-  }
-
-  .panel-header h1 {
-    font-family: "Rambla", sans-serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-top: 0rem;
-  }
-
-  .panel-header .doctrax {
-    font-weight: 800;
-  }
-
-  .panel-header p {
-    display: flex;
-    width: 15rem;
-    font-family: "Source Serif 4", serif;
-    font-size: 1rem;
-    margin-bottom: 4.5rem;
-    box-sizing: border-box;
-  }
-
-  .panel-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   .search-input-wrapper {
@@ -197,6 +189,19 @@
     border-color: #333;
   }
 
+  /* Search Button Icon */
+  .search-button {
+    display: flex;
+    background-color: white;
+    justify-content: start;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    margin-left: auto;
+    border-radius: 0rem 1rem 1rem 0rem;
+  }
+
+  /* Unused CSS */
   .or-separator {
     margin: 1rem 0;
     font-family: "Mate", serif;

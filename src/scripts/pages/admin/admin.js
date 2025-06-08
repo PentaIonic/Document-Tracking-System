@@ -1,3 +1,4 @@
+/* Since displaying logs and it is not much needed in other pages. In this implementation, it is clustered into a single file if the page is being loaded will be executed along. */
 document.addEventListener("DOMContentLoaded", () => {
   const documentRecords =
     JSON.parse(localStorage.getItem("documentRecords")) || [];
@@ -73,5 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
   } catch (e) {
     console.log(e);
   }
-  document.getElementById("dashboardLoggedName").textContent = displayName || "Placeholder";
+  document.getElementById("dashboardLoggedName").textContent =
+    displayName || "Placeholder";
 });

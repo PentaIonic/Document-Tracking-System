@@ -1,12 +1,15 @@
+// This function checks the document's date from appointed date to today.
 function daysBetween(documentDate, today) {
   const timeDifference = Math.abs(documentDate - today);
   return Math.ceil(timeDifference / (1000 * 3600 * 24));
 }
 
+// Returns true if the document is past due date, false otherwise. The metric is set to 2 days.
 function isNotificationDue(documentDate, today) {
   return daysBetween(documentDate, today) >= 2;
 }
 
+// This function loads the notifications to the navigation bar.
 function loadNotifications() {
   const documentRecords =
     JSON.parse(localStorage.getItem("documentRecords")) || [];

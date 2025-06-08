@@ -125,6 +125,7 @@ function insertDisplayName() {
   }
 }
 
+// Get account's display name displayed in the admin panel only
 function insertDisplayNameAdminPanel() {
   const name = localStorage.getItem("displayName");
   if (name) {
@@ -135,6 +136,7 @@ function insertDisplayNameAdminPanel() {
   }
 }
 
+// Get account's role description displayed
 function insertRole() {
   const role = localStorage.getItem("role");
   if (role) {
@@ -170,6 +172,7 @@ function setupMenuToggle() {
   });
 }
 
+// Toggle menu visibility for index navigation bar
 function setupMenuToggleIndex() {
   const toggleMenu = document.getElementById("toggleMenu");
   const menu = document.getElementById("menu");
@@ -192,6 +195,7 @@ function setupMenuToggleIndex() {
   });
 }
 
+// Toggle notification window visibility
 function setupNotificationWindow() {
   const toggleNotification = document.getElementById("toggleNotification");
   const notificationWindow = document.getElementById("notificationWindow");
@@ -216,6 +220,7 @@ function setupNotificationWindow() {
   });
 }
 
+// Toggle notification visibility for admin panel only
 function setupNotificationWindowAdminOnly() {
   const toggleNotification = document.getElementById("toggleNotification");
   const notificationWindow = document.getElementById("notificationWindow");
@@ -238,6 +243,7 @@ function setupNotificationWindowAdminOnly() {
   });
 }
 
+// Alternative to direct location.href from HTML. Redirects to home page.
 function gotoHome() {
   window.location.href = "../home.html";
 }

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const recordForm = document.getElementById("recordForm");
-  const uploadBox = document.getElementById("uploadBox");
+  const recordForm = document.getElementById("recordForm"); //id of Registration From
+  const uploadBox = document.getElementById("uploadBox"); //id of Upload field
   const documentFile = document.getElementById("documentFile");
   const uploadedFilesList = document.getElementById("uploadList");
 
@@ -160,9 +160,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderUploadedFile(name, url) {
-    const li = document.createElement("li");
-    li.innerHTML = `<a href="${url}" target="_blank">${name}</a>`;
-    uploadedFilesList.appendChild(li);
+    const filePreview = document.createElement("div");
+    filePreview.innerHTML = `                <img src="../assets/icons/document-minus.svg" alt="">
+    <a href="${url}" target="_blank">${name}</a>`;
+    uploadedFilesList.appendChild(filePreview);
   }
 
   function generateDocumentCode(department) {
