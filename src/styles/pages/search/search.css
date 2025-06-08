@@ -10,12 +10,16 @@
 
   .container {
     display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--primary-color);
     width: 90%;
     min-height: 40vh;
+    height: 70vh;
     max-width: 550px;
     padding: 2rem;
     box-sizing: border-box;
+    transition: all 0.3s ease;
   }
 
   .search-container {
@@ -23,6 +27,7 @@
     flex-direction: column;
     background-color: var(--primary-color);
     min-width: 300px;
+    border-radius: 4px;
     width: 80%;
     padding: 1rem;
     max-width: 800px;

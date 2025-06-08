@@ -23,7 +23,7 @@ function loadNavIndex() {
   xhr.onload = function () {
     if (xhr.status === 200) {
       document.getElementById("navbar").innerHTML = xhr.responseText;
-      setupMenuToggle();
+      setupMenuToggleIndex();
     } else {
       console.error("Failed to load navigation bar:", xhr.status);
     }
@@ -157,6 +157,28 @@ function setupMenuToggle() {
     e.stopPropagation();
     menu.classList.toggle("open");
     notificationWindow.classList.remove("open");
+  });
+
+  document.addEventListener("click", function (e) {
+    if (
+      menu.classList.contains("open") &&
+      !menu.contains(e.target) &&
+      !toggleMenu.contains(e.target)
+    ) {
+      menu.classList.remove("open");
+    }
+  });
+}
+
+function setupMenuToggleIndex() {
+  const toggleMenu = document.getElementById("toggleMenu");
+  const menu = document.getElementById("menu");
+
+  if (!toggleMenu || !menu) return;
+
+  toggleMenu.addEventListener("click", function (e) {
+    e.stopPropagation();
+    menu.classList.toggle("open");
   });
 
   document.addEventListener("click", function (e) {
