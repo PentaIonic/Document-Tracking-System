@@ -82,6 +82,15 @@
     resize: none;
     width: 100%;
     box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 8px rgba(245, 166, 35, 0.4);
+    outline: none;
   }
 
   .radio-group {
@@ -101,6 +110,12 @@
     background-color: #fff;
     height: 250px;
     box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .upload-box:hover{
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   .upload-box .material-icons-round {
@@ -136,6 +151,7 @@
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
 
   .submit-btn {
@@ -152,6 +168,7 @@
 
   .submit-btn:hover {
     background-color: #9d9d9d;
+    transform: scale(1.03);
   }
 
   .cancel-btn {
@@ -163,12 +180,13 @@
     border-radius: 0.5rem;
     cursor: pointer;
     font-weight: 550;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, transform 0.2s ease;
     height: 50px;
   }
 
   .cancel-btn:hover {
     background-color: #dd9a00;
+    transform: scale(1.03);
   }
 
   .container {
