@@ -86,7 +86,7 @@ function loadNavAdmin() {
 
       setupMenuToggle();
       setupNotificationWindowAdminOnly();
-      insertDisplayName();
+      insertDisplayNameAdminPanel();
       loadNotifications();
       insertRole();
     } else {
@@ -121,6 +121,17 @@ function insertDisplayName() {
     if (nameSpan) {
       nameSpan.innerText = name;
       nameSpanMenu.innerText = name;
+    }
+  }
+}
+
+// Get account's display name displayed in the admin panel only
+function insertDisplayNameAdminPanel() {
+  const name = localStorage.getItem("displayName");
+  if (name) {
+    const nameSpan = document.getElementById("accountName");
+    if (nameSpan) {
+      nameSpan.innerText = name;
     }
   }
 }
