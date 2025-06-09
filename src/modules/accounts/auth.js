@@ -18,9 +18,9 @@ document.getElementById("loginForm")?.addEventListener("submit", function (e) {
     localStorage.setItem("username", username);
     localStorage.setItem("displayName", user.displayName);
     localStorage.setItem("role", user.role);
-    window.location.href = "../../../home.html";
+    window.location.href = "./home.html";
     console.log("Login button clicked");
-  } 
+  }
   // Else, it prompts the user with an error message
   else {
     document.getElementById("errorLogin").innerText =
@@ -33,14 +33,14 @@ document.getElementById("loginForm")?.addEventListener("submit", function (e) {
 // For every page that a guest attempts visit beyond its access, this function checks if the user is logged in.
 function checkLogin() {
   if (localStorage.getItem("loggedIn") !== "true") {
-    window.location.href = "../../../index.html";
+    window.location.href = "../index.html";
   }
 }
 
 // If the user is logged in, it redirects the user to the home page.
 function redirectHome() {
   if (localStorage.getItem("loggedIn") === "true") {
-    window.location.href = "../../../home.html";
+    window.location.href = "./home.html";
   }
 }
 
@@ -49,5 +49,12 @@ function logout() {
   localStorage.removeItem("loggedIn");
   localStorage.removeItem("username");
   localStorage.removeItem("displayName");
-  window.location.href = "../../../index.html";
+  window.location.href = "../index.html";
+}
+
+function logoutHome() {
+  localStorage.removeItem("loggedIn");
+  localStorage.removeItem("username");
+  localStorage.removeItem("displayName");
+  window.location.href = "./index.html";
 }
