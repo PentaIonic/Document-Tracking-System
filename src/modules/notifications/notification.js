@@ -26,8 +26,9 @@ function loadNotifications() {
       notification.className = "notification";
       notification.setAttribute("data-index", index); // Needed for dismiss
 
+      const basePath = window.location.origin + "/Document-Tracking-System";
       notification.innerHTML = `
-        <div class="notification-info" onclick="window.location.href='../../../document/tracking.html?codeDocument=${entry.documentCode}'">
+        <div class="notification-info" onclick="window.location.href='${basePath}/document/tracking.html?codeDocument=${entry.documentCode}'">
           <span class="notification-title">Document is past due date!</span>
           <span class="notification-description">${entry.documentCode}</span>
         </div>
