@@ -118,10 +118,8 @@ function insertDisplayName() {
   if (name) {
     const nameSpan = document.getElementById("accountName");
     const nameSpanMenu = document.getElementById("accountNameMenu");
-    if (nameSpan) {
-      nameSpan.innerText = name;
-      nameSpanMenu.innerText = name;
-    }
+    if (nameSpan) nameSpan.innerText = name;
+    if (nameSpanMenu) nameSpanMenu.innerText = name;
   }
 }
 
