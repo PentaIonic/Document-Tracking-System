@@ -132,7 +132,7 @@
   }
 
   /* Input Field */
-  .panel-body input[type="text"] {
+  .panel-body input[type="text"], .panel-body input[type="password"] {
     max-width: 18.5625rem;
     border-radius: 0.625rem;
     border: 2px solid #000;

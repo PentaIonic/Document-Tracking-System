@@ -251,9 +251,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .navbar-container {
-    padding: 0px 2em;
-  }
   .logo-area a {
     display: flex;
   }
@@ -272,7 +269,4 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .navbar-container {
-    padding: 0px 4em;
-  }
 }

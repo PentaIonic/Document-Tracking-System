@@ -193,6 +193,7 @@
 
   .action-button {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 4.5rem;
@@ -242,6 +243,7 @@
 
   .sub-container {
     border-radius: 14px;
+    padding: 1.5rem;
   }
 
   .sector-plate {
@@ -263,6 +265,14 @@
     min-width: 720px;
     width: 80%;
     min-height: 40vh;
+  }
+
+  .sub-container {
+    padding: 3.5rem;
+  }
+
+  .action-button {
+    align-items: end;
   }
 }
 
