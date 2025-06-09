@@ -235,5 +235,5 @@ function deleteDocument() {
   documentRecords.splice(itemIndex, 1);
   localStorage.setItem("documentRecords", JSON.stringify(documentRecords));
 
-  window.location.href = "../../../../../document/repository.html";
+  window.location.href = "./repository.html";
 }
