@@ -28,7 +28,7 @@ function loadNavIndex() {
       console.error("Failed to load navigation bar:", xhr.status);
     }
   };
-  xhr.open("GET", "../src/components/nav/navIndex.html", true);
+  xhr.open("GET", "./src/components/nav/navIndex.html", true);
   xhr.send();
 }
 
@@ -47,7 +47,7 @@ function loadNavHome() {
       console.error("Failed to load navigation bar:", xhr.status);
     }
   };
-  xhr.open("GET", "../src/components/nav/navHome.html", true);
+  xhr.open("GET", "./src/components/nav/navHome.html", true);
   xhr.send();
 }
 
