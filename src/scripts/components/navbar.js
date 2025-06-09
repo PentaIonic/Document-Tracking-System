@@ -125,17 +125,6 @@ function insertDisplayName() {
   }
 }
 
-// Get account's display name displayed in the admin panel only
-function insertDisplayNameAdminPanel() {
-  const name = localStorage.getItem("displayName");
-  if (name) {
-    const nameSpan = document.getElementById("accountName");
-    if (nameSpan) {
-      nameSpan.innerText = name;
-    }
-  }
-}
-
 // Get account's role description displayed
 function insertRole() {
   const role = localStorage.getItem("role");
