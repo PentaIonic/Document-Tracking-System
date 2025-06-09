@@ -37,6 +37,12 @@ function checkLogin() {
   }
 }
 
+function checkLoginHome() {
+  if (localStorage.getItem("loggedIn") !== "true") {
+    window.location.href = "./index.html";
+  }
+}
+
 // If the user is logged in, it redirects the user to the home page.
 function redirectHome() {
   if (localStorage.getItem("loggedIn") === "true") {
