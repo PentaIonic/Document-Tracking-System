@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Reset and redirect
     processLogForm.reset();
     closePrompt();
-    window.location.href = `../../../../../document/tracking.html?codeDocument=${documentCode}`;
+    window.location.href = `./tracking.html?codeDocument=${documentCode}`;
   }
 });
 
