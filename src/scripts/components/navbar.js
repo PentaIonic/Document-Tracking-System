@@ -86,7 +86,7 @@ function loadNavAdmin() {
 
       setupMenuToggle();
       setupNotificationWindowAdminOnly();
-      insertDisplayNameAdminPanel();
+      insertDisplayName();
       loadNotifications();
       insertRole();
     } else {
