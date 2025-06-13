@@ -1,0 +1,161 @@
+@media screen and (min-width: 320px) {
+  /* Navigation Bar Body */
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--background-color);
+    height: 6em;
+    width: 100vw;
+    position: sticky;
+    top: 0;
+    align-items: start;
+    padding: 0px 1em;
+    margin: auto;
+    box-sizing: border-box;
+  }
+
+  /* Logo with Web Name */
+  .logo-area {
+    display: flex;
+    align-items: center;
+    margin: auto auto auto 0.5rem;
+    height: 100%;
+    gap: 16px;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+  }
+
+  .logo-area img {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+
+  .logo-area a {
+    display: none;
+    color: var(--text-color);
+    text-decoration: none;
+    text-align: center;
+    font-family: Rambla;
+    font-size: 1.8125rem;
+    font-weight: 700;
+    line-height: normal;
+    box-sizing: border-box;
+  }
+
+  /* For tab navigation */
+  .nav-tabs {
+    display: none;
+  }
+
+  /* For sidebar button */
+  .nav-action-buttons {
+    display: flex;
+    margin: auto 0.5rem auto auto;
+    padding: 0;
+    height: auto;
+    width: fit-content;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .menu-window {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    gap: 1rem;
+    top: 6em;
+    right: 0rem;
+    width: 200px;
+    height: 200px;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background-color: var(--background-color);
+  }
+
+  .menu-window > a {
+    text-decoration: none;
+  }
+
+  .menu-window > a > span {
+    color: var(--text-color);
+    text-decoration: none;
+    text-align: center;
+    font-family: "Source Serif 4";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+
+  #menu {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  #menu.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* For tab navigation */
+  .nav-tabs {
+    display: flex;
+    margin: auto 0.5rem auto auto;
+    height: auto;
+    width: fit-content;
+    gap: 1rem;
+  }
+
+  .nav-tabs > a {
+    text-decoration: none;
+    color: var(--text-color);
+  }
+
+  .action-buttons:hover {
+    border-radius: 0.5rem;
+    background: #000;
+    color: var(--text-color-Hover);
+    padding: 1em;
+  }
+
+  .action-buttons {
+    background-color: none;
+    padding: 1em;
+    color: var(--text-color);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .action-buttons > span:hover {
+    color: var(--text-color-Hover);
+  }
+
+  .action-buttons > span {
+    text-decoration: none;
+    text-align: center;
+    font-family: "Source Serif 4";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+
+  .nav-action-buttons {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .logo-area > a {
+    display: flex;
+  }
+}

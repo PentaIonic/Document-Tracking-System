@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchTerm = searchInput.value.trim();
     const filtered = documentRecords.filter(
       (entry) =>
-      entry.documentCode &&
-      entry.documentCode.toLowerCase().includes(searchTerm.toLowerCase())
+        entry.documentCode &&
+        entry.documentCode.toLowerCase().includes(searchTerm.toLowerCase())
     );
     renderTable(filtered);
   });
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function trackDocumentInfo(codeDocument) {
   const params = new URLSearchParams({ codeDocument });
-  window.location.href = `./results.html?${params.toString()}`;
+  window.location.href = "../search/results.html?" + params.toString();
 }
 
 function clickDocumentView() {
