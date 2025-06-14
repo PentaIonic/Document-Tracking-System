@@ -51,7 +51,7 @@ function showSuccess($prompt)
     <link rel="stylesheet" href="../src/styles/components/footer/footer.css">
 
     <!-- Web Page Information -->
-    <title>Sign Up | Doctrax</title>
+    <title>Log In | Doctrax</title>
     <link rel="icon" href="../assets/images/Santa_Elena_Camarines_Norte.png" type="image/x-icon" />
 </head>
 
