@@ -23,7 +23,8 @@ function showError($prompt)
     return !empty($prompt) ? "<p class='error-message'>$prompt</p>" : '';
 }
 
-function showSuccess($prompt) {
+function showSuccess($prompt)
+{
     return !empty($prompt) ? "<p class='prompt-message'>$prompt</p>" : '';
 }
 
@@ -56,7 +57,8 @@ function showSuccess($prompt) {
 
 <body>
     <div class="container">
-        <nav class="navbar-container"><?php include '../src/components/nav/navPortal.php' ?></nav>
+        <nav class="navbar-container"><?php include '../src/components/nav/navPortal.php' ?>
+        </nav>
         <main>
             <div class="page-container">
                 <div class="panel-header">
@@ -87,6 +89,7 @@ function showSuccess($prompt) {
         </main>
         <footer class="footer-container"><?php include '../src/components/footer/footerNoLogo.html' ?></footer>
     </div>
+    <script src="../src/scripts/components/nav.js"></script>
 </body>
 
 </html>

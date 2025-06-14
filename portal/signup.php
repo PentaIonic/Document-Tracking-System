@@ -47,7 +47,9 @@ function showError($error)
 
 <body>
     <div class="container">
-        <nav class="navbar-container"><?php include '../src/components/nav/navPortal.php' ?></nav>
+        <nav class="navbar-container"><?php include '../src/components/nav/navPortal.php' ?>
+            <script src="../src/scripts/components/nav.js"></script>
+        </nav>
         <main>
             <div class="page-container">
                 <div class="panel-header">
