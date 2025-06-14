@@ -109,6 +109,19 @@
     padding: 2rem;
   }
 
+  .forgot-pass {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .forgot-pass:hover {
+    text-decoration: underline;
+  }
+
   form > span {
     font-family: "Rambla";
     font-size: 1.75rem;

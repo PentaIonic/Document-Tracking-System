@@ -76,6 +76,9 @@ function showSuccess($prompt)
                             <label for="password">Password</label>
                             <input type="password" name="password" id="signupPassword" placeholder="Password" required>
                         </div>
+                        <div class="input-group">
+                            <a class="forgot-pass" href="#">Forgot Password?</a>
+                        </div>
                     </div>
                     <?= showError($errors['login']); ?>
                     <?= showError($errors['password']); ?>
