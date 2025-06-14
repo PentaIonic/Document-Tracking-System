@@ -13,12 +13,12 @@
       <span>Sign Up</span>
     </div>
   </a>
-  <a href="../index.html">
+  <a href="../index.php">
     <div class="action-buttons">
       <span>Search</span>
     </div>
   </a>
-  <a href="../about.html">
+  <a href="../about.php">
     <div class="action-buttons"><span>About</span></div>
   </a>
 </div>
@@ -31,7 +31,7 @@
   <div class="menu-window" id="menu">
     <a href="./login.php"><span>Log In</span></a>
     <a href="./signup.php"><span>Sign Up</span></a>
-    <a href="../index.html"><span>Search</span></a>
-    <a href="../about.html"><span>About</span></a>
+    <a href="../index.php"><span>Search</span></a>
+    <a href="../about.php"><span>About</span></a>
   </div>
 </div>
