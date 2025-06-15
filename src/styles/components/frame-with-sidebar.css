@@ -1,0 +1,66 @@
+:root {
+  --primary-color: #eae4d5;
+  --secondary-color: #bdb39c;
+  --accent-color: #85795c;
+  --background-color: #b6b09f;
+  --text-color: #000000;
+  --text-color-Hover: #ffffff;
+  --text-color-Dark: #ffffff;
+  --text-color-Dark-Hover: #000000;
+  --sidebar-width: 24em;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Page Structure */
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Grid Structure */
+.container {
+  display: grid;
+  grid-template-columns: var(--sidebar-width, 24em) 1fr;
+  grid-template-rows: 6em 1fr auto;
+  grid-template-areas:
+    "sidebar navbar"
+    "sidebar main"
+    "sidebar footer";
+  min-height: 100vh;
+}
+
+/* Navigation Bar */
+nav {
+  display: block;
+  position: sticky;
+  top: 0;
+  height: 6em;
+  width: 100%;
+  grid-area: navbar;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+/* Page Grid */
+main {
+  grid-area: main;
+  background-color: white;
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+}
+
+aside {
+  grid-area: sidebar;
+}
+
+/* Footer Grid */
+footer {
+  grid-area: footer;
+  width: 100%;
+  background-color: var(--background-color);
+}

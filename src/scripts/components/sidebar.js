@@ -8,6 +8,8 @@ window.addEventListener("DOMContentLoaded", () => {
     setSidebarWidth("24em");
     sidebarMoved = false;
   }
+
+  document.getElementById("toggleSidebar").addEventListener("click", moveSidebar);
 });
 
 // Don't attach toggleSidebar event here! It's injected later.
