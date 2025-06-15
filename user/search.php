@@ -1,6 +1,12 @@
 <?php
 
 session_start();
+
+if (!isset($_SESSION['user_id'])) {
+  header("Location: ../index.php");
+  exit();
+}
+
 $userName = (!isset($_SESSION['user_id']) || $_SESSION['user_id'] == null) ? "No Account" : $_SESSION['user_name'];
 $role = (!isset($_SESSION['user_role']) || $_SESSION['user_role'] == null) ? "No Role" : $_SESSION['user_role'];
 
@@ -49,12 +55,13 @@ $role = (!isset($_SESSION['user_role']) || $_SESSION['user_role'] == null) ? "No
 
                     <!-- Search Section -->
                     <div class="panel-body">
-                        <div class="search-input-wrapper">
-                            <input type="text" name="document-ID" id="documentID" placeholder="Search..." required
-                                onkeypress="if(event.key === 'Enter'){ clickSearchUser(); }" />
-                            <a onclick="clickSearchUser()"><span class="material-icons-round"
-                                    style="cursor: pointer">search</span></a>
-                        </div>
+                        <form class="search-input-wrapper" action="./results.php" method="get">
+                            <div class="input-group">
+                                <input type="text" name="search" id="search" placeholder="Search..." required>
+                                <button type="submit" style="cursor: pointer"><span
+                                        class="material-icons-round">search</span></button>
+                            </div>
+                        </form>
 
                         <div class="or-separator" style="display: none">or</div>
 
@@ -77,7 +84,6 @@ $role = (!isset($_SESSION['user_role']) || $_SESSION['user_role'] == null) ? "No
         <footer class="footer-container"><?php include '../src/components/footer/footerNoLogo.html' ?></footer>
     </div>
     <script src="../src/scripts/components/nav.js"></script>
-    <script src="../src/scripts/pages/search/searchDocument.js"></script>
 </body>
 
 </html>

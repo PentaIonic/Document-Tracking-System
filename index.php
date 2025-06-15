@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="./src/styles/components/footer/footer.css">
 
     <!-- Web Page Information -->
-    <title>Search | Doctrax</title>
+    <title>Doctrax</title>
     <link rel="icon" href="./assets/images/Santa_Elena_Camarines_Norte.png" type="image/x-icon" />
 </head>
 
@@ -32,43 +32,8 @@
     <div class="container">
         <nav class="navbar-container"><?php include './src/components/nav/navIndex.php' ?></nav>
         <main>
-            <!-- Main Search Panel -->
-            <div class="page-container">
-                <div class="portal-panel">
-                    <!-- Header Section -->
-                    <div class="panel-header">
-                        <h1>Santa Elena<br /><span class="doctrax">DOCTRAX</span></h1>
-                        <p>
-                            Know the status of your document by providing a valid Document ID
-                        </p>
-                    </div>
-
-                    <!-- Search Section -->
-                    <div class="panel-body">
-                        <div class="search-input-wrapper">
-                            <input type="text" name="document-ID" id="documentID" placeholder="Document ID" required
-                                onkeypress="if(event.key === 'Enter'){ clickSearch(); }" />
-                            <a onclick="clickSearch()"><span class="material-icons-round"
-                                    style="cursor: pointer">search</span></a>
-                        </div>
-
-                        <div class="or-separator" style="display: none">or</div>
-
-                        <button class="upload-btn" style="display: none">
-                            <span class="upload-text">Upload File</span>
-                            <span class="icon-svg">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M20 15V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18L4 15M8 11L12 15M12 15L16 11M12 15V3"
-                                        stroke="black" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <div class="section 1"></div>
+            <div class="section 2"></div>
         </main>
         <footer class="footer-container"><?php include './src/components/footer/footerNoLogo.html' ?></footer>
     </div>

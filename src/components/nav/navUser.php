@@ -1,6 +1,6 @@
 <div class="logo-area">
     <img src="../assets/images/Santa_Elena_Camarines_Norte.png" alt="Logo" />
-    <a href="../index.html">Santa Elena Doctrax</a>
+    <a href="../index.php">Santa Elena Doctrax</a>
 </div>
 <div class="nav-action-buttons">
     <div style="display: flex; flex-direction: row; gap: 10px">

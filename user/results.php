@@ -2,9 +2,30 @@
 
 // For Navbar Name Displays
 session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../index.php");
+    exit();
+}
+
 include '../src/scripts/components/database/connection.php';
 $userName = (!isset($_SESSION['user_id']) || $_SESSION['user_id'] == null) ? "No Account" : $_SESSION['user_name'];
 $role = (!isset($_SESSION['user_role']) || $_SESSION['user_role'] == null) ? "No Role" : $_SESSION['user_role'];
+
+$search = $_GET['search'] ?? '';
+$userId = $_SESSION['user_id'];
+
+$sqlSearchQuery = "SELECT document_id, document_title, document_code 
+                   FROM document_records 
+                   WHERE (document_code LIKE ? OR document_title LIKE ?) 
+                   AND user_id = ?";
+
+$searchTerm = "%" . $search . "%";
+$stmt = $conn->prepare($sqlSearchQuery);
+$stmt->bind_param("sss", $searchTerm, $searchTerm, $userId);
+$stmt->execute();
+$result = $stmt->get_result();
+
 
 ?>
 <!DOCTYPE html>
@@ -41,47 +62,46 @@ $role = (!isset($_SESSION['user_role']) || $_SESSION['user_role'] == null) ? "No
             <div class="page-container">
                 <div class="results-header">
                     <span>Your Requests</span>
-                    <div class="search-bar">
-                        <input type="search" name="searchDocument" id="searchDocument" />
-                        <button onclick="clickDocumentView()">
+                    <form class="search-bar" action="./results.php" method="get">
+                        <input type="search" name="search" id="search" />
+                        <button type="submit">
                             <div class="search-icon">
                                 <span class="material-icons-round"> search </span>
                             </div>
                         </button>
-                    </div>
+                    </form>
                 </div>
                 <div class="document-results">
                     <div class="horz-scroll">
                         <table id="documentDatabase" class="document-list">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>ID</th>
                                     <th>Document Title</th>
-                                    <th>Status</th>
+                                    <th>Code</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                // Load user's requests according to the logged account
-                                $userId = $_SESSION['user_id'];
-                                $sqlQuery = "SELECT document_id, document_title, document_status FROM document_records WHERE user_id = '$userId'";
-                                $sqlResult = $conn->query($sqlQuery);
-
-                                if ($sqlResult->num_rows > 0) {
-                                    while ($row = $sqlResult->fetch_assoc()) {
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
                                         echo "<tr>
-                                        <td>$row[document_id]</td>
-                                        <td>$row[document_title]</td>
-                                        <td>$row[document_status]</td>
-                                        <td><input type='button' name='viewDocument' value='View' onclick=''/></td>
-                                        </tr>
-                                        ";
+                                            <td>{$row['document_id']}</td>
+                                            <td>{$row['document_title']}</td>
+                                            <td>{$row['document_code']}</td>
+                                            <td><input type='button' name='viewDocument' value='View' onclick='window.location.href=\"./viewDocument.php?code={$row['document_code']}\"'/></td>
+                                            </tr>
+                                            <tr>
+                                            <td></td>
+                                            </tr>
+                                            ";
                                     }
                                 } else {
-                                    echo '<td colspan="3" style="text-align:center;" class="noDataRow"><span>No Data Available</span></td>';
+                                    echo '<tr><td colspan="4" style="text-align:center;" class="noDataRow"><span>No Data Available</span></td></tr>';
                                 }
                                 ?>
+
                             </tbody>
                         </table>
                     </div>
