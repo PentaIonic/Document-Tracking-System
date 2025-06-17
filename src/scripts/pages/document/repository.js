@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function trackDocumentInfo(codeDocument) {
   const params = new URLSearchParams({ codeDocument });
-  window.location.href = `../../document/tracking.html?${params.toString()}`;
+  window.location.href = `./tracking.html?${params.toString()}`;
 }
 
 function clickViewDocument() {

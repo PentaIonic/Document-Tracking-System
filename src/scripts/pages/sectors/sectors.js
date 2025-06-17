@@ -1,4 +1,5 @@
 function redirectDepartmentCode(department) {
   const params = new URLSearchParams({ department });
-  window.location.href = `../../document/register.html?${params.toString()}`;
+  const basePath = window.location.origin + "/Document-Tracking-System";
+  window.location.href = `${basePath}/document/register.php?${params.toString()}`;
 }

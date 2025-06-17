@@ -8,6 +8,8 @@ window.addEventListener("DOMContentLoaded", () => {
     setSidebarWidth("24em");
     sidebarMoved = false;
   }
+
+  document.getElementById("toggleSidebar").addEventListener("click", moveSidebar);
 });
 
 // Don't attach toggleSidebar event here! It's injected later.
@@ -29,19 +31,4 @@ function moveSidebar() {
 
 function setSidebarWidth(width) {
   document.documentElement.style.setProperty("--sidebar-width", width);
-}
-
-function loadSidebarAdmin() {
-  const xhr = new XMLHttpRequest();
-  xhr.onload = function () {
-    if (xhr.status === 200) {
-      document.getElementById("sidebarPanel").innerHTML = xhr.responseText;
-      insertDisplayName();
-      insertRole();
-    } else {
-      console.error("Failed to load sidebar:", xhr.status);
-    }
-  };
-  xhr.open("GET", "../src/components/sidebar.html", true);
-  xhr.send();
 }

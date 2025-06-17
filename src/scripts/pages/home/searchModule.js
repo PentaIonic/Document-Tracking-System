@@ -1,6 +1,6 @@
 function searchDocument(codeDocument) {
   const params = new URLSearchParams({ codeDocument });
-  window.location.href = `../../document/repository.html?${params.toString()}`;
+  window.location.href = `./document/repository.html?${params.toString()}`;
 }
 
 function clickSearch() {
