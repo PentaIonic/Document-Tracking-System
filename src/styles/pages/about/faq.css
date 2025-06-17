@@ -1,15 +1,103 @@
 @media screen and (min-width: 320px) {
-  main {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    background-color: var(--background-color);
-    min-height: 90vh;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
+main {
+    background-color: #B6B09F;
   }
-  
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000;
+  max-width: 1900px;
+  background-color: #F9C240; 
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: inset;
+  font-family: 'Rambla', sans-serif;
+}
+
+.navbar-container {
+    background-color: #B6B09F;
+  }
+
+.faq-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  background-color: #EAE4D5;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 0 50px rgba(0,0,0,0.1);
+    }
+
+.faq-item {
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  overflow: hidden;
+    }
+
+.faq-question {
+  background-color: #EAE4D5;
+  color: #000;
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1.5px solid #000;
+  font-family: 'Source Serif 4', sans-serif;
+    }
+
+.faq-question .icon {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.faq-question:hover {
+  background-color: #ece9e0;
+  cursor: pointer;
+    }
+
+.faq-answer {
+  display: none;
+  padding: 1rem;
+  background-color: #FFD600;
+  border-top: 1px solid #ccc;
+  font-family: "Source Serif 4", serif;
+  font-size: 1rem;
+  font-weight: 10rem;
+    }
+
+.faq-yellow-box {
+  background-color: #FFD600;
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: "Source Serif 4", serif;
+  font-size: 1rem;
+  font-weight: 10rem;
+  color: #333;
+    }
+
+.faq-yellow-box ol, 
+.faq-yellow-box ul {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+    }
+
+.faq-yellow-box li {
+  margin: 0.3rem 0;
+    }
+
+.faq-answer.show {
+  display: block;
+    }
 }
 
 /* Tablet & Up Overrides */
