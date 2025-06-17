@@ -1,0 +1,54 @@
+@media screen and (min-width: 320px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: var(--background-color);
+    min-height: 90vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+}
+
+/* Tablet & Up Overrides */
+@media screen and (min-width: 768px) {
+  .background {
+    display: flex;
+  }
+
+  main {
+    flex-direction: row;
+  }
+
+  .main-container {
+    align-items: flex-end;
+    padding: 4rem;
+    text-align: center;
+  }
+
+  .main-container p {
+    max-width: 250px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main-container p {
+    max-width: 400px;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(0.8);
+  }
+}

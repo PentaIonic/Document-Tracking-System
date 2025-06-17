@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Web Page Information & Responsive Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Styles & Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mate:ital@0;1&family=Rambla:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Local Styles -->
+    <link rel="stylesheet" href="./src/styles/components/nav/navIndex.css" />
+    <link
+      rel="stylesheet"
+      href="./src/styles/components/footer/footerNoLogo.css"
+    />
+    <link rel="stylesheet" href="./src/styles//components/webFrame.css" />
+    <link rel="stylesheet" href="./src/styles/pages/about/faq.css" />
+
+    <!-- Web Page Information -->
+    <title>Frequently Asked Questions | Doctrax</title>
+    <link rel="icon" href="#" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <navbar>
+      <div class="navbar-container" id="navbar"></div>
+    </navbar>
+    <!-- Page Content -->
+    <main>
+      
+    </main>
+    <!-- Page Footer -->
+    <footer><div class="footer-container" id="footer"></div></footer>
+
+    <!-- Local Scripts -->
+    <script src="./src/scripts/components/navbar.js"></script>
+    <script src="./src/scripts/components/footer.js"></script>
+    <script>
+      // Loading Components
+      document.addEventListener("DOMContentLoaded", loadNavIndex);
+      document.addEventListener("DOMContentLoaded", loadFooter);
+    </script>
+  </body>
+</html>
