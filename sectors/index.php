@@ -73,31 +73,31 @@ $role = (!isset($_SESSION['user_role']) || $_SESSION['user_role'] == null) ? "No
                 <!-- Sector Selection -->
                 <div class="home-options">
                     <div class="option-layer">
-                        <a href="../sectors/health-office.html">
+                        <a href="../sectors/health-office.php">
                             <div class="sector">
                                 <img src="../assets/images/health.png" alt="" />
                                 <span>Municipal Health Office</span>
                             </div>
                         </a>
-                        <a href="../sectors/civil-registrar-office.html">
+                        <a href="../sectors/civil-registrar-office.php">
                             <div class="sector">
                                 <img src="../assets/images/civil-reg.png" alt="" />
                                 <span>Civil Registrar Office</span>
                             </div>
                         </a>
-                        <a href="../sectors/general-services-office.html">
+                        <a href="../sectors/general-services-office.php">
                             <div class="sector">
                                 <img src="../assets/images/gen-service.png" alt="" />
                                 <span>General Services Office</span>
                             </div>
                         </a>
-                        <a href="../sectors/agricultural-office.html">
+                        <a href="../sectors/agricultural-office.php">
                             <div class="sector">
                                 <img src="../assets/images/agri.png" alt="" />
                                 <span>Agricultural Office</span>
                             </div>
                         </a>
-                        <a href="../sectors/accounting-office.html">
+                        <a href="../sectors/accounting-office.php">
                             <div class="sector">
                                 <img src="../assets/images/accounting.png" alt="" />
                                 <span>Accounting Office</span>

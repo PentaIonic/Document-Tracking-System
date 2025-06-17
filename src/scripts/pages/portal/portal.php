@@ -54,7 +54,9 @@ if (isset($_POST['login'])) {
 
             // Redirect based on role
             if ($user['role'] === 'User') {
-                header("Location: ../../../../user/search.php");
+                header("Location: ../../../../user/index.php");
+            } else if ($user['role'] === 'Admin') {
+                header("Location: ../../../../admin/index.php");
             } else {
                 header("Location: ../../../portal/admin_dashboard.php");
             }
