@@ -18,13 +18,13 @@
     <div class="middle-sidebar">
         <div class="sidebar-options">
             <h3>Features</h3>
-            <button onclick="location.href='../home.html'">
+            <button onclick="location.href='../sectors'">
                 <div class="option-button">
                     <span class="material-icons-round"> home </span>
                     <label for="documents">Home</label>
                 </div>
             </button>
-            <button onclick="location.href='../document/repository.html'">
+            <button onclick="location.href='../document/repository.php'">
                 <div class="option-button">
                     <span class="material-icons-round"> folder </span>
                     <label for="documents">Repository</label>
