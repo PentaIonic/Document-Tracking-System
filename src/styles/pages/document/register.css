@@ -64,7 +64,7 @@
     font-weight: bold;
     flex-direction: row;
     width: fit-content;
-    color: #000; /* Or keep it #807d73 if you prefer */
+    color: #000; 
   }
 
   .italic-text {
@@ -155,7 +155,7 @@
   }
 
   .submit-btn {
-    background-color: #ccc;
+    background-color: #ffb200;
     font-weight: bold;
     padding: 0.5rem 1.25rem;
     font-size: 1rem;
@@ -167,12 +167,12 @@
   }
 
   .submit-btn:hover {
-    background-color: #9d9d9d;
+    background-color: #dd9a00;
     transform: scale(1.03);
   }
 
   .cancel-btn {
-    background-color: #ffb200;
+    background-color: #ccc;
     color: black;
     padding: 0.5rem 1.25rem;
     font-size: 1rem;
@@ -185,7 +185,7 @@
   }
 
   .cancel-btn:hover {
-    background-color: #dd9a00;
+    background-color: #9d9d9d;
     transform: scale(1.03);
   }
 
