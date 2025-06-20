@@ -1,0 +1,310 @@
+@media screen and (min-width: 320px) {
+  .page-container {
+    display: flex;
+    width: 100%;
+    background-color: var(--background-color);
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+
+  .page-actions {
+    display: flex;
+    width: 100%;
+    height: 2rem;
+    box-sizing: border-box;
+  }
+
+  .back-button {
+    display: flex;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 1rem;
+    width: fit-content;
+    align-items: center;
+    box-sizing: border-box;
+    transition: color 0.3s ease;
+  }
+
+  .back-button:hover {
+    color: #f8f6f3;
+  }
+
+  .sub-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 90vh;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    animation: fadeInSubtle 0.5s ease-in-out both;
+}
+
+  .sector-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid #000;
+    background: rgba(242, 242, 242, 0.85);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+  }
+
+  .sector-logo {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+  }
+
+  .sector-logo > img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .sector-logo > img:hover {
+    transform: rotate(10deg) scale(1.05);
+  }
+
+  .sector-plate {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid #000;
+    background: hsla(42, 100%, 50%, 0.7);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+  }
+
+  .sector-plate > span {
+    color: var(--text-color);
+    font-family: "Montagu Slab";
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    font-size: 1.25rem;
+  }
+
+  .text-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: 0;
+  }
+
+  .sector-overview > h1 {
+    color: var(--text-color);
+    font-family: "Montagu Slab";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 1rem;
+    text-align: left;
+    margin-top: 2rem;
+  }
+
+  .transaction-type-header > h1 {
+    color: var(--text-color);
+    font-family: "Montagu Slab";
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 0;
+  }
+
+  .image-container {
+    width: auto; 
+    display: flex;
+    justify-content: unset;
+    align-items: center;
+  }
+
+   .image-container img {
+    width: 450%;
+    height: 102%;
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 4rem;
+  }
+  
+  .transaction-type {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    min-height: 50vh;
+    box-sizing: border-box;
+  }
+
+  .transaction-type-header {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: left;
+    box-sizing: border-box;
+  }
+
+  .transaction-options {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2.5rem;
+    padding: 1.5rem;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .transaction-options > a {
+    text-decoration: none;
+  }
+
+  .transaction {
+    display: flex;
+    width: 250px;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
+    border-radius: 10px;
+    border: 2px solid #000;
+    background: rgba(242, 242, 242, 0.85);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+
+  .transaction:hover {
+    transform: translateY(-4px);
+    background: #ffb200;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .transaction > span {
+    color: var(--text-color);
+    text-align: center;
+    font-family: "Source Serif 4";
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .action-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 4.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #autoFillForm {
+    background: transparent;
+    border: 0;
+  }
+
+  .proceed {
+    display: flex;
+    border-radius: 10px;
+    border: 2px solid #000;
+    padding: 0.5rem 3rem;
+    background: rgba(255, 178, 0, 0.7);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .proceed:hover {
+    background: rgba(255, 178, 0, 0.7);
+    transform: scale(1.03);
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .proceed > span {
+    color: var(--text-color);
+    text-align: center;
+    font-family: "Source Serif 4";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  #mainContainer {
+    padding: 3.25rem;
+  }
+
+  .sub-container {
+    border-radius: 14px;
+    padding: 1.5rem;
+  }
+
+  .sector-plate {
+    width: 90%;
+  }
+
+  .sector-plate > span {
+    font-size: 30px;
+  }
+
+  .transaction-options {
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .transaction-options {
+    min-width: 720px;
+    width: 80%;
+    min-height: 40vh;
+  }
+
+  .sub-container {
+    padding: 3.5rem;
+  }
+
+  .action-button {
+    align-items: end;
+  }
+}
+
+/* Fade-in animation keyframes */
+@keyframes fadeInSubtle {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
