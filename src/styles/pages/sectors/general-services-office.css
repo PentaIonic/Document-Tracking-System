@@ -99,7 +99,7 @@
   }
 
   .text-content {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -136,8 +136,8 @@
   }
 
    .image-container img {
-    width: 450%;
-    height: 102%;
+    width: 480%;
+    height: 100%;
   }
 
   .content-wrapper {
@@ -172,7 +172,7 @@
     align-items: flex-end;
     flex-direction: column;
     align-items: flex-end;
-    gap: 1.5rem;
+    gap: 3rem;
     padding: 1.5rem;
     width: 100%;
     height: fit-content;
