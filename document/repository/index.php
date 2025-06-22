@@ -77,7 +77,7 @@ if (!empty($search)) {
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="container">
         <aside class="left-sidebar" id="sidebarPanel"><?php include '../../src/components/sidebar/sidebarDocument.php' ?>
         </aside>
         <nav class="navbar-container"><?php include '../../src/components/nav/navDocument.php' ?></nav>

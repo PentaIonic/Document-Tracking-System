@@ -1,4 +1,4 @@
-<button type="button" id="toggleSidebar">
+<button type="button" id="toggleSidebar" onclick="moveSidebar()">
     <img src="../../assets/icons/menu-hamburger.svg" alt="Menu" />
 </button>
 <div class="nav-action-buttons">

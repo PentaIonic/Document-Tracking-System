@@ -24,7 +24,7 @@
                     <label for="documents">Home</label>
                 </div>
             </button>
-            <button onclick="location.href='../document/repository.php'">
+            <button onclick="location.href='../document/repository'">
                 <div class="option-button">
                     <span class="material-icons-round"> folder </span>
                     <label for="documents">Repository</label>

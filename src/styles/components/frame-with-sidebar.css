@@ -8,6 +8,7 @@
   --text-color-Dark: #ffffff;
   --text-color-Dark-Hover: #000000;
   --sidebar-width: 24em;
+  --sidebar-opacity: 1;
 }
 
 ::-webkit-scrollbar {

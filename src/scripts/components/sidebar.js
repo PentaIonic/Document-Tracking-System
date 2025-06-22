@@ -10,10 +10,13 @@ window.addEventListener("DOMContentLoaded", () => {
     setSidebarOpacity("1");
     sidebarMoved = false;
   }
-
-  document
-    .getElementById("toggleSidebar")
-    .addEventListener("click", moveSidebar);
+  /*
+  const toggleSidebar = document.getElementById("toggleSidebar");
+  if (toggleSidebar) {
+    toggleSidebar.addEventListener("click", moveSidebar);
+  }
+    */
+  // Do not warn if not found; it's expected on some pages.
 });
 
 // Don't attach toggleSidebar event here! It's injected later.
@@ -32,6 +35,15 @@ function moveSidebar() {
     setSidebarOpacity("0");
   }
 
+  console.log(
+    "Sidebar moved:",
+    sidebarMoved,
+    "Width:",
+    getComputedStyle(document.documentElement).getPropertyValue(
+      "--sidebar-width"
+    )
+  );
+
   sidebarMoved = !sidebarMoved;
 }
 
@@ -40,5 +52,5 @@ function setSidebarWidth(width) {
 }
 
 function setSidebarOpacity(opacity) {
-  document.documentElement.style.setProperty("", opacity);
+  document.documentElement.style.setProperty("--sidebar-opacity", opacity);
 }

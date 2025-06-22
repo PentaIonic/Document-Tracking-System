@@ -40,7 +40,7 @@ $role = (!isset($_SESSION['user_role']) || $_SESSION['user_role'] == null) ? "No
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="container">
         <aside class="left-sidebar" id="sidebarPanel"><?php include '../src/components/sidebar/sidebarAdmin.php' ?>
         </aside>
         <nav class="navbar-container"><?php include '../src/components/nav/navSector.php' ?></nav>

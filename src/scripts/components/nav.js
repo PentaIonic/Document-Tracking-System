@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const toggleMenu = document.getElementById("toggleMenu"); // Menu Button
   const menu = document.getElementById("menu"); // Menu Frame
+  
 
   if (toggleMenu && menu) {
     // If clicked, it will set and unset the menu id with open class.
