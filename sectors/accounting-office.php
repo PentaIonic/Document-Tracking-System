@@ -28,7 +28,7 @@ $role = (!isset($_SESSION['user_role']) || $_SESSION['user_role'] == null) ? "No
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
 
     <!-- Local Styles -->
-    <link rel="stylesheet" href="../src/styles/pages/sectors/sectors.css" />
+    <link rel="stylesheet" href="../src/styles/pages/sectors/accounting-office.css" />
     <link rel="stylesheet" href="../src/styles/components/nav/navSector.css" />
     <link rel="stylesheet" href="../src/styles/components/footer/footer.css" />
     <link rel="stylesheet" href="../src/styles/components/sidebar.css" />
@@ -62,18 +62,19 @@ $role = (!isset($_SESSION['user_role']) || $_SESSION['user_role'] == null) ? "No
                     </div>
                     <div class="sector-overview">
                         <h1>Overview</h1>
-                        <p>
                             Handles all financial transactions of the municipality, including
                             budgeting, fund disbursement, and financial reporting to ensure
                             transparency and compliance.
-                        </p>
                     </div>
                     <hr style="width: 100%; box-sizing: border-box" />
                     <div class="transaction-type">
                         <div class="transaction-type-header">
                             <h1>Type of Transactions</h1>
-                            <p>Select the specific transaction you wish to process:</p>
                         </div>
+                        <div class="content-wrapper">
+                <div class="image-container">
+                    <img src="../assets/images/aco.jpg" alt="Accounting Office" />
+                </div>
                         <div class="transaction-options">
                             <div class="transaction">
                                 <span>Disbursement Voucher</span>
@@ -92,6 +93,9 @@ $role = (!isset($_SESSION['user_role']) || $_SESSION['user_role'] == null) ? "No
                             </div>
                         </div>
                     </div>
+                    <div class="frame-10">
+                    <img src="../assets/images/Frame 10.png" alt="Frame" />
+                        </div>
                     <div class="action-button">
                         <button id="autoFillForm" onclick="redirectDepartmentCode('accounting-office')">
                             <div class="proceed">
