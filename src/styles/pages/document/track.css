@@ -6,14 +6,16 @@
 
 /* ===== Responsive Styles ===== */
 @media screen and (min-width: 320px) {
-  main {
+  .page-container {
     height: 105vh;
     background-color: var(--background-color);
     display: flex;
+    width: 100%;
     justify-content: left;
     align-items: flex-start;
     padding: 3rem;
     padding-top: 0%;
+    box-sizing: border-box;
   }
 
   h1 {
@@ -310,8 +312,21 @@
     box-sizing: border-box;
   }
 
-  #referenceNumValidRemark, #officerNameRemark, #documentRemarksRemark, #remarkDescriptionRemark {
+  #referenceNumValidRemark,
+  #officerNameRemark,
+  #documentRemarksRemark,
+  #remarkDescriptionRemark {
     font-weight: normal;
     font-size: 1rem;
+  }
+
+  .qr-box {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* optional for visibility */
+    border: 1px solid #ccc; /* optional for debugging */
   }
 }

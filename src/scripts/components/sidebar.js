@@ -3,13 +3,17 @@ let sidebarMoved = false;
 window.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth < 768) {
     setSidebarWidth("0");
+    setSidebarOpacity("0");
     sidebarMoved = true;
   } else {
     setSidebarWidth("24em");
+    setSidebarOpacity("1");
     sidebarMoved = false;
   }
 
-  document.getElementById("toggleSidebar").addEventListener("click", moveSidebar);
+  document
+    .getElementById("toggleSidebar")
+    .addEventListener("click", moveSidebar);
 });
 
 // Don't attach toggleSidebar event here! It's injected later.
@@ -22,8 +26,10 @@ function moveSidebar() {
 
   if (!sidebarMoved) {
     setSidebarWidth("24em");
+    setSidebarOpacity("1");
   } else {
     setSidebarWidth("0");
+    setSidebarOpacity("0");
   }
 
   sidebarMoved = !sidebarMoved;
@@ -31,4 +37,8 @@ function moveSidebar() {
 
 function setSidebarWidth(width) {
   document.documentElement.style.setProperty("--sidebar-width", width);
+}
+
+function setSidebarOpacity(opacity) {
+  document.documentElement.style.setProperty("", opacity);
 }
