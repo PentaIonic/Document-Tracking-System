@@ -110,7 +110,7 @@ if (isset($_POST['register'])) {
     );
 
     if ($stmt->execute()) {
-      header("Location: ../../../../document/register.php?code=" . urlencode($documentCode) . "&success=1");
+      header("Location: ../../../../document/register/index.php?code=" . urlencode($documentCode) . "&success=1");
       exit();
     } else {
       echo "Error saving to database: " . $stmt->error;

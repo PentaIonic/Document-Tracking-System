@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       height: 200,
       type: "png",
       data: `${window.location.origin}/document/track/index.php?code=${docCode}`,
-      image: "../assets/images/Santa_Elena_Camarines_Norte.png",
+      image: "../../assets/images/Santa_Elena_Camarines_Norte.png",
       dotsOptions: {
         color: "var(--accent-color)",
         type: "classy-rounded",
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function gotoHome() {
   recordForm.reset();
   clearStoredData();
-  window.location.href = `./`;
+  window.location.href = `../../admin/`;
 }
 
 async function clearStoredData() {
@@ -148,7 +148,7 @@ function handleSingleFile(input) {
   if (input.files && input.files.length > 0) {
     const file = input.files[0];
     const preview = document.createElement("div");
-    preview.innerHTML = `<img src="../assets/icons/document-minus.svg" alt=""><span>${file.name}</span>`;
+    preview.innerHTML = `<img src="../../assets/icons/document-minus.svg" alt=""><span>${file.name}</span>`;
     uploadList.appendChild(preview);
   }
 }
