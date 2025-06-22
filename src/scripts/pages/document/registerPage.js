@@ -1,29 +1,49 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const uploadedFilesList = document.getElementById("uploadList");
+  const uploadBox = document.getElementById("uploadBox");
+  const documentFile = document.getElementById("documentFile");
+
   // Autofills and changes form content based from different departments/sectors
   const params = new URLSearchParams(window.location.search);
   const department = params.get("department");
 
-  const docCode = generateDocumentCode(department);
+  // From PHP
+  const submissionSuccess = window.submissionSuccess;
+  const docCode = window.docCode;
+
+  // Show success popup
+  if (window.docCode && window.submissionSuccess === "1") {
+    popSuccessPanel();
+
+    // Remove query string from URL without reloading (after popup)
+    window.history.replaceState(null, "", window.location.pathname);
+  }
 
   // QR Code Generation
-  const registerQR = new QRCodeStyling({
-    width: 200,
-    height: 200,
-    type: "png",
-    data: `${window.location.href}/viewDocument.html?codeDocument=${docCode}`,
-    image: "../assets/images/Santa_Elena_Camarines_Norte.png",
-    dotsOptions: {
-      color: "var(--accent-color)",
-      type: "classy-rounded",
-    },
-    backgroundOptions: {
-      color: "var(--background-color)",
-    },
-    imageOptions: {
-      margin: 10,
-    },
-  });
-  registerQR.append(document.getElementById("qrDocument"));
+  if (typeof docCode !== "undefined" && docCode) {
+    const registerQR = new QRCodeStyling({
+      width: 200,
+      height: 200,
+      type: "png",
+      data: `${window.location.origin}/document/track/index.php?code=${docCode}`,
+      image: "../assets/images/Santa_Elena_Camarines_Norte.png",
+      dotsOptions: {
+        color: "var(--accent-color)",
+        type: "classy-rounded",
+      },
+      backgroundOptions: {
+        color: "var(--background-color)",
+      },
+      imageOptions: {
+        margin: 10,
+      },
+    });
+
+    const qrTarget = document.getElementById("qrDocument");
+    if (qrTarget) {
+      registerQR.append(qrTarget);
+    }
+  }
 
   switch (department) {
     case "health-office":
@@ -98,52 +118,16 @@ document.addEventListener("DOMContentLoaded", () => {
   uploadBox.addEventListener("drop", async (e) => {
     e.preventDefault();
     uploadBox.classList.remove("hover");
-    const files = e.dataTransfer.files;
-    await handleFileUpload(files[0]);
   });
 
-  documentFile.addEventListener("change", async () => {
-    if (documentFile.files.length > 0) {
-      await handleFileUpload(documentFile.files[0]);
+  document.getElementById("submitData").addEventListener("click", () => {
+    const form = document.getElementById("recordForm");
+    if (form.checkValidity()) {
+      form.submit();
+    } else {
+      form.reportValidity();
     }
   });
-
-  // To be swapped/transfer to PHP
-  function generateDocumentCode(department) {
-    const currentDate = new Date();
-    const year = currentDate.getFullYear();
-    const month = String(currentDate.getMonth() + 1).padStart(2, "0");
-    const day = String(currentDate.getDate()).padStart(2, "0");
-
-    let depCode = "";
-    switch (department) {
-      case "health-office":
-        depCode = "HO";
-        break;
-      case "civil-registrar-office":
-        depCode = "CRO";
-        break;
-      case "gen-service-office":
-        depCode = "GSO";
-        break;
-      case "agricultural-office":
-        depCode = "AGO";
-        break;
-      case "accounting-office":
-        depCode = "ACO";
-        break;
-    }
-
-    let endCode = Math.floor(Math.random() * 9999 + 1);
-    return `${depCode}-${year}${month}${day}-${endCode}`;
-  }
-
-  function renderUploadedFile(name, url) {
-    const filePreview = document.createElement("div");
-    filePreview.innerHTML = `                <img src="../assets/icons/document-minus.svg" alt="">
-    <a href="${url}" target="_blank">${name}</a>`;
-    uploadedFilesList.appendChild(filePreview);
-  }
 });
 
 function gotoHome() {
@@ -155,6 +139,18 @@ function gotoHome() {
 async function clearStoredData() {
   uploadedFilesList.innerHTML = "";
   uploadedFileInfo = null;
+}
+
+function handleSingleFile(input) {
+  const uploadList = document.getElementById("uploadList");
+  uploadList.innerHTML = ""; // Remove previous file preview
+
+  if (input.files && input.files.length > 0) {
+    const file = input.files[0];
+    const preview = document.createElement("div");
+    preview.innerHTML = `<img src="../assets/icons/document-minus.svg" alt=""><span>${file.name}</span>`;
+    uploadList.appendChild(preview);
+  }
 }
 
 function closePrompt() {
