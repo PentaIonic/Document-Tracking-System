@@ -35,7 +35,11 @@ $accountCode = (!isset($_SESSION['user_code']) || $_SESSION['user_code'] == null
 <body>
     <div class="container">
         <nav class="navbar-container"><?php include '../src/components/nav/navServices.php' ?></nav>
-        <main></main>
+        <main>
+            <div class="page-container">
+                
+            </div>
+        </main>
         <footer class="footer-container"><?php include '../src/components/footer/footerNoLogo.html' ?></footer>
     </div>
     <script src="../src/scripts/components/nav.js"></script>
