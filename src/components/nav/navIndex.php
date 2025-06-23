@@ -3,18 +3,36 @@
   <a href="./index.php">Santa Elena Doctrax</a>
 </div>
 <div class="nav-tabs">
-  <a href="./portal/login.php">
+  <?php
+  if (!isset($_SESSION['user_id'])) {
+    echo '
+    <a href="./portal/login.php">
     <div class="action-buttons">
       <span>Log In</span>
     </div>
-  </a>
-  <a href="./portal/signup.php">
+    </a>
+    <a href="./portal/signup.php">
     <div class="action-buttons">
       <span>Sign Up</span>
     </div>
+    </a>';
+  } else {
+    echo '
+    <a href="./user/">
+    <div class="action-buttons">
+      <span>Home</span>
+    </div>
+    </a>
+    ';
+  }
+  ?>
+  <a href="./user/faq.php">
+    <div class="action-buttons">
+      <span>FAQs</span>
+    </div>
   </a>
-  <a href="./about.php">
-    <div class="action-buttons"><span>About</span></div>
+  <a href="./user/services.php">
+    <div class="action-buttons"><span>Services</span></div>
   </a>
 </div>
 <div class="nav-action-buttons">
@@ -24,8 +42,19 @@
     </div>
   </a>
   <div class="menu-window" id="menu">
-    <a href="./portal/login.php"><span>Log In</span></a>
-    <a href="./portal/signup.php"><span>Sign Up</span></a>
-    <a href="./about.php"><span>About</span></a>
+    <?php
+    if (!isset($_SESSION['user_id'])) {
+      echo '    
+      <a href="./portal/login.php"><span>Log In</span></a>
+      <a href="./portal/signup.php"><span>Sign Up</span></a>
+      ';
+    } else {
+      echo '
+      <a href="./user/"><span>Home</span></a>
+    ';
+    }
+    ?>
+    <a href="./user/faq.php"><span>FAQs</span></a>
+    <a href="./user/services.php"><span>Services</span></a>
   </div>
 </div>

@@ -78,13 +78,13 @@ if (isset($_POST['register'])) {
             document_url,
             document_status,
             document_code,
-            user_id
+            account_code
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
     $documentRegistered = date('Y-m-d H:i:s');
     $documentStatus = 'Pending';
     $documentCode = generateDocumentCode($sector);
-    $userId = $_SESSION['user_id'] ?? null;
+    $accountCode = $_SESSION['user_code'] ?? null;
     $storedFilePath = 'uploads/' . $uniqueFileName; // relative path
 
     $stmt->bind_param(
@@ -106,7 +106,7 @@ if (isset($_POST['register'])) {
       $storedFilePath,
       $documentStatus,
       $documentCode,
-      $userId
+      $accountCode
     );
 
     if ($stmt->execute()) {

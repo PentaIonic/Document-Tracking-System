@@ -11,18 +11,19 @@ if (!isset($_SESSION['user_id'])) {
 include '../src/scripts/components/database/connection.php';
 $userName = (!isset($_SESSION['user_id']) || $_SESSION['user_id'] == null) ? "No Account" : $_SESSION['user_name'];
 $role = (!isset($_SESSION['user_role']) || $_SESSION['user_role'] == null) ? "No Role" : $_SESSION['user_role'];
+$accountCode = (!isset($_SESSION['user_code']) || $_SESSION['user_code'] == null) ? "No Code" : $_SESSION['user_code'];
 
 $search = $_GET['search'] ?? '';
-$userId = $_SESSION['user_id'];
+$accountCode = $_SESSION['user_code'];
 
 $sqlSearchQuery = "SELECT document_id, document_title, document_code 
                    FROM document_records 
                    WHERE (document_code LIKE ? OR document_title LIKE ?) 
-                   AND user_id = ?";
+                   AND account_code = ?";
 
 $searchTerm = "%" . $search . "%";
 $stmt = $conn->prepare($sqlSearchQuery);
-$stmt->bind_param("sss", $searchTerm, $searchTerm, $userId);
+$stmt->bind_param("sss", $searchTerm, $searchTerm, $accountCode);
 $stmt->execute();
 $result = $stmt->get_result();
 

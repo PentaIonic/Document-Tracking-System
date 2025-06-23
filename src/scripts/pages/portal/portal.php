@@ -10,6 +10,7 @@ if (isset($_POST['signup'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirmPassword'];
+    $accountCode = generateUserCode('User');
 
     // Check password match
     if ($password != $confirmPassword) {
@@ -30,8 +31,8 @@ if (isset($_POST['signup'])) {
     }
 
     // Register user
-    $conn->query("INSERT INTO `accounts` (`user_id`, `first_name`, `middle_name`, `last_name`, `suffix_name`, `email`, `role`, `password`, `account_created`) 
-                  VALUES (NULL, '$firstName', '$middleName', '$lastName', '$suffixName', '$email', 'User', '$password', current_timestamp())");
+    $conn->query("INSERT INTO `accounts` (`user_id`, `account_code`, `first_name`, `middle_name`, `last_name`, `suffix_name`, `email`, `role`, `password`, `account_created`) 
+                  VALUES (NULL, '$accountCode', '$firstName', '$middleName', '$lastName', '$suffixName', '$email', 'User', '$password', current_timestamp())");
 
     $conn->close();
     $_SESSION['success_register'] = 'Account registered successfully!';
@@ -51,11 +52,12 @@ if (isset($_POST['login'])) {
             $_SESSION['user_role'] = $user['role'];
             $_SESSION['user_id'] = $user['user_id'];
             $_SESSION['email'] = $user['email'];
+            $_SESSION['user_code'] = $user['account_code'];
 
             // Redirect based on role
             if ($user['role'] === 'User') {
                 header("Location: ../../../../user/index.php");
-            } else if ($user['role'] === 'Admin') {
+            } else if ($user['role'] === 'Super Admin') {
                 header("Location: ../../../../admin/index.php");
             } else {
                 header("Location: ../../../portal/admin_dashboard.php");
@@ -67,5 +69,20 @@ if (isset($_POST['login'])) {
     $_SESSION['login_error'] = 'Incorrect email or password!';
     header("Location: ../../../../portal/login.php");
     exit();
+}
+
+function generateUserCode($user)
+{
+    $year = date("Y");
+    $month = date("m");
+    $day = date("d");
+
+    $userCode = match ($user) {
+        "Super Admin" => "SA",
+        default => "USR"
+    };
+
+    $endCode = str_pad(rand(1, 9999), 4, '0', STR_PAD_LEFT);
+    return "{$userCode}-{$year}{$month}{$day}-{$endCode}";
 }
 ?>

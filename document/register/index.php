@@ -12,6 +12,7 @@ $success = $_GET['success'] ?? null;
 
 $userName = (!isset($_SESSION['user_id']) || $_SESSION['user_id'] == null) ? "No Account" : $_SESSION['user_name'];
 $role = (!isset($_SESSION['user_role']) || $_SESSION['user_role'] == null) ? "No Role" : $_SESSION['user_role'];
+$accountCode = (!isset($_SESSION['user_code']) || $_SESSION['user_code'] == null) ? "No Code" : $_SESSION['user_code'];
 
 ?>
 <!DOCTYPE html>
@@ -100,7 +101,8 @@ $role = (!isset($_SESSION['user_role']) || $_SESSION['user_role'] == null) ? "No
                 </div>
             </div>
         </div>
-        <aside class="left-sidebar" id="sidebarPanel"><?php include '../../src/components/sidebar/sidebarDocument.php' ?>
+        <aside class="left-sidebar" id="sidebarPanel">
+            <?php include '../../src/components/sidebar/sidebarDocument.php' ?>
         </aside>
         <nav class="navbar-container"><?php include '../../src/components/nav/navDocument.php' ?></nav>
         <main>
@@ -116,6 +118,8 @@ $role = (!isset($_SESSION['user_role']) || $_SESSION['user_role'] == null) ? "No
                         <div class="form-grid">
                             <!-- Left Column -->
                             <div class="form-group left">
+                                <label class="label-normal">Account Code<span style="color: red">*</span></label><input
+                                    type="text" name="accountCode" id="accountCode" required />
                                 <label class="label-normal">Last Name <span style="color: red">*</span></label><input
                                     type="text" name="lastName" id="lastName" required />
                                 <label class="label-normal">First Name <span style="color: red">*</span></label><input
@@ -214,4 +218,4 @@ $role = (!isset($_SESSION['user_role']) || $_SESSION['user_role'] == null) ? "No
     <script src="../../src/scripts/components/sidebar.js"></script>
 </body>
 
-</html> 
+</html>

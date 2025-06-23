@@ -2,8 +2,15 @@
 
 session_start();
 if (isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit();
+    switch ($_SESSION['user_role']) {
+        case 'Super Admin':
+            header("Location: ../admin/index.php");
+            exit();
+        default:
+            header("Location: ../user/index.php");
+            exit();
+    }
+
 }
 
 $errors = [

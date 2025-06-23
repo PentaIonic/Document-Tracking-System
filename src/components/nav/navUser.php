@@ -32,10 +32,20 @@
                 </div>
             </div>
             <div class="menu-options">
-                <button type="button" class="option-button" onclick="location.href='../admin/admin.html'">
-                    <img src="../assets/icons/material-design-icons/dashboard_24dp_000000.svg" alt="" />
-                    <span>Dashboard</span>
-                </button>
+                <?php
+                    switch ($role) {
+                        case 'Super Admin':
+                            echo '                
+                            <button type="button" class="option-button" onclick="location.href=\'../admin/admin.html\'">
+                            <img src="../assets/icons/material-design-icons/dashboard_24dp_000000.svg" alt="" />
+                            <span>Dashboard</span>
+                            </button>';
+                            break;
+                        default:
+                            echo '';
+                            break;
+                    }
+                ?>
                 <button type="button" class="option-button" onclick="">
                     <img src="../assets/icons/material-design-icons/home_24dp_000000.svg" alt="" />
                     <span>Home</span>
