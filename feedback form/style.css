@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  background: #EAE4D5;
+}
+
+.navbar {
+  background-color: transparent;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar img {
+  width: 18px;
+  height: 18px;
+}
+
+.navbar .brand {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  color: black;
+}
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  position: relative;
+}
+
+.form-box {
+  background: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  display: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.header img {
+  width: 18px;
+  height: 18px;
+}
+
+.header h3 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.feedback-form label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 1px;
+  font-weight: bold;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 1px 0 20px 0;
+  flex-direction: row-reverse;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  font-size: 36px;
+  cursor: pointer;
+  color: #444;
+}
+
+.rating label::after {
+  content: "☆";
+}
+
+.rating input:checked ~ label::after,
+.rating input:checked + label::after {
+  content: "★";
+  color: #f9bf3b;
+  text-shadow: 0 0 10px #f9bf3b;
+}
+
+.rating label:hover::after,
+.rating label:hover ~ label::after {
+  content: "★";
+  color: #f9bf3b;
+  text-shadow: 0 0 10px #f9bf3b;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 8px;
+  box-sizing: border-box;
+}
+
+.radio-group {
+  display: flex;
+  gap: 23px;
+  align-items: center;
+  margin-top: 1px;
+  margin-bottom: 30px;
+}
+
+.radio-group input[type="radio"] {
+  transform: scale(1.2);
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.radio-group label {
+  margin-right: 20px;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+button[type="submit"] {
+  position: absolute;
+  bottom: 20px;
+  right: 45px;
+  background-color: #26b526;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #537453;
+}
