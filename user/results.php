@@ -26,6 +26,7 @@ $stmt = $conn->prepare($sqlSearchQuery);
 $stmt->bind_param("sss", $searchTerm, $searchTerm, $accountCode);
 $stmt->execute();
 $result = $stmt->get_result();
+$userRequests = $result;
 
 
 ?>
@@ -85,8 +86,8 @@ $result = $stmt->get_result();
                             </thead>
                             <tbody>
                                 <?php
-                                if ($result->num_rows > 0) {
-                                    while ($row = $result->fetch_assoc()) {
+                                if ($userRequests->num_rows > 0) {
+                                    while ($row = $userRequests->fetch_assoc()) {
                                         echo "<tr>
                                             <td>{$row['document_id']}</td>
                                             <td>{$row['document_title']}</td>

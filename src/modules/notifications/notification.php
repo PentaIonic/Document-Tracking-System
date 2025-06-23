@@ -1,6 +1,7 @@
 <?php
-if (session_status() === PHP_SESSION_NONE)
+if (session_status() === PHP_SESSION_NONE) {
     session_start();
+}
 
 $userName = $_SESSION['user_name'] ?? 'No Account';
 $accountCode = $_SESSION['user_code'] ?? null;
@@ -8,7 +9,9 @@ $accountCode = $_SESSION['user_code'] ?? null;
 $notifications = [];
 
 if ($accountCode) {
-    include __DIR__ . '/../../scripts/components/database/connection.php';
+    if (!isset($conn)) {
+        include __DIR__ . '/../../scripts/components/database/connection.php';
+    }
 
     $sql = "SELECT document_code, document_title, document_status, document_registered
             FROM document_records
@@ -17,10 +20,11 @@ if ($accountCode) {
     $stmt->bind_param("s", $accountCode);
     $stmt->execute();
     $result = $stmt->get_result();
+    $notification = $result;
 
     $today = new DateTime();
 
-    while ($row = $result->fetch_assoc()) {
+    while ($row = $notification->fetch_assoc()) {
         $status = strtolower($row['document_status'] ?? '');
         $title = htmlspecialchars($row['document_title'] ?? 'Untitled');
         $code = htmlspecialchars($row['document_code'] ?? '');

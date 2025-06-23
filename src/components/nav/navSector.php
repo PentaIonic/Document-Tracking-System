@@ -10,6 +10,6 @@
         <img src="../assets/icons/material-design-icons/notifications_24dp_000000.svg" alt="Notification" />
     </button>
     <div class="notification-window" id="notificationWindow">
-        <?php include __DIR__ . '/../modules/notifications/notification.php'; ?>
+        <?php include __DIR__ . '/../../modules/notifications/notification.php'; ?>
     </div>
 </div>
