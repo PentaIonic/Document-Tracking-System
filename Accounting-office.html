@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <!--Font Styles Links-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mate:ital@0;1&family=Montagu+Slab:opsz,wght@16..144,100..700&family=Rambla:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+        rel="stylesheet" />
+
+  <title>Santa Elena Doctrax</title>
+  <link rel="stylesheet" href="directory.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="top-bar">
+      <div class="logo-area">
+        <img src="../assets/images/Santa_Elena_Camarines_Norte.png" alt="Logo" />
+        <a href="../index.php" class="brand-name">Santa Elena Doctrax</a>
+      </div>
+      <nav class="nav-tabs">
+        <a href="../index.php" class="action-button">Home</a>
+        <a href="./login.php" class="action-button">Log In</a>
+        <a href="../user/faq.php" class="action-button">FAQs</a>
+        <a href="../user/services.php" class="action-button">Services</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="main-content">
+    <aside class="sidebar">
+      <div class="departments">DEPARTMENTS</div>
+      <ul>
+        <li><a href="Municipality-directory.html">🏥 Municipal Health Office</a></li>
+        <li><a href="CivilRegistart-directory.html">📜 Civil Registrar Office</a></li>
+        <li><a href="agricultural-office.html">🌾 Agricultural Office</a></li>
+        <li><a href="general-services-office.html">🛠️ General Services Office</a></li>
+        <li class="active"><a href="accounting-office.html">💼 Accounting Office</a></li>
+      </ul>
+    </aside>
+
+    <section class="document-directory">
+      <h2>DOCUMENT SERVICES DIRECTORY</h2>
+      <h3>Accounting Office</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Document Type</th>
+            <th>Requirements</th>
+            <th>Processing Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dibursement Voucher</td>
+            <td>Accomplished DV Form, Supporting documents, Department Head Signature</td>
+            <td>3-7 Working Days</td>
+          </tr>
+          <tr>
+            <td>Liquidation Report Submission</td>
+            <td>Official Receipts (OR), Liquidation Form, Certificate of expenses/Incurred (if required)</td>
+            <td>2-5 Working Days</td>
+          </tr>
+          <tr>
+            <td>Obligation Request & Status</td>
+            <td>Accomplished QRS Form, Approved Budget/Allotment, Valid ID or Endorsement from office</td>
+            <td>3–5 Working Days</td>
+          </tr>
+          <tr>
+            <td>Payroll Certification Request</td>
+            <td>Payroll list/schedule, Request form, Signature of department head/payroll in charge</td>
+            <td>2-4 Working Days</td>
+          </tr>
+          <tr>
+            <td>Budget Utilization Request</td>
+            <td>Filled-out Request Form, Approved Budget Allotment or Work Plan (WFP/AIP)</td>
+            <td>3-5 Working Days</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="process-flow">
+        <h2>HOW TO PROCESS YOUR DOCUMENT</h2>
+        <div class="steps">
+          <div class="step"><span>1</span><br>Select Transaction</div>
+          <div class="step"><span>2</span><br>Fill out Form</div>
+          <div class="step"><span>3</span><br>Upload Requirements</div>
+          <div class="step"><span>4</span><br>Wait for Approval</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.getElementById('toggleMenu').addEventListener('click', function () {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
