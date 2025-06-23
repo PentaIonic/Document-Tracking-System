@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+include '../src/scripts/components/database/connection.php';
 
 if (!isset($_SESSION['user_id'])) {
   header("Location: ../index.php");

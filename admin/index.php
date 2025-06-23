@@ -2,6 +2,7 @@
 
 session_start();
 
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../index.php");
     exit();
@@ -9,6 +10,55 @@ if (!isset($_SESSION['user_id'])) {
 
 $userName = (!isset($_SESSION['user_id']) || $_SESSION['user_id'] == null) ? "No Account" : $_SESSION['user_name'];
 $role = (!isset($_SESSION['user_role']) || $_SESSION['user_role'] == null) ? "No Role" : $_SESSION['user_role'];
+
+include '../src/scripts/components/database/connection.php';
+$countRecord = [];
+$sectors = [
+    'HO' => ['name' => 'Health Office', 'alias' => 'health_office_count'],
+    'CRO' => ['name' => 'Civil Registrar Office', 'alias' => 'civil_registrar_office_count'],
+    'GSO' => ['name' => 'General Services Office', 'alias' => 'general_services_office_count'],
+    'AGO' => ['name' => 'Agriculture Office', 'alias' => 'agricultural_office_count'],
+    'ACO' => ['name' => 'Accounting Office', 'alias' => 'accounting_office_count'],
+];
+
+foreach ($sectors as $key => $sector) {
+    $sql = "SELECT COUNT(*) as count FROM document_records WHERE sector = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $sector['name']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $data = $result->fetch_assoc();
+    $countRecord[$key] = $data['count']; // Store the actual count value
+}
+
+$documentRecords = [];
+$sqlGetLogs = "
+    SELECT 
+        dr.last_name, 
+        dr.first_name, 
+        dr.middle_name, 
+        dr.suffix_name, 
+        dr.document_type, 
+        dr.document_status, 
+        pl.user, 
+        pl.document_validation
+    FROM document_records dr
+    LEFT JOIN (
+        SELECT pl1.*
+        FROM process_logs pl1
+        INNER JOIN (
+            SELECT document_code, MAX(document_validation) AS max_date
+            FROM process_logs
+            GROUP BY document_code
+        ) pl2 ON pl1.document_code = pl2.document_code AND pl1.document_validation = pl2.max_date
+    ) pl ON dr.document_code = pl.document_code
+";
+$result = $conn->query($sqlGetLogs);
+if ($result && $result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $documentRecords[] = $row;
+    }
+}
 
 ?>
 <!DOCTYPE html>
@@ -63,23 +113,28 @@ $role = (!isset($_SESSION['user_role']) || $_SESSION['user_role'] == null) ? "No
                         <div class="dashboard-cards">
                             <div class="dashboard-card">
                                 <div class="card-title">Municipal Health Office</div>
-                                <span class="card-value" id="hoRecordValue"></span>
+                                <span class="card-value"
+                                    id="hoRecordValue"><?= htmlspecialchars($countRecord['HO'] ?? 'N/A') ?></span>
                             </div>
                             <div class="dashboard-card">
                                 <div class="card-title">Civil Register Office</div>
-                                <span class="card-value" id="croRecordValue"></span>
+                                <span class="card-value"
+                                    id="croRecordValue"><?= htmlspecialchars($countRecord['CRO'] ?? 'N/A') ?></span>
                             </div>
                             <div class="dashboard-card">
                                 <div class="card-title">General Services Office</div>
-                                <dspan class="card-value" id="gsoRecordValue"></span>
+                                <span class="card-value" id="gsoRecordValue">
+                                    <?= htmlspecialchars($countRecord['GSO'] ?? 'N/A') ?></span>
                             </div>
                             <div class="dashboard-card">
                                 <div class="card-title">Agricultural Office</div>
-                                <span class="card-value" id="agoRecordValue"></span>
+                                <span class="card-value"
+                                    id="agoRecordValue"><?= htmlspecialchars($countRecord['AGO'] ?? 'N/A') ?></span>
                             </div>
                             <div class="dashboard-card">
                                 <div class="card-title">Agricultural Office</div>
-                                <span class="card-value" id="acoRecordValue"></span>
+                                <span class="card-value"
+                                    id="acoRecordValue"><?= htmlspecialchars($countRecord['ACO'] ?? 'N/A') ?></span>
                             </div>
                         </div>
                     </div>
@@ -97,7 +152,24 @@ $role = (!isset($_SESSION['user_role']) || $_SESSION['user_role'] == null) ? "No
                                 <th>DATE PROCESSED</th>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                            <?php foreach ($documentRecords as $record): ?>
+                                <tr>
+                                    <td>
+                                        <?= htmlspecialchars($record['last_name'] . ', ' . $record['first_name'] . ' ' . $record['middle_name'] . ' ' . $record['suffix_name']) ?>
+                                    </td>
+                                    <td><?= htmlspecialchars($record['document_type']) ?></td>
+                                    <td><?= htmlspecialchars($record['document_status']) ?></td>
+                                    <td><?= htmlspecialchars($record['user'] ?? '—') ?></td>
+                                    <td><?= htmlspecialchars($record['document_validation'] ?? '—') ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                            <?php if (empty($documentRecords)): ?>
+                                <tr>
+                                    <td colspan="5" style="text-align:center;">No records found.</td>
+                                </tr>
+                            <?php endif; ?>
+                        </tbody>
                     </table>
                 </div>
             </div>

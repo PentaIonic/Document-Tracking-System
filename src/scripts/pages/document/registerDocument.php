@@ -18,6 +18,7 @@ if ($docCode) {
 
 if (isset($_POST['register'])) {
   // Get form inputs
+  $accountCode = $_POST['accountCode'];
   $lastName = $_POST['lastName'];
   $firstName = $_POST['firstName'];
   $middleName = $_POST['middleName'];
@@ -84,7 +85,6 @@ if (isset($_POST['register'])) {
     $documentRegistered = date('Y-m-d H:i:s');
     $documentStatus = 'Pending';
     $documentCode = generateDocumentCode($sector);
-    $accountCode = $_SESSION['user_code'] ?? null;
     $storedFilePath = 'uploads/' . $uniqueFileName; // relative path
 
     $stmt->bind_param(
