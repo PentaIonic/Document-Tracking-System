@@ -39,11 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
     data: qrData,
     image: "../../assets/images/Santa_Elena_Camarines_Norte.png",
     dotsOptions: {
-      color: "#000", // fallback color
+      color: "var(--accent-color)", // fallback color
       type: "classy-rounded",
     },
     backgroundOptions: {
-      color: "#fff", // fallback background
+      color: "var(--background-color)", // fallback background
     },
     imageOptions: {
       margin: 10,

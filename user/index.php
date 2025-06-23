@@ -59,7 +59,7 @@ $accountCode = (!isset($_SESSION['user_code']) || $_SESSION['user_code'] == null
                     <div class="panel-body">
                         <form class="search-input-wrapper" action="./results.php" method="get">
                             <div class="input-group">
-                                <input type="text" name="search" id="search" placeholder="Search..." required>
+                                <input type="text" name="search" id="search" placeholder="Search...">
                                 <button type="submit" style="cursor: pointer"><span
                                         class="material-icons-round">search</span></button>
                             </div>

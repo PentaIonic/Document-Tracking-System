@@ -42,7 +42,7 @@
                         break;
                 }
                 ?>
-                <button type="button" class="option-button" onclick="">
+                <button type="button" class="option-button" onclick="window.location.href='../user'">
                     <img src="../assets/icons/material-design-icons/home_24dp_000000.svg" alt="" />
                     <span>Home</span>
                 </button>

@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
     setSidebarOpacity("0");
     sidebarMoved = true;
   } else {
-    setSidebarWidth("24em");
+    setSidebarWidth("16em");
     setSidebarOpacity("1");
     sidebarMoved = false;
   }
@@ -28,7 +28,7 @@ function moveSidebar() {
   container.style.transition = "grid-template-columns 0.3s linear";
 
   if (!sidebarMoved) {
-    setSidebarWidth("24em");
+    setSidebarWidth("16em");
     setSidebarOpacity("1");
   } else {
     setSidebarWidth("0");

@@ -15,9 +15,9 @@ if ($code === null) {
 }
 
 $userId = $_SESSION['user_id'];
-$sqlQueryDocument = "SELECT * FROM document_records WHERE document_code = ? AND user_id = ?";
+$sqlQueryDocument = "SELECT * FROM document_records WHERE document_code = ? AND account_code = ?";
 $stmt = $conn->prepare($sqlQueryDocument);
-$stmt->bind_param("ii", $code, $userId);
+$stmt->bind_param("ii", $code, $accountCode);
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -98,26 +98,7 @@ $document = $result->fetch_assoc();
                             </tr>
                             <tr>
                                 <th>Department</th>
-                                <td><span id="sector">
-                                        <?php
-                                        switch ($document['sector']) {
-                                            case "health-office":
-                                                echo "Health Office";
-                                                break;
-                                            case "civil-registrar-office":
-                                                echo "Civil Registrar Office";
-                                                break;
-                                            case "gen-service-office":
-                                                echo "General Services Office";
-                                                break;
-                                            case "agricultural-office":
-                                                echo "Agricultural Office";
-                                                break;
-                                            case "accounting-office":
-                                                echo "Accounting Office";
-                                                break;
-                                        }
-                                        ?>
+                                <td><span id="sector"><?= htmlspecialchars($document['sector']) ?>
                                     </span></td>
                             </tr>
                             <tr>
@@ -130,7 +111,8 @@ $document = $result->fetch_assoc();
                                 <th>Action</th>
                                 <td>
                                     <?php if (!empty($document['document_url'])): ?>
-                                        <a href="<?= $filePath ?>" target="_blank" class="view-button">View Uploaded
+                                        <a href="../<?= $document['document_url'] ?>" target="_blank"
+                                            class="view-button">View Uploaded
                                             Document</a>
                                     <?php else: ?>
                                         <span>No file uploaded.</span>
