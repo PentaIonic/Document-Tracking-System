@@ -23,6 +23,7 @@ session_start();
     <link rel="stylesheet" href="./src/styles/components/frame.css" />
     <link rel="stylesheet" href="./src/styles/components/nav/navIndex.css">
     <link rel="stylesheet" href="./src/styles/pages/search/search.css">
+    <link rel="stylesheet" href="./src/styles/pages/about/about.css">
     <link rel="stylesheet" href="./src/styles/components/footer/footer.css">
 
     <!-- Web Page Information -->
@@ -34,7 +35,25 @@ session_start();
     <div class="container">
         <nav class="navbar-container"><?php include './src/components/nav/navIndex.php' ?></nav>
         <main>
-            <div class="section 1"></div>
+            <div class="section-1">
+                <div class="background">
+                    <!-- Background -->
+                    <div class="ripple-background">
+                        <div class="circle xxlarge shade1"></div>
+                        <div class="circle xlarge shade2"></div>
+                        <div class="circle large shade3"></div>
+                        <div class="circle medium shade4"></div>
+                        <div class="circle small shade5"></div>
+                    </div>
+                </div>
+                <div class="main-container">
+                    <h1>Santa Elena<br />DOCTRAX</h1>
+                    <p>
+                        Welcome to Santa Elena City, Online Document Tracking System. We
+                        provide real time and transparency to all of you.
+                    </p>
+                </div>
+            </div>
             <div class="section 2"></div>
         </main>
         <footer class="footer-container"><?php include './src/components/footer/footerNoLogo.html' ?></footer>

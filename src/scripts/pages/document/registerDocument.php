@@ -35,7 +35,7 @@ if (isset($_POST['register'])) {
   $documentTitle = $_POST['documentTitle'];
 
   if (!validateAge($age)) {
-    die("Invalid age provided.");
+    header("Location: ../../../../document/register/index.php?error=invalid-age");
   }
 
   // File upload handling

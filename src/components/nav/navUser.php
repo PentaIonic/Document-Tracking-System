@@ -32,7 +32,7 @@
                 switch ($role) {
                     case 'Super Admin':
                         echo '                
-                            <button type="button" class="option-button" onclick="location.href=\'../admin/admin.html\'">
+                            <button type="button" class="option-button" onclick="location.href=\'../admin/\'">
                             <img src="../assets/icons/material-design-icons/dashboard_24dp_000000.svg" alt="" />
                             <span>Dashboard</span>
                             </button>';

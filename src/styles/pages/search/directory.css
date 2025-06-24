@@ -11,60 +11,6 @@ body {
   color: #333;
 }
 
-/* ==== HEADER ==== */
-.main-header {
-  background-color: #dcd6cc;
-  border-bottom: 4px solid #f39c12;
-}
-
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 30px;
-}
-
-.logo-area {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo-area img {
-  height: 40px;
-}
-
-.brand-name {
-  font-size: 20px;
-  font-weight: bold;
-  color: #000;
-  text-decoration: none;
-}
-
-.nav-tabs {
-  display: flex;
-  gap: 18px;
-  align-items: center;
-}
-
-.nav-tabs .action-button {
-  font-weight: bold;
-  color: #444;
-  text-decoration: none;
-  padding: 6px 14px;
-  border-radius: 4px;
-  transition: background 0.2s;
-}
-
-.nav-tabs .action-button:first-child {
-  background-color: #000;
-  color: #fff;
-}
-
-.nav-tabs .action-button:hover {
-  background-color: #ece9e4;
-}
-
 /* ==== LAYOUT ==== */
 .page-container {
   display: flex;
