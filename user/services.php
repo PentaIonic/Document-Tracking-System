@@ -1,5 +1,7 @@
 <?php
 
+header("Location: ./health-office-directory.php");
+
 $userName = (!isset($_SESSION['user_id']) || $_SESSION['user_id'] == null) ? "No Account" : $_SESSION['user_name'];
 $role = (!isset($_SESSION['user_role']) || $_SESSION['user_role'] == null) ? "No Role" : $_SESSION['user_role'];
 $accountCode = (!isset($_SESSION['user_code']) || $_SESSION['user_code'] == null) ? "No Code" : $_SESSION['user_code'];
@@ -24,7 +26,7 @@ $accountCode = (!isset($_SESSION['user_code']) || $_SESSION['user_code'] == null
     <!-- Local Styles -->
     <link rel="stylesheet" href="../src/styles/components/frame.css" />
     <link rel="stylesheet" href="../src/styles/components/nav/navIndex.css">
-    <link rel="stylesheet" href="../src/styles/pages/search/service-directory.css" />
+    <link rel="stylesheet" href="../src/styles/pages/search/directory.css" />
     <link rel="stylesheet" href="../src/styles/components/footer/footer.css">
 
     <!-- Web Page Information -->

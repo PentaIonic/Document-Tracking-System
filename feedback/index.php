@@ -25,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute();
             $stmt->close();
 
-            // ✅ Now this works — no output before this
             header("Location: ../user/");
             exit();
         } catch (Exception $e) {

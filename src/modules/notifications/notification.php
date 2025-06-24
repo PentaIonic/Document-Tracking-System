@@ -19,8 +19,7 @@ if ($accountCode) {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $accountCode);
     $stmt->execute();
-    $result = $stmt->get_result();
-    $notification = $result;
+    $notification = $stmt->get_result();
 
     $today = new DateTime();
 

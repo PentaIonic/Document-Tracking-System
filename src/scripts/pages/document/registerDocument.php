@@ -88,7 +88,7 @@ if (isset($_POST['register'])) {
     $storedFilePath = 'uploads/' . $uniqueFileName; // relative path
 
     $stmt->bind_param(
-      "sssssisssssssssssi",
+      "sssssissssssssssss",
       $documentRegistered,
       $lastName,
       $firstName,

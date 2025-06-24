@@ -53,11 +53,11 @@ $accountCode = (!isset($_SESSION['user_code']) || $_SESSION['user_code'] == null
                 </div>
                 <div class="text-section">
                     <h1>Success!</h1>
-                    <span>You may download the file or scan the QR code to access it.</span>
+                    <span>How's our service? You can scan the QR code to access updates to your request.</span>
                 </div>
                 <div class="actions-section">
-                    <button>
-                        <span>Download File</span>
+                    <button onclick="window.location.href='../../feedback/index.php'">
+                        <span>Feedback</span>
                     </button>
                     <span>OR</span>
                     <div class="qr-generated-code">

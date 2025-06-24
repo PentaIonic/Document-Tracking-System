@@ -31,7 +31,7 @@
       <span>FAQs</span>
     </div>
   </a>
-  <a href="./user/services.php">
+  <a href="./user/health-office-directory.php">
     <div class="action-buttons"><span>Services</span></div>
   </a>
 </div>
@@ -55,6 +55,6 @@
     }
     ?>
     <a href="./user/faq.php"><span>FAQs</span></a>
-    <a href="./user/services.php"><span>Services</span></a>
+    <a href="./user/health-office-directory.php"><span>Services</span></a>
   </div>
 </div>

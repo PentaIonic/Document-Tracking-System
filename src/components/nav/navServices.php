@@ -55,6 +55,6 @@
     }
     ?>
     <a href="../user/faq.php"><span>FAQs</span></a>
-    <a href="../user/health-office-directory.php"><span>Services</span></a>
+    <a href="./health-office-directory.php"><span>Services</span></a>
   </div>
 </div>

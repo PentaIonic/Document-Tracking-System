@@ -31,9 +31,9 @@ if (!empty($search)) {
         $searchTerm = "%{$search}%";
         $stmt->bind_param("sss", $searchTerm, $searchTerm, $searchTerm);
         $stmt->execute();
-        $result = $stmt->get_result();
+        $repository = $stmt->get_result();
     } else {
-        $result = false;
+        $repository = false;
     }
 } else {
     $sqlSearchQuery = "SELECT * FROM document_records ORDER BY $sort";
@@ -41,9 +41,9 @@ if (!empty($search)) {
 
     if ($stmt) {
         $stmt->execute();
-        $result = $stmt->get_result();
+        $repository = $stmt->get_result();
     } else {
-        $result = false;
+        $repository = false;
     }
 }
 
@@ -121,8 +121,8 @@ if (!empty($search)) {
                             </thead>
                             <tbody>
                                 <?php
-                                if ($result && $result->num_rows > 0) {
-                                    while ($row = $result->fetch_assoc()) {
+                                if ($repository && $repository->num_rows > 0) {
+                                    while ($row = $repository->fetch_assoc()) {
                                         $docId = htmlspecialchars($row['document_id']);
                                         $code = htmlspecialchars($row['document_code'], ENT_QUOTES);
                                         $sector = htmlspecialchars($row['sector']);
