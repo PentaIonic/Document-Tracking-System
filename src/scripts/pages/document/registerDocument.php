@@ -34,9 +34,17 @@ if (isset($_POST['register'])) {
   $documentType = $_POST['transactionType'];
   $documentTitle = $_POST['documentTitle'];
 
-  if (!validateAge($age)) {
-    header("Location: ../../../../document/register/index.php?error=invalid-age");
+  if (!$accountCode || !$lastName || !$firstName || !$address || !$barangay || !$province || !$municipal || !$sector || !$documentType || !$documentTitle || !$documentDate) {
+    header("Location: ../../../../document/register/index.php?error=missing-fields");
+    exit();
   }
+
+  if (!validateAge($age)) {
+    $conn->close();
+    header("Location: ../../../../document/register/index.php?error=invalid-age");
+    exit();
+  }
+
 
   // File upload handling
 // File upload handling
@@ -45,6 +53,10 @@ if (isset($_POST['register'])) {
   $originalFileName = basename($_FILES["documentFile"]["name"]);
   $uniqueFileName = uniqid() . "_" . preg_replace("/[^a-zA-Z0-9\._-]/", "_", $originalFileName);
   $filePath = $targetDirectory . $uniqueFileName;
+
+  if (!isset($_FILES["documentFile"])) {
+    die("No file uploaded.");
+  }
 
   // File type validation
   $allowedTypes = [
